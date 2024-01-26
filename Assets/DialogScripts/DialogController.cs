@@ -105,7 +105,6 @@ public class DialogController : MonoBehaviour
 
     public void openBox()
     {
-        CanvasManager.HideHUD();
         anim.SetBool("requestClose", false);
         panel.alpha = panelAlpha;
         textDisplay.alpha = 255;
@@ -130,8 +129,6 @@ public class DialogController : MonoBehaviour
 
     public void finishClose()
     {
-        if (!CutsceneController.cutsceneHideUI && !PauseScreen.quit && SceneManager.GetActiveScene().name != "Main menu")
-            CanvasManager.ShowHUD();
         if (panel != null)
         {
             panel.alpha = 0;
