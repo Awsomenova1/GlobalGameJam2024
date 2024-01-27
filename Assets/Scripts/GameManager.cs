@@ -12,10 +12,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject LoseScreen;
     [SerializeField] private LaughMeter laughMeter;
 
+    public static GameManager main;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        main = this;
     }
 
     // Update is called once per frame
