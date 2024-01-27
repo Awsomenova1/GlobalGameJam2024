@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" SchemaVersion="119">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="Menu" ID="{D1DD13C0-51BB-4FF1-9040-F0DE2CADBC42}" ShortID="307437577">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+						</Reference>
+					</ReferenceList>
+				</ActorMixer>
+				<ActorMixer Name="Story_SFX" ID="{BC49F56A-26C8-4F58-BBC0-71E4DC6C0610}" ShortID="77003234">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+						</Reference>
+					</ReferenceList>
+				</ActorMixer>
+				<ActorMixer Name="UI_Gameplay" ID="{9E3F32EF-CE88-4208-95B5-37616B5944DF}" ShortID="23030961">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+						</Reference>
+					</ReferenceList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>
