@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 03553eb7daa17140a941f904675f149a
     GuidInternal: 
-    m_lastTime: -8584952966290598936
+    m_lastTime: -8584952932311011889
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -54,6 +54,57 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: 80fcaa3dcf87ca44a1aed790a498cdc2
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 03553eb7daa17140a941f904675f149a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: 80fcaa3dcf87ca44a1aed790a498cdc2
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+    - name: Story_FX
+      guid: d6756e78e30ccb419313baf06114cde6
+      id: 2223886005
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 03553eb7daa17140a941f904675f149a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Story_FX
+        ObjectType: 2
+        guid: d6756e78e30ccb419313baf06114cde6
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Story_FX
+    - name: User_Interface
+      guid: 52591a364323d34081d8f244de6735a6
+      id: 3017890412
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 03553eb7daa17140a941f904675f149a
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: User_Interface
+        ObjectType: 2
+        guid: 52591a364323d34081d8f244de6735a6
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\User_Interface
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
