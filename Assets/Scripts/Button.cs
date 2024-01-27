@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Button : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Button : MonoBehaviour
     public Sprite not_pressed;
     public Sprite pressed;
     public KeyCode buttonToPress;
+    public LaughMeter laughMeter;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class Button : MonoBehaviour
         {
             //show the circle (player pressing down on button)
             button.sprite = pressed;
+            laughMeter.laughter += 100;
         }
 
         if (Input.GetKeyUp(buttonToPress))
