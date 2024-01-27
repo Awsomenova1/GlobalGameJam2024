@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 180
   m_WholeNumbers: 0
-  m_Value: 130
+  m_Value: 93
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2099,6 +2099,7 @@ MonoBehaviour:
   gameSequence: {fileID: 1166480477}
   meter: {fileID: 1166480476}
   dialog: {fileID: 163700207}
+  speedMeter: {fileID: 1548834336}
   startedSequence: 0
 --- !u!4 &1789445935
 Transform:

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameplayManager : MonoBehaviour
     public Animator gameSequence;
     public LaughMeter meter;
     public DialogController dialog;
+    public Slider speedMeter;
 
     public bool startedSequence = false;
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class GameplayManager : MonoBehaviour
         if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Q))
             StartSequence();
 
+        speedMeter.value = meter.laughSpeed * 5;
         
     }
 
