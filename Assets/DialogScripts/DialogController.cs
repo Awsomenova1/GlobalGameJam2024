@@ -31,6 +31,8 @@ public class DialogController : MonoBehaviour
     public DialogSource.ReadMode readMode = DialogSource.ReadMode.DEFAULT;
 
 
+    bool collected = false;
+
     void Awake()
     {
         main = this;
@@ -42,22 +44,40 @@ public class DialogController : MonoBehaviour
 
     private void Start()
     {
-        setSource(new DialogSource("This is a [TFX,Wave,5,5,50]tester[/TFX,Wave]! [w, 7] [c]"));
+        setSource(new DialogSource("This is a [TFX,Wave,5,5,50]tester[/TFX,Wave]! [w, 7] [c] And again to test wrapping! [exit]"));
         reading = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        OtherUpdate();
+        return;
+        //if (reading)
+        //{
+        //    textDisplay.text = source.read(readMode);
+        //    textDisplay.ForceMeshUpdate();
+            
+        //}
+        
+        //if (main == null || main != this)
+        //    main = this;
+    }
+    void OtherUpdate()
+    {
         if (reading)
         {
-            textDisplay.text = source.read(readMode);
-            textDisplay.ForceMeshUpdate();
-            
+            if (!collected)
+            {
+                textDisplay.maxVisibleCharacters = 0;
+                textDisplay.text = source.collect();
+                collected = true;
+            }
+            source.read(DialogSource.ReadMode.TYPEWRITE);
+            textDisplay.maxVisibleCharacters = source.charCount;
         }
-        
-        if (main == null || main != this)
-            main = this;
+        if (collected)
+            textDisplay.ForceMeshUpdate();
     }
 
 
@@ -117,6 +137,7 @@ public class DialogController : MonoBehaviour
     public void OutputCleared()
     {
         textEffects.Clear();
+        collected = false;
     }
 
     public int GetLengthNoCommands()

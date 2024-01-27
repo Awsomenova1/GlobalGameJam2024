@@ -220,6 +220,7 @@ public class DialogSource
 
     public string collect()
     {
+        int originalPosition = position;
         if (waiting || waitingForButtonInput || dialog == null)
             return outString;
         
@@ -228,13 +229,13 @@ public class DialogSource
         {
             readDialog(ReadMode.COLLECT);
 
-            if (position == dialog.Length - 1 && speed == 0)
+            if (position >= dialog.Length - 1)
             {
                 skippingText = false;
-                Debug.LogWarning("Speed was left at 0, this could prevent anything else from running! Always return speed to non-zero once finishing");
+                //Debug.LogWarning("Speed was left at 0, this could prevent anything else from running! Always return speed to non-zero once finishing");
             }
         }
-        position = 0;
+        position = originalPosition;
         charCount = 0;
         return outString;
     }
@@ -303,10 +304,17 @@ public class DialogSource
                 }
             }
             position = endPos + 1;
-            if (mode != ReadMode.TYPEWRITE) // TODO this may need to be changed to account for effects that should not run in collect mode
-                processStringEffect(mode, parameters.ToArray());
-            else if (parameters[0] != "TFX" && parameters[0] != "/TFX") // TODO this may need to be expanded to cover other effects that should not run in typewrite mode
-                processStringEffect(mode, parameters.ToArray());
+
+            if ((mode == ReadMode.COLLECT && parameters[0] != "c") || mode != ReadMode.COLLECT)
+            {
+                if (mode != ReadMode.TYPEWRITE) // TODO this may need to be changed to account for effects that should not run in collect mode
+                    processStringEffect(mode, parameters.ToArray());
+                else if (parameters[0] != "TFX" && parameters[0] != "/TFX") // TODO this may need to be expanded to cover other effects that should not run in typewrite mode
+                    processStringEffect(mode, parameters.ToArray());
+            }
+
+            if (mode == ReadMode.COLLECT && parameters[0] == "c")
+                skippingText = false;
         }
         if (position >= dialog.Length)
             return;
