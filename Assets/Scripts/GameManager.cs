@@ -28,6 +28,16 @@ public class GameManager : MonoBehaviour
             else if (paused && PopupPanel.open)
                 UnPause();
         }
+
+        // TODO TEMP DEBUG KEYBINDS
+        if (Input.GetKeyDown(KeyCode.W) && !paused && !PopupPanel.open)
+        {
+            Win();
+        }
+        if (Input.GetKeyDown(KeyCode.L) && !paused && !PopupPanel.open)
+        {
+            Lose();
+        }
     }
 
     public void Pause()
@@ -56,6 +66,18 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         WinScreen.SetActive(true);
-        WinScreen.GetComponentInChildren<TextMeshProUGUI>().SetText("<b><size=+200%><align=center>YOU WIN!</size></b>\nYou're a great listener! Your score: " + laughMeter.calculateAvgDistance());
+        WinScreen.GetComponentInChildren<TextMeshProUGUI>().SetText("<b><size=+200%><align=center>YOU WIN!</size></b>\nYou're a great listener!\nAverage Distance from Center: " + laughMeter.calculateAvgDistance());
+    }
+
+    public void Lose()
+    {
+        LoseScreen.SetActive(true);
+    }
+
+    public void PlayAgain()
+    {
+        PopupPanel.open = false; // TODO this is really crappy and temporary
+        // TODO add fancy screen transition thingy
+        SceneManager.LoadScene("Game Scene");
     }
 }

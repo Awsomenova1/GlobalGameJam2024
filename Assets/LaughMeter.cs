@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -68,7 +69,14 @@ public class LaughMeter : MonoBehaviour
     }
 
     public float calculateAvgDistance(){
-        return totalDistance / countDistance;
+        try {
+            return totalDistance / countDistance;
+        }
+        catch (DivideByZeroException) // amazing
+        {
+            return 0;
+        }
+        
     }
 
 

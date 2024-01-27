@@ -1266,6 +1266,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754808848}
   m_CullTransparentMesh: 1
+--- !u!1 &767012848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 560026996816832373, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
+  m_PrefabInstance: {fileID: 1793439768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &789484923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,19 +1418,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2273655306564698948, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -236.79988
+      value: -83.40343
       objectReference: {fileID: 0}
     - target: {fileID: 2273655306564698948, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -88.40039
+      value: -11.699219
       objectReference: {fileID: 0}
     - target: {fileID: 3023351415569043137, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_text
       value: '<b><size=+200%><align=center>YOU WIN!</size></b>
 
+        You''re a
+        great listener!
 
-        You''re
-        a great listener!'
+        Average Distance from Center: 0'
       objectReference: {fileID: 0}
     - target: {fileID: 6356120279326138087, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_Maskable
@@ -2267,7 +2273,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1037971953}
   - component: {fileID: 1037971955}
-  - component: {fileID: 1037971954}
   - component: {fileID: 1022847409}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -2295,18 +2300,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1037971954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037971952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &1037971955
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3493,8 +3486,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1875534820}
-        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
-        m_MethodName: UnPause
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4260,8 +4253,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 404.4502, y: -96.32498}
-  m_SizeDelta: {x: 808.9004, y: 192.64996}
+  m_AnchoredPosition: {x: 404.4502, y: -96.325}
+  m_SizeDelta: {x: 808.9004, y: 192.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1742082534
 MonoBehaviour:
@@ -4308,8 +4301,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1875534820}
-        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
-        m_MethodName: UnPause
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4455,16 +4448,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2273655306564698948, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -236.79988
+      value: -83.4039
       objectReference: {fileID: 0}
     - target: {fileID: 2273655306564698948, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -88.40039
+      value: -11.699219
       objectReference: {fileID: 0}
     - target: {fileID: 3023351415569043137, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_text
       value: '<b><size=+200%><align=center>YOU LOSE!</size></b>
-
 
         Next time,
         be a little more <i>considerate</i>...
@@ -4589,6 +4581,11 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1840864332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 560026996816832373, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
+  m_PrefabInstance: {fileID: 799903608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1875534815
 GameObject:
   m_ObjectHideFlags: 0
@@ -4710,8 +4707,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenu: {fileID: 456324228}
-  WinScreen: {fileID: 0}
-  LoseScreen: {fileID: 0}
+  WinScreen: {fileID: 1840864332}
+  LoseScreen: {fileID: 767012848}
+  laughMeter: {fileID: 1166480476}
 --- !u!1 &1877318306
 GameObject:
   m_ObjectHideFlags: 0
@@ -4748,8 +4746,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 404.4502, y: -328.97495}
-  m_SizeDelta: {x: 808.9004, y: 192.64996}
+  m_AnchoredPosition: {x: 404.4502, y: -328.97498}
+  m_SizeDelta: {x: 808.9004, y: 192.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877318308
 MonoBehaviour:
@@ -4989,10 +4987,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1428125267}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.4937}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -37.027}
+  m_SizeDelta: {x: 0, y: 74.055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946155031
 MonoBehaviour:
@@ -5067,7 +5065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -91.24997}
+  m_AnchoredPosition: {x: 0, y: -187}
   m_SizeDelta: {x: -1111.0996, y: -654.7001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086870322
