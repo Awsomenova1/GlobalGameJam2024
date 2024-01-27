@@ -31,7 +31,7 @@ public class LaughMeter : MonoBehaviour
     //number of frames since the last time distance recorded
     private int timeSinceCount;
 
-    public static float difficultyScalar = 2;
+    public static float difficultyScalar = 5;
 
     // Start is called before the first frame update
     void Start()
