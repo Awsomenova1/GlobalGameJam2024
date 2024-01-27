@@ -21,7 +21,6 @@ public class DialogSource
     float waitTime = 0;
     float waitStart;
 
-    public Vector2 randBarkRange = new Vector2(3, 3);
 
     public string outString = "";
 

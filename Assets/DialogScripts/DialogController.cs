@@ -13,7 +13,7 @@ public class DialogController : MonoBehaviour
 
     public TextMeshProUGUI textDisplay;
 
-    public TextMeshProUGUI headerDisplay;
+    //public TextMeshProUGUI headerDisplay;
 
     public DialogSource source;
 
@@ -24,7 +24,7 @@ public class DialogController : MonoBehaviour
         get { return main.reading; }
     }
 
-    public Animator anim;
+    //public Animator anim;
 
     public bool readWhenOpen = false;
 
@@ -51,7 +51,8 @@ public class DialogController : MonoBehaviour
 
     public bool inDialog = false;
 
-    public Animator DotAnimator;
+    public DialogSource.ReadMode readMode = DialogSource.ReadMode.DEFAULT;
+
 
     void Awake()
     {
@@ -61,7 +62,13 @@ public class DialogController : MonoBehaviour
         textDisplay.OnPreRenderText += applyTextEffects;
 
     }
-    
+
+    private void Start()
+    {
+        source = new DialogSource("This is a tester! [w, 3] [c]");
+        reading = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -78,7 +85,7 @@ public class DialogController : MonoBehaviour
         //}
         if (reading)
         {
-            textDisplay.text = source.read();
+            textDisplay.text = source.read(readMode);
             textDisplay.ForceMeshUpdate();
             
         }
@@ -105,24 +112,22 @@ public class DialogController : MonoBehaviour
 
     public void openBox()
     {
-        anim.SetBool("requestClose", false);
+        //anim.SetBool("requestClose", false);
         panel.alpha = panelAlpha;
         textDisplay.alpha = 255;
-        headerDisplay.alpha = 255;
-        DotAnimator.ResetTrigger("Close");
+        //headerDisplay.alpha = 255;
         inDialog = true;
     }
 
     public void closeBox()
     {
-        if(anim != null)
-            anim?.SetBool("requestClose", true);
+        //if(anim != null)
+        //    anim?.SetBool("requestClose", true);
         closedAnimator = false;
         if(textDisplay != null)
             textDisplay.alpha = 0;
-        if(headerDisplay != null)
-           headerDisplay.alpha = 0;
-        DotAnimator?.SetTrigger("Close");
+        //if(headerDisplay != null)
+        //   headerDisplay.alpha = 0;
         inDialog = false;
     }
 
@@ -168,7 +173,7 @@ public class DialogController : MonoBehaviour
         }
         source = newSource;
         text = "";
-        headerDisplay.text = "";
+        //headerDisplay.text = "";
         textEffects.Clear();
         newSource.clear += OutputCleared;
         newSource.addEffect += AddEffect;
@@ -179,7 +184,7 @@ public class DialogController : MonoBehaviour
 
     public void setHeaderName(string newName)
     {
-        headerDisplay.text = newName;
+        //headerDisplay.text = newName;
     }
 
 
