@@ -128,7 +128,7 @@ public class GameplayManager : MonoBehaviour
     public void Win()
     {
         WinScreen.SetActive(true);
-        WinText.SetText("You're a great listener!\nAverage Distance from Center: " + meter.calculateAvgDistance());
+        WinText.SetText("You made it through without laughing!\nFinal Grade: <color=\"red\">" + meter.calculateGrade());
         button.stopInputs = true;
     }
 
