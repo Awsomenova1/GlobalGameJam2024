@@ -631,7 +631,7 @@ MonoBehaviour:
   gotResponseThisFrame: 0
   skippedTextThisFrame: 0
   inDialog: 0
-  readMode: 0
+  readMode: 1
 --- !u!1 &1244275862
 GameObject:
   m_ObjectHideFlags: 0

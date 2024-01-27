@@ -8,29 +8,13 @@ public class DialogController : MonoBehaviour
 {
     public static DialogController main;
 
-    public CanvasGroup panel;
-    public int panelAlpha = 255;
-
     public TextMeshProUGUI textDisplay;
-
-    //public TextMeshProUGUI headerDisplay;
 
     public DialogSource source;
 
     public bool reading = false;
 
-    public static bool dialogOpen
-    {
-        get { return main.reading; }
-    }
-
-    //public Animator anim;
-
-    public bool readWhenOpen = false;
-
     public List<TextEffect> textEffects = new List<TextEffect>();
-
-    public bool endedWaitThisFrame = false;
 
     public string text
     {
@@ -43,13 +27,6 @@ public class DialogController : MonoBehaviour
             textDisplay.text = value;
         }
     }
-
-    public static bool closedAnimator = true;
-    public bool openedThisFrame = false;
-    public bool gotResponseThisFrame = false;
-    public bool skippedTextThisFrame = false;
-
-    public bool inDialog = false;
 
     public DialogSource.ReadMode readMode = DialogSource.ReadMode.DEFAULT;
 
@@ -65,24 +42,13 @@ public class DialogController : MonoBehaviour
 
     private void Start()
     {
-        source = new DialogSource("This is a tester! [w, 3] [c]");
+        setSource(new DialogSource("This is a [TFX,Wave,5,5,50]tester[/TFX,Wave]! [w, 7] [c]"));
         reading = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Old stuff receiving user input to skip
-        //if (InputReader.inputs == null) return; // temp
-        //if ((InputReader.inputs.actions["Interact"].WasPressedThisFrame() || InputReader.inputs.actions["Pause"].WasPressedThisFrame()) && source != null)
-        //{
-        //    if (!(source.waiting || source.waitingForButtonInput) && !openedThisFrame && reading && !gotResponseThisFrame)
-        //    {
-        //        source.skippingText = true;
-        //        skippedTextThisFrame = true;
-        //    }
-        //    pauseWaitForInputEnd();
-        //}
         if (reading)
         {
             textDisplay.text = source.read(readMode);
@@ -94,74 +60,6 @@ public class DialogController : MonoBehaviour
             main = this;
     }
 
-    private void LateUpdate()
-    {
-        openedThisFrame = false;
-        gotResponseThisFrame = false;
-        endedWaitThisFrame = false;
-        skippedTextThisFrame = false;
-    }
-
-    public void finishOpen()
-    {
-        panel.interactable = true;
-        panel.blocksRaycasts = true;
-        if (readWhenOpen)
-            reading = true;
-    }
-
-    public void openBox()
-    {
-        //anim.SetBool("requestClose", false);
-        panel.alpha = panelAlpha;
-        textDisplay.alpha = 255;
-        //headerDisplay.alpha = 255;
-        inDialog = true;
-    }
-
-    public void closeBox()
-    {
-        //if(anim != null)
-        //    anim?.SetBool("requestClose", true);
-        closedAnimator = false;
-        if(textDisplay != null)
-            textDisplay.alpha = 0;
-        //if(headerDisplay != null)
-        //   headerDisplay.alpha = 0;
-        inDialog = false;
-    }
-
-
-    public void finishClose()
-    {
-        if (panel != null)
-        {
-            panel.alpha = 0;
-            panel.interactable = false;
-            panel.blocksRaycasts = false;
-        }
-        if (readWhenOpen)
-            reading = false;
-        closedAnimator = true;
-    }
-
-    //public void forceClose()
-    //{
-
-    //    anim.Play("Idle");
-    //    textDisplay.alpha = 0;
-    //    headerDisplay.alpha = 0;
-
-
-    //    panel.alpha = 0;
-    //    panel.interactable = false;
-    //    panel.blocksRaycasts = false;
-    //    responseController.close();
-    //    if (readWhenOpen)
-    //        reading = false;
-    //    closedAnimator = true;
-    //    InteractablesTracker.alreadyInteracting = false;
-    //}
 
     public void setSource(DialogSource newSource)
     {
@@ -180,13 +78,6 @@ public class DialogController : MonoBehaviour
         newSource.removeEffect += RemoveEffect;
 
     }
-
-
-    public void setHeaderName(string newName)
-    {
-        //headerDisplay.text = newName;
-    }
-
 
     public void applyTextEffects(TMP_TextInfo info)
     {
