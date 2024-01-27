@@ -52,5 +52,6 @@ public class GameplayManager : MonoBehaviour
     {
         startedSequence = false;
         Debug.Log("Finished sequence");
+        GameManager.main.Win();
     }
 }
