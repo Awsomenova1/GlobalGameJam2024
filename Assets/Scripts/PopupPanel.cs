@@ -12,10 +12,26 @@ public class PopupPanel : MonoBehaviour
     private GameObject PreviousButton;
     public static bool open = false;
     private Animator anim;
+    private GameObject currentSelection;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if (open)
+        {
+            if (EventSystem.current.currentSelectedGameObject != null)
+            {
+                currentSelection = EventSystem.current.currentSelectedGameObject;
+            }
+            else
+            {
+                EventSystem.current.SetSelectedGameObject(currentSelection);
+            }
+        }
     }
 
     // Start is called before the first frame update
