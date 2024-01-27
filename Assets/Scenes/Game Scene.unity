@@ -1755,7 +1755,7 @@ MonoBehaviour:
   pressed: {fileID: -2413806693520163455, guid: fc15058e77eb6fc4aa9a77695e457eb4, type: 3}
   buttonToPress: 113
   laughMeter: {fileID: 1166480476}
-  laughRecovery: 40
+  laughRecovery: 180
 --- !u!212 &1553205887
 SpriteRenderer:
   m_ObjectHideFlags: 0
