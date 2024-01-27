@@ -19,15 +19,14 @@ public class Button : MonoBehaviour
     {
         if (Input.GetKeyDown(buttonToPress))
         {
-            //show the red circle (player pressing down on button)
-            print("Q");
+            //show the circle (player pressing down on button)
             button.sprite = pressed;
         }
 
         if (Input.GetKeyUp(buttonToPress))
         {
             button.sprite = not_pressed;
-            //back to white square (player not pressing the button)
+            //back to square (player not pressing the button)
         }
     }
 }
