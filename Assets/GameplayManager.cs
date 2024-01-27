@@ -42,7 +42,7 @@ public class GameplayManager : MonoBehaviour
 
         dialog.setSource(new DialogSource("[c] Blah blah blah."));
         dialog.reading = true;
-        gameSequence.Play("24HrEmployee");
+        gameSequence.Play("24hrEmployee");
     }
 
     public void FinishedSequence()

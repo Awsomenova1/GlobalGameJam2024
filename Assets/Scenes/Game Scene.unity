@@ -1066,6 +1066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1137183161}
   - component: {fileID: 1166480476}
+  - component: {fileID: 1166480477}
   m_Layer: 0
   m_Name: LaughBar
   m_TagString: Untagged
@@ -1107,8 +1108,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laughter: 0
-  laughSpeed: 5
+  laughSpeed: 0
   laughBarFill: {fileID: 1838579118}
+--- !u!95 &1166480477
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137183160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83170d5041384b142b962c688ce7e0de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1244275862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,6 +1716,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673603300}
   m_CullTransparentMesh: 1
+--- !u!1 &1789445933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1789445935}
+  - component: {fileID: 1789445934}
+  m_Layer: 0
+  m_Name: GameplayManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1789445934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789445933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fcfd429c43e2c049bfaec70542854c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSequence: {fileID: 1166480477}
+  meter: {fileID: 1166480476}
+  dialog: {fileID: 163700207}
+  startedSequence: 0
+--- !u!4 &1789445935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789445933}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 580.4736, y: 269.8067, z: -0.03978467}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1838579116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,3 +2116,4 @@ SceneRoots:
   - {fileID: 1368631630}
   - {fileID: 854817549}
   - {fileID: 399553200}
+  - {fileID: 1789445935}
