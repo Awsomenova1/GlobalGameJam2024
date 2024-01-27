@@ -15,6 +15,7 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         EventSystem.current.SetSelectedGameObject(PlayButton.gameObject);
+        screenWipe.gameObject.SetActive(true);
         screenWipe.WipeOut();
     }
 

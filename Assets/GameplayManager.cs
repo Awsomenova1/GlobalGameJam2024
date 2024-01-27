@@ -33,6 +33,7 @@ public class GameplayManager : MonoBehaviour
     void Start()
     {
         meter.laughSpeed = 0;
+        screenWipe.gameObject.SetActive(true);
         screenWipe.WipeOut();
         IntroSequence();
     }
