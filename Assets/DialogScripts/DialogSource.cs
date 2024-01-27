@@ -640,6 +640,10 @@ public class DialogSource
                     Debug.LogWarning("play animation takes a name of an animation to play!");
                 break;
 
+            case "out":
+                Debug.Log("Hit out at: " + Time.time);
+                break;
+
 
             #region old audio stuff
             //case "ps":
