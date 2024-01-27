@@ -772,4 +772,62 @@ public class DialogSource
     //{
     //    AudioManager.instance.ApplyMixerEffect(mixer, effect, value, duration);
     //}
+
+    public float GetTimeToReachPoint(int toPosition, int fromPosition = 0)
+    {
+        int position = fromPosition;
+        float totalTime = 0;
+        float waitTime = speed;
+
+        while (position < toPosition)
+        {
+            if (dialog[position] == '[')
+            {
+                int endPos = getCommandEnd(dialog, position);
+                List<string> parameters = new List<string>();
+                int depth = 0;
+
+                int lastProcessPosition = position;
+                for (int i = lastProcessPosition; i <= endPos; i++)
+                {
+                    if (dialog[i] == '[')
+                        depth++;
+                    if (dialog[i] == ']')
+                        depth--;
+                    if ((dialog[i] == ',' && depth == 1) || i == endPos)
+                    {
+                        parameters.Add(dialog.Substring(lastProcessPosition + 1, i - lastProcessPosition - 1));
+                        lastProcessPosition = i;
+                    }
+                }
+
+                if (parameters[0] == "ss")
+                    waitTime = float.Parse(parameters[1]);
+                if (parameters[0] == "w")
+                    totalTime += float.Parse(parameters[1]);
+
+                position = endPos;
+            }
+
+            totalTime += waitTime;
+            position++;
+        }
+        return totalTime;
+    }
+
+    //public bool TimeAccuracyTest()
+    //{
+    //    float startTime = Time.time;
+    //    DialogSource source = new DialogSource("Tester [ss, .05] again [w, .5] here");
+
+    //    bool pass = true;
+
+    //    //pass &= (Mathf.Abs(source.GetTimeToReachPoint(6) - (.075f * 6)) <= .075f);
+
+    //    //pass &= (Mathf.Abs(source.GetTimeToReachPoint(23) - (.075f * 6 + .05f * 6)) <= .075f);
+
+    //    return pass;
+
+        
+    //}
 }

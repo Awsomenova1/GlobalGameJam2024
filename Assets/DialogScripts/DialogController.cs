@@ -41,7 +41,6 @@ public class DialogController : MonoBehaviour
         textDisplay.ForceMeshUpdate();
 
         textDisplay.OnPreRenderText += applyTextEffects;
-
     }
 
     private void Start()
