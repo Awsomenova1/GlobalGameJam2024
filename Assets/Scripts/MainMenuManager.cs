@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private Button PlayButton;
+    [SerializeField] private GameObject PlayButton;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class MainMenuManager : MonoBehaviour
     {
         // TODO change to gameplay scene
         // maybe add a fancy transition or something idk :eyes:
-        Debug.Log("Play");
+        SceneManager.LoadScene("Game Scene");
     }
 
     public void Instructions()
