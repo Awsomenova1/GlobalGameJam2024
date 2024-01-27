@@ -1,0 +1,45 @@
+Event	ID	Name			Wwise Object Path	Notes
+	540993415	Start_Music			\Default Work Unit\Music\Start_Music	
+	953277036	Resume			\Default Work Unit\Resume	
+	1244834824	State_Mediate			\Default Work Unit\Music\Instensity\State_Mediate	
+	2575031991	State_Intense			\Default Work Unit\Music\Instensity\State_Intense	
+	2837384057	Stop_Music			\Default Work Unit\Music\Stop_Music	
+	2880738500	State_Silent			\Default Work Unit\Music\Instensity\State_Silent	
+	3092587493	Pause			\Default Work Unit\Pause	
+	3675814650	State_Calm			\Default Work Unit\Music\Instensity\State_Calm	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	2470328564	Intensity			\Default Work Unit\Intensity	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Intensity			
+	3160623154	Silent	Intensity			
+	3753286132	Calm	Intensity			
+	4019181194	Mediate	Intensity			
+	4223512837	Intense	Intensity			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	6142316	Intense_Guitar_180bpm_longtail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Intense_Guitar_180bpm_longtail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Guitar_180bpm_longtail		4189316
+	66996052	Calm_PianoLH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Calm_PianoLH_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_PianoLH_180bpm_4b_tail		4233760
+	101753864	Calm_2ndbeat_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Calm_2ndbeat_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_2ndbeat_180bpm_4b_tail		4233760
+	124769407	Breakbeat_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Breakbeat_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Breakbeat_180bpm_tail		3927172
+	264731060	Calm_Snare_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Calm_Snare_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_Snare_180bpm_4b_tail		4233760
+	269112471	Calm_Kick_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Calm_Kick_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_Kick_180bpm_4b_tail		4233760
+	298887167	Intense_Soct_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Intense_Soct_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Soct_180bpm_tail		3927172
+	316273951	Mediate_PianoRH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Mediate_PianoRH_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_PianoRH_180bpm_4b_tail		4233760
+	394227182	Intense_Slead_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Intense_Slead_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Slead_180bpm_tail		4189316
+	530961174	Intense_Jupiter_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Intense_Jupiter_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Jupiter_180bpm_tail		4713604
+	549676011	Mediate_Sbass_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Mediate_Sbass_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_Sbass_180bpm_4b_tail		4233760
+	593321699	Calm_HiHat_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Calm_HiHat_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_HiHat_180bpm_4b_tail		4233760
+	613973448	Mediate_16mm_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Mediate_16mm_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_16mm_180bpm_4b_tail		4451460
+	647416999	Mediate_PianoLH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Mediate_PianoLH_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_PianoLH_180bpm_4b_tail		4233760
+	783345208	Calm_Bassguitar_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Calm_Bassguitar_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_Bassguitar_180bpm_4b_tail		4233760
+	827364640	Intense_16mm_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Intense_16mm_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_16mm_180bpm_tail		4451460
+	867652906	Mediate_Guitar_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Mediate_Guitar_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_Guitar_180bpm_4b_tail		4233760
+	926802467	Calm_PianoRH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Calm_PianoRH_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_PianoRH_180bpm_4b_tail		4233760
+	940001257	Calm_EPiano_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Calm_EPiano_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_EPiano_180bpm_4b_tail		4451460
+	965771257	Mediate_EPiano_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Mediate_EPiano_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_EPiano_180bpm_4b_tail		4713604
+	1031649684	Intense_Sbass_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Intense_Sbass_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Sbass_180bpm_tail		3927172
+	1040733307	Intense_Ther_180bpm_longtail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Intense_Ther_180bpm_longtail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Ther_180bpm_longtail		4451460
+	1051850607	Calm_Guitar_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Mac\SFX\Calm_Guitar_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_Guitar_180bpm_4b_tail		4233760
+

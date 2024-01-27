@@ -3,7 +3,7 @@
 	<Platform Name="Linux" BasePlatform="Linux" Generator="2023.1.0.8367"/>
 	<RootPaths>
 		<ProjectRoot>../..</ProjectRoot>
-		<SourceFilesRoot>../../.cache/Linux/</SourceFilesRoot>
+		<SourceFilesRoot>../../.cache/Linux</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
 		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
@@ -28,5 +28,5 @@
 		<PrintObjectGuid>false</PrintObjectGuid>
 		<PrintObjectPath>false</PrintObjectPath>
 	</Settings>
-	<FileHash>{AC7E212B-07E5-7FCC-DAD0-DB0F89A6ED5D}</FileHash>
+	<FileHash>{80F31176-4C76-43DE-B32A-8E47C3792A4B}</FileHash>
 </PlatformInfo>

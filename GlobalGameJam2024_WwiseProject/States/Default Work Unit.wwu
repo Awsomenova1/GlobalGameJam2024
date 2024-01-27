@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{D24E68CE-F003-4C96-9B0A-398861EF1FAF}" SchemaVersion="119">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{D24E68CE-F003-4C96-9B0A-398861EF1FAF}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{D24E68CE-F003-4C96-9B0A-398861EF1FAF}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Intensity" ID="{ADD3F2AA-C60E-4AFA-9F33-AA48A9AF24F6}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{E6586EB2-5D0A-4224-ACD6-F1F91CA7026A}"/>
+						<State Name="Calm" ID="{18485634-69F0-4E3D-9BBF-0E1795F534F1}"/>
+						<State Name="Mediate" ID="{F8390D5C-0711-4361-8CFF-A9FC422598F9}"/>
+						<State Name="Intense" ID="{9F146DCB-C38C-4348-BFC1-E4011C4B5FFF}"/>
+						<State Name="Silent" ID="{BE4ADB2D-507F-4433-BD24-08ABE88594D9}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="Playing" ID="{ED081FF0-140F-4C28-B333-051C2F61067E}">
+					<ChildrenList>
+						<State Name="None" ID="{6D6020C0-4FFE-4989-B687-1F7E1FA12270}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

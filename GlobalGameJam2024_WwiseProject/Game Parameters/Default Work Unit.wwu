@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{3541F5E9-EEF4-4D53-9C3F-3253377BBAE3}" SchemaVersion="119">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{3541F5E9-EEF4-4D53-9C3F-3253377BBAE3}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{3541F5E9-EEF4-4D53-9C3F-3253377BBAE3}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Laugh_Meter" ID="{DEC19A5F-D8F2-486F-91A0-34908945FFB1}"/>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>
