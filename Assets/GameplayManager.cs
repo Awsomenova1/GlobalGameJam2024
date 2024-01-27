@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class GameplayManager : MonoBehaviour
     public LaughMeter meter;
     public DialogController dialog;
     public Slider speedMeter;
+
+    public ScreenWipe screenWipe;
 
     public bool startedSequence = false;
     public bool suspendSequence = false;
@@ -21,6 +25,11 @@ public class GameplayManager : MonoBehaviour
     public Sprite emote2;
     public Sprite emote3;
     public Sprite emote4;
+
+    public static bool paused;
+    [SerializeField] private GameObject PauseMenu;
+    [SerializeField] private GameObject WinScreen;
+    [SerializeField] private GameObject LoseScreen;
 
     public Button button;
 
@@ -50,12 +59,31 @@ public class GameplayManager : MonoBehaviour
             dialog.setSource(new DialogSource("Laughter"));
             dialog.reading = true;
             suspendSequence = true;
-            GameManager.main.Lose();
+            Lose();
             button.stopInputs = true;
         }
 
         UpdateSliderIcons();
-        
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!paused && !PopupPanel.open)
+                Pause();
+            else if (paused && PopupPanel.open)
+                UnPause();
+        }
+
+        // TODO TEMP DEBUG KEYBINDS
+        if (Input.GetKeyDown(KeyCode.W) && !paused && !PopupPanel.open)
+        {
+            Win();
+        }
+        if (Input.GetKeyDown(KeyCode.L) && !paused && !PopupPanel.open)
+        {
+            Lose();
+        }
+
     }
 
     public void IntroSequence()
@@ -63,7 +91,58 @@ public class GameplayManager : MonoBehaviour
         dialog.setSource(new DialogSource("This guys about to talk to you. [exit]"));
         dialog.reading = true;
     }
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        PauseMenu.SetActive(true);
+        paused = true;
+    }
 
+    public void UnPause()
+    {
+        Time.timeScale = 1;
+        paused = false;
+        PauseMenu.GetComponent<PopupPanel>().Close();
+    }
+
+    public void QuitToMenu()
+    {
+        Time.timeScale = 1;
+        paused = false;
+        PopupPanel.open = false; // TODO this is really crappy and temporary
+        screenWipe.WipeIn();
+        screenWipe.PostWipe += LoadMenu;
+    }
+
+    public void LoadMenu()
+    {
+        screenWipe.PostWipe -= LoadMenu;
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void ReloadGame()
+    {
+        screenWipe.PostWipe -= ReloadGame;
+        SceneManager.LoadScene("Game Scene");
+    }
+
+    public void Win()
+    {
+        WinScreen.SetActive(true);
+        WinScreen.GetComponentInChildren<TextMeshProUGUI>().SetText("<b><size=+200%><align=center>YOU WIN!</size></b>\nYou're a great listener!\nAverage Distance from Center: " + meter.calculateAvgDistance());
+    }
+
+    public void Lose()
+    {
+        LoseScreen.SetActive(true);
+    }
+
+    public void PlayAgain()
+    {
+        PopupPanel.open = false; // TODO this is really crappy and temporary
+        screenWipe.WipeIn();
+        screenWipe.PostWipe += ReloadGame;
+    }
     public void StartSequence()
     {
         startedSequence = true;
@@ -80,7 +159,7 @@ public class GameplayManager : MonoBehaviour
     {
         startedSequence = false;
         Debug.Log("Finished sequence");
-        GameManager.main.Win();
+        Win();
         button.stopInputs = false;
     }
 
