@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LaughMeter : MonoBehaviour
 {
     //current laughter meter value
-    public int laughter;
+    public static int laughter;
     //minimum and maximum laugh bar values, set to 0-10000 range for high customizability via speed
     private int minLaughter = 0;
     private int maxLaughter = 10000;
