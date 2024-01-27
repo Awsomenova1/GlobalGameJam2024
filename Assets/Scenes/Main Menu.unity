@@ -355,21 +355,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1693694532878645695, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
+    - target: {fileID: 2009565331762433719, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
+      propertyPath: m_text
+      value: 'blah blah blah
+
+        test 1234
+
+        we did the thing'
       objectReference: {fileID: 0}
     - target: {fileID: 3023351415569043137, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_text
-      value: '<b><size=+200%>CREDITS</size></b>
-
-
-        blah blah blah
-
-        test
-        1234
-
-        we did the thing'
+      value: <size=+200%>CREDITS</size>
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -470,7 +466,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.95
+  m_fontSize: 55.6
   m_fontSizeBase: 55.6
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -737,7 +733,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.95
+  m_fontSize: 55.6
   m_fontSizeBase: 55.6
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -871,7 +867,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.95
+  m_fontSize: 55.6
   m_fontSizeBase: 55.6
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1383,7 +1379,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.95
+  m_fontSize: 55.6
   m_fontSizeBase: 55.6
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1517,7 +1513,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.95
+  m_fontSize: 55.6
   m_fontSizeBase: 55.6
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1829,21 +1825,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1693694532878645695, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
+    - target: {fileID: 2009565331762433719, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
+      propertyPath: m_text
+      value: 'blah blah blah
+
+        test 1234
+
+        change the thing'
       objectReference: {fileID: 0}
     - target: {fileID: 3023351415569043137, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_text
-      value: '<b><size=+200%>SETTINGS</size></b>
-
-
-        blah blah blah
-
-        test
-        1234
-
-        change the thing'
+      value: <size=+200%>SETTINGS</size>
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2441,6 +2433,22 @@ PrefabInstance:
     - target: {fileID: 560026996816832373, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985612616138203033, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693694532878645695, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -18.099854
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693694532878645695, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.3632812
+      objectReference: {fileID: 0}
+    - target: {fileID: 2273655306564698948, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.7746582
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

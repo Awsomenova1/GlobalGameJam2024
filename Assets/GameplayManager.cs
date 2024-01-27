@@ -93,6 +93,7 @@ public class GameplayManager : MonoBehaviour
         dialog.setSource(new DialogSource("This guys about to talk to you. [exit]"));
         dialog.reading = true;
     }
+
     public void Pause()
     {
         Time.timeScale = 0;
@@ -102,6 +103,7 @@ public class GameplayManager : MonoBehaviour
 
     public void UnPause()
     {
+        if (!PopupPanel.open) return;
         Time.timeScale = 1;
         paused = false;
         PauseMenu.GetComponent<PopupPanel>().Close();
@@ -109,9 +111,10 @@ public class GameplayManager : MonoBehaviour
 
     public void QuitToMenu()
     {
+        if (!PopupPanel.open) return;
         Time.timeScale = 1;
         paused = false;
-        PopupPanel.open = false; // TODO this is really crappy and temporary
+        PopupPanel.open = false;
         screenWipe.WipeIn();
         screenWipe.PostWipe += LoadMenu;
     }
@@ -141,7 +144,8 @@ public class GameplayManager : MonoBehaviour
 
     public void PlayAgain()
     {
-        PopupPanel.open = false; // TODO this is really crappy and temporary
+        if (!PopupPanel.open) return;
+        PopupPanel.open = false;
         screenWipe.WipeIn();
         screenWipe.PostWipe += ReloadGame;
     }
