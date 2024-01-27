@@ -1334,6 +1334,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3905377247873069073, guid: 4ac270944197acb4ea11b1b4bd8fa1e2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8000965105466938728, guid: 4ac270944197acb4ea11b1b4bd8fa1e2, type: 3}
       propertyPath: m_Name
       value: rhythmMeter_top
