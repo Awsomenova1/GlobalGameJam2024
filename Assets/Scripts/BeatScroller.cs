@@ -17,7 +17,7 @@ public class BeatScroller : MonoBehaviour
     public Vector2 basePosition;
 
     public GameObject keyPrefab;
-    public GameObject hitEffectPrefab;
+    public Animator hitEffects;
 
     public float timeInSequence
     {
@@ -61,6 +61,9 @@ public class BeatScroller : MonoBehaviour
 
     public void DetectInputs()
     {
+        bool hitSomething = false;
+
+
         for(int i = 0; i < InputQueue.Count; i++)
         {
             if(Input.GetKeyDown(InputQueue[i].keyToHit) && Mathf.Abs(timeInSequence -InputQueue[i].TimeToHit ) < .2f)
@@ -69,17 +72,28 @@ public class BeatScroller : MonoBehaviour
                 {
                     Destroy(InputQueue[i].associatedObj);
                     InputQueue[i].hit = true;
-                    Debug.Log("Time difference: " + (timeInSequence - InputQueue[i].TimeToHit));
 
                     if (Mathf.Abs(timeInSequence - InputQueue[i].TimeToHit) < .1f)
-                        Instantiate(hitEffectPrefab, transform);
+                        hitEffects.Play("clickHit");
+                    else
+                        hitEffects.Play("click");
+
+                    hitSomething = true;
 
                 }
+            }
 
-
-                
+            if (timeInSequence - InputQueue[i].TimeToHit > .5f && !InputQueue[i].missed && !InputQueue[i].hit)
+            {
+                hitEffects.Play("clickMiss");
+                InputQueue[i].missed = true;
             }
         }
+
+        if (!hitSomething && Input.anyKeyDown)
+            hitEffects.Play("clickWrong");
+
+        
     }
 
     public void UpdatePositions()
@@ -123,6 +137,7 @@ public class ButtonPrompt
     public KeyCode keyToHit;
     public GameObject associatedObj;
     public bool hit = false;
+    public bool missed = false;
 
 
     public ButtonPrompt(float time)
