@@ -1089,7 +1089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2273655306564698948, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -88.40039
+      value: -88.40625
       objectReference: {fileID: 0}
     - target: {fileID: 3023351415569043137, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_text
@@ -1305,6 +1305,13 @@ MonoBehaviour:
   dialog: {fileID: 163700207}
   speedMeter: {fileID: 1548834336}
   startedSequence: 0
+  suspendSequence: 0
+  speedIcon: {fileID: 1589672195}
+  laughIcon: {fileID: 1946155031}
+  emote1: {fileID: 21300000, guid: ad7e8e5bb885cad4cadc3007cab04205, type: 3}
+  emote2: {fileID: 21300000, guid: ac6711e2aeee69b458bc855de99d18fd, type: 3}
+  emote3: {fileID: 21300000, guid: 625873e90f627a34b875fe6b4d15e328, type: 3}
+  emote4: {fileID: 21300000, guid: f8fa68cd2bd6d4148bb514552213d239, type: 3}
 --- !u!4 &789484925
 Transform:
   m_ObjectHideFlags: 0
@@ -1422,7 +1429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2273655306564698948, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -11.699219
+      value: -11.703125
       objectReference: {fileID: 0}
     - target: {fileID: 3023351415569043137, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_text
@@ -2065,6 +2072,7 @@ GameObject:
   - component: {fileID: 1022847405}
   - component: {fileID: 1022847408}
   - component: {fileID: 1022847407}
+  - component: {fileID: 1022847410}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2263,6 +2271,50 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1022847410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022847403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &1037971952
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,9 +2624,9 @@ RectTransform:
   - {fileID: 1838579117}
   m_Father: {fileID: 1875534816}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -750, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 210, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166480476
@@ -4452,7 +4504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2273655306564698948, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -11.699219
+      value: -11.703125
       objectReference: {fileID: 0}
     - target: {fileID: 3023351415569043137, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_text
@@ -4577,7 +4629,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 10000
   m_WholeNumbers: 0
-  m_Value: 4937
+  m_Value: 5615
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

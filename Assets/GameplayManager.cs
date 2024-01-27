@@ -13,6 +13,15 @@ public class GameplayManager : MonoBehaviour
 
     public bool startedSequence = false;
     public bool suspendSequence = false;
+
+    public Image speedIcon;
+    public Image laughIcon;
+
+    public Sprite emote1;
+    public Sprite emote2;
+    public Sprite emote3;
+    public Sprite emote4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +50,8 @@ public class GameplayManager : MonoBehaviour
             suspendSequence = true;
             GameManager.main.Lose();
         }
+
+        UpdateSliderIcons();
         
     }
 
@@ -65,5 +76,29 @@ public class GameplayManager : MonoBehaviour
         startedSequence = false;
         Debug.Log("Finished sequence");
         GameManager.main.Win();
+    }
+
+    public void UpdateSliderIcons()
+    {
+        if (Mathf.Abs(LaughMeter.laughter - 5000) > -1 && Mathf.Abs(LaughMeter.laughter - 5000) <= 1000)
+        {
+            speedIcon.sprite = emote1;
+            laughIcon.sprite = emote1;
+        }
+        else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 2600)
+        {
+            speedIcon.sprite = emote2;
+            laughIcon.sprite = emote2;
+        }
+        else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 3800)
+        {
+            speedIcon.sprite = emote3;
+            laughIcon.sprite = emote3;
+        }
+        else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 5000)
+        {
+            speedIcon.sprite = emote4;
+            laughIcon.sprite = emote4;
+        }
     }
 }
