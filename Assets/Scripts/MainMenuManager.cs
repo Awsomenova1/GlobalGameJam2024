@@ -16,6 +16,11 @@ public class MainMenuManager : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(PlayButton.gameObject);
         screenWipe.gameObject.SetActive(true);
+        Invoke("RevealScreen", 0.5f);
+    }
+
+    void RevealScreen()
+    {
         screenWipe.WipeOut();
     }
 
