@@ -6,8 +6,10 @@ using UnityEngine;
 public class ScreenWipe : MonoBehaviour
 {
     public Action PostWipe;
+    public static bool over = false;
     public void WipeIn()
     {
+        over = false;
         GetComponent<Animator>().SetTrigger("WipeIn");
     }
 
@@ -19,5 +21,10 @@ public class ScreenWipe : MonoBehaviour
     public void CallPostWipe()
     {
         PostWipe?.Invoke();
+    }
+
+    public void ScreenRevealed()
+    {
+        over = true;
     }
 }
