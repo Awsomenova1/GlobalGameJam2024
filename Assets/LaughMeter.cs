@@ -67,7 +67,7 @@ public class LaughMeter : MonoBehaviour
         countDistance += 1;
     }
 
-    float calculateAvgDistance(){
+    public float calculateAvgDistance(){
         return totalDistance / countDistance;
     }
 

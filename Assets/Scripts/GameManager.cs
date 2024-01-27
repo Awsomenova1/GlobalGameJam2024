@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] private GameObject WinScreen;
     [SerializeField] private GameObject LoseScreen;
+    [SerializeField] private LaughMeter laughMeter;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,6 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         WinScreen.SetActive(true);
-        WinScreen.GetComponentInChildren<TextMeshProUGUI>().SetText("<b><size=+200%><align=center>YOU WIN!</size></b>\nYou're a great listener! Your score: ");
+        WinScreen.GetComponentInChildren<TextMeshProUGUI>().SetText("<b><size=+200%><align=center>YOU WIN!</size></b>\nYou're a great listener! Your score: " + laughMeter.calculateAvgDistance());
     }
 }
