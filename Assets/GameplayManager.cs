@@ -22,6 +22,8 @@ public class GameplayManager : MonoBehaviour
     public Sprite emote3;
     public Sprite emote4;
 
+    public Button button;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,7 @@ public class GameplayManager : MonoBehaviour
             dialog.reading = true;
             suspendSequence = true;
             GameManager.main.Lose();
+            button.stopInputs = true;
         }
 
         UpdateSliderIcons();
@@ -69,6 +72,8 @@ public class GameplayManager : MonoBehaviour
         dialog.setSource(new DialogSource("[c] Blah blah blah."));
         dialog.reading = true;
         gameSequence.Play("24hrEmployee");
+
+        button.stopInputs = false;
     }
 
     public void FinishedSequence()
@@ -76,6 +81,7 @@ public class GameplayManager : MonoBehaviour
         startedSequence = false;
         Debug.Log("Finished sequence");
         GameManager.main.Win();
+        button.stopInputs = false;
     }
 
     public void UpdateSliderIcons()

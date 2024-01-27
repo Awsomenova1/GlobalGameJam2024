@@ -55,6 +55,8 @@ public class LaughMeter : MonoBehaviour
             addDistance();
             timeSinceCount = 0;
         }
+        //reqhits/second = (60 * laughSpeed)/180
+        //decayRateForBpm = (180 * bpm/60)/60 = 180 * bpm/360, 180 is recovery rate
     }
 
     public bool checkLose(){

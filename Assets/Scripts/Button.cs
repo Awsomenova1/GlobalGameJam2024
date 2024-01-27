@@ -10,6 +10,9 @@ public class Button : MonoBehaviour
     public KeyCode buttonToPress;
     public LaughMeter laughMeter;
     public int laughRecovery = 40;
+
+    public bool stopInputs = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,9 @@ public class Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (stopInputs)
+            return;
+
         if (Input.GetKeyDown(buttonToPress))
         {
             //show the circle (player pressing down on button)
