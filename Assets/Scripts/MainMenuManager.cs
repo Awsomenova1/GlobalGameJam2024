@@ -7,14 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject PlayButton;
-    [SerializeField] private GameObject InstructionsPanel, SettingsPanel, CreditsPanel;
+    [SerializeField] private GameObject PlayButton, InstructionsPanel, SettingsPanel, CreditsPanel;
+    [SerializeField] private ScreenWipe screenWipe;
     private GameObject currentSelection;
 
     // Start is called before the first frame update
     void Start()
     {
         EventSystem.current.SetSelectedGameObject(PlayButton.gameObject);
+        screenWipe.WipeOut();
     }
 
     // Update is called once per frame
@@ -32,8 +33,13 @@ public class MainMenuManager : MonoBehaviour
 
     public void Play()
     {
-        // TODO change to gameplay scene
-        // maybe add a fancy transition or something idk :eyes:
+        screenWipe.WipeIn();
+        screenWipe.PostWipe += LoadGame;
+    }
+
+    public void LoadGame()
+    {
+        screenWipe.PostWipe -= LoadGame;
         SceneManager.LoadScene("Game Scene");
     }
 
@@ -57,6 +63,13 @@ public class MainMenuManager : MonoBehaviour
 
     public void Quit()
     {
+        screenWipe.WipeIn();
+        screenWipe.PostWipe += ExitGame;
+    }
+
+    public void ExitGame()
+    {
+        screenWipe.PostWipe -= ExitGame;
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
