@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class PopupPanel : MonoBehaviour
 {
-    [SerializeField] private GameObject CloseButton;
+    [SerializeField] private GameObject PrimaryButton;
+    [SerializeField] private bool SelectPrevious;
     private GameObject PreviousButton;
     public static bool open = false;
     private Animator anim;
@@ -22,14 +23,16 @@ public class PopupPanel : MonoBehaviour
     {
         anim.SetTrigger("Open");
         open = true;
-        PreviousButton = EventSystem.current.currentSelectedGameObject;
-        EventSystem.current.SetSelectedGameObject(CloseButton);
+        if (SelectPrevious)
+            PreviousButton = EventSystem.current.currentSelectedGameObject;
+        EventSystem.current.SetSelectedGameObject(PrimaryButton);
     }
 
     public void Close()
     {
         anim.SetTrigger("Close");
-        EventSystem.current.SetSelectedGameObject(PreviousButton);
+        if (SelectPrevious)
+            EventSystem.current.SetSelectedGameObject(PreviousButton);
     }
 
     public void Disable()
