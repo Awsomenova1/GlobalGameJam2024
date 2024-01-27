@@ -1933,7 +1933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c768c87e1c2f99548a0e000f2b9ef1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayButton: {fileID: 622920392}
+  PlayButton: {fileID: 622920390}
 --- !u!1 &2037198652
 GameObject:
   m_ObjectHideFlags: 0
