@@ -33,7 +33,6 @@ public class MainMenuManager : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(currentSelection);
             }
         }
-        
     }
 
     public void Play()
