@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseGame : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public static bool paused;
     [SerializeField] private GameObject PauseMenu;
+    [SerializeField] private GameObject WinScreen;
+    [SerializeField] private GameObject LoseScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -47,5 +50,11 @@ public class PauseGame : MonoBehaviour
         PopupPanel.open = false; // TODO this is really crappy and temporary
         // TODO add fancy scene transition thingy
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void Win()
+    {
+        WinScreen.SetActive(true);
+        WinScreen.GetComponentInChildren<TextMeshProUGUI>().SetText("<b><size=+200%><align=center>YOU WIN!</size></b>\nYou're a great listener! Your score: ");
     }
 }
