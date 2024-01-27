@@ -29,7 +29,10 @@ public class GameplayManager : MonoBehaviour
     public static bool paused;
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] private GameObject WinScreen;
+    [SerializeField] private TextMeshProUGUI WinText;
     [SerializeField] private GameObject LoseScreen;
+
+    private float targetSpeed;
 
     public Button button;
 
@@ -45,6 +48,14 @@ public class GameplayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape) && ScreenWipe.over)
+        {
+            if (!paused && !PopupPanel.open)
+                Pause();
+            else if (paused && PopupPanel.open)
+                UnPause();
+        }
+
         if (suspendSequence)
             return;
 
@@ -54,7 +65,9 @@ public class GameplayManager : MonoBehaviour
         if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Q))
             StartSequence();
 
-        speedMeter.value = meter.laughSpeed * 5;
+        targetSpeed = meter.laughSpeed * 5;
+
+        speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, 0.1f);
 
         if(meter.checkLose())
         {
@@ -66,25 +79,6 @@ public class GameplayManager : MonoBehaviour
         }
 
         UpdateSliderIcons();
-
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (!paused && !PopupPanel.open)
-                Pause();
-            else if (paused && PopupPanel.open)
-                UnPause();
-        }
-
-        // TODO TEMP DEBUG KEYBINDS
-        if (Input.GetKeyDown(KeyCode.W) && !paused && !PopupPanel.open)
-        {
-            Win();
-        }
-        if (Input.GetKeyDown(KeyCode.L) && !paused && !PopupPanel.open)
-        {
-            Lose();
-        }
 
     }
 
@@ -134,7 +128,7 @@ public class GameplayManager : MonoBehaviour
     public void Win()
     {
         WinScreen.SetActive(true);
-        WinScreen.GetComponentInChildren<TextMeshProUGUI>().SetText("<b><size=+200%><align=center>YOU WIN!</size></b>\nYou're a great listener!\nAverage Distance from Center: " + meter.calculateAvgDistance());
+        WinText.SetText("You're a great listener!\nAverage Distance from Center: " + meter.calculateAvgDistance());
         button.stopInputs = true;
     }
 
