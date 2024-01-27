@@ -57,7 +57,7 @@ public class LaughMeter : MonoBehaviour
         }
     }
 
-    bool checkLose(){
+    public bool checkLose(){
         if(laughter >= maxLaughter || laughter <= minLaughter){
             return true;
         }

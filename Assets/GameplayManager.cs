@@ -12,6 +12,7 @@ public class GameplayManager : MonoBehaviour
     public Slider speedMeter;
 
     public bool startedSequence = false;
+    public bool suspendSequence = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,9 @@ public class GameplayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (suspendSequence)
+            return;
+
         if (startedSequence && gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence"))
             FinishedSequence();
 
@@ -29,6 +33,14 @@ public class GameplayManager : MonoBehaviour
             StartSequence();
 
         speedMeter.value = meter.laughSpeed * 5;
+
+        if(meter.checkLose())
+        {
+            dialog.setSource(new DialogSource("Laughter"));
+            dialog.reading = true;
+            suspendSequence = true;
+            GameManager.main.Lose();
+        }
         
     }
 
