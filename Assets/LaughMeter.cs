@@ -91,5 +91,28 @@ public class LaughMeter : MonoBehaviour
         
     }
 
+    //calculate a grade for the player based on how well they kept in the center
+    public string calculateGrade(){
+        float avgDist = calculateAvgDistance();
+
+        if(avgDist == 0f){
+            return "S";
+        }
+        else if(avgDist <= 100){
+            return "A";
+        }
+        else if(avgDist <= 500){
+            return "B";
+        }
+        else if(avgDist <= 1000){
+            return "C";
+        }
+        else if(avgDist <= 2000){
+            return "D";
+        }
+        else{
+            return "F";
+        }
+    }
 
 }
