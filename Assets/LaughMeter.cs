@@ -57,6 +57,14 @@ public class LaughMeter : MonoBehaviour
         }
     }
 
+    bool checkLose(){
+        if(laughter >= maxLaughter || laughter <= minLaughter){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     
     void addDistance(){
         if(laughter > startLaughter + threashold || laughter < startLaughter + threashold){
