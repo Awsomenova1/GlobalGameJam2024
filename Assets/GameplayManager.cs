@@ -32,6 +32,8 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI WinText;
     [SerializeField] private GameObject LoseScreen;
 
+    private float targetSpeed;
+
     public Button button;
 
     // Start is called before the first frame update
@@ -63,7 +65,9 @@ public class GameplayManager : MonoBehaviour
         if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Q))
             StartSequence();
 
-        speedMeter.value = meter.laughSpeed * 5;
+        targetSpeed = meter.laughSpeed * 5;
+
+        speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, 0.1f);
 
         if(meter.checkLose())
         {
