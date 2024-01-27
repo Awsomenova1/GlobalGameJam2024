@@ -44,7 +44,7 @@ public class DialogController : MonoBehaviour
 
     private void Start()
     {
-        setSource(new DialogSource("This is a [TFX,Wave,5,5,50]tester[/TFX,Wave]! [w, 7] [c] And again to test wrapping! [exit]"));
+        setSource(new DialogSource("This[w, 1] is a[ss, .2] [TFX,Wave,5,5,50]tester[/TFX,Wave]! [w, 7] [c][ss, .05] And again to test wrapping! [exit]"));
         reading = true;
     }
 
