@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac/</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{8DF38CA6-357D-A9E3-B16D-4B59F3674A9F}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="2223886005" Name="Story_FX"/>
+				<Bus Id="3017890412" Name="User_Interface"/>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3991942870" Name="Music"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="3354297748" Type="User" Language="SFX" Hash="{732593A0-6D58-6209-E7BC-A18431E88222}">
+			<ShortName>Empty</ShortName>
+			<Path>Empty.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{F0CE0C54-45C1-288A-107D-3DF2246911BA}</FileHash>
+</SoundBanksInfo>
