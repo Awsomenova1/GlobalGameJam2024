@@ -142,6 +142,8 @@ public class GameplayManager : MonoBehaviour
     {
         if (!PopupPanel.open) return;
         PopupPanel.open = false;
+        Time.timeScale = 1;
+        paused = false;
         screenWipe.WipeIn();
         screenWipe.PostWipe += ReloadGame;
     }
