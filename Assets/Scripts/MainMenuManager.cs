@@ -22,14 +22,18 @@ public class MainMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject != null)
+        if (!PopupPanel.open)
         {
-            currentSelection = EventSystem.current.currentSelectedGameObject;
+            if (EventSystem.current.currentSelectedGameObject != null)
+            {
+                currentSelection = EventSystem.current.currentSelectedGameObject;
+            }
+            else
+            {
+                EventSystem.current.SetSelectedGameObject(currentSelection);
+            }
         }
-        else
-        {
-            EventSystem.current.SetSelectedGameObject(currentSelection);
-        }
+        
     }
 
     public void Play()

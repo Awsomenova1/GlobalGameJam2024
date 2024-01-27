@@ -29,7 +29,7 @@ public class Button : MonoBehaviour
         {
             //show the circle (player pressing down on button)
             button.sprite = pressed;
-            LaughMeter.laughter += laughRecovery;
+            LaughMeter.laughter += (int)(laughRecovery * LaughMeter.difficultyScalar);
         }
 
         if (Input.GetKeyUp(buttonToPress))
