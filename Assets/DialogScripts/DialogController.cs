@@ -91,6 +91,7 @@ public class DialogController : MonoBehaviour
             source.addEffect -= AddEffect;
             source.removeEffect -= RemoveEffect;
             source.exit -= close;
+            source.playAnimation -= playAnimation;
 
         }
         source = newSource;
@@ -101,6 +102,7 @@ public class DialogController : MonoBehaviour
         newSource.addEffect += AddEffect;
         newSource.removeEffect += RemoveEffect;
         newSource.exit += close;
+        source.playAnimation += playAnimation;
 
     }
 
