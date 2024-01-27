@@ -8,8 +8,6 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject PlayButton;
-    [SerializeField] private GameObject InstructionsPanel, SettingsPanel, CreditsPanel;
-    private GameObject currentSelection;
 
     // Start is called before the first frame update
     void Start()
@@ -20,14 +18,7 @@ public class MainMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject != null)
-        {
-            currentSelection = EventSystem.current.currentSelectedGameObject;
-        }
-        else
-        {
-            EventSystem.current.SetSelectedGameObject(currentSelection);
-        }
+        
     }
 
     public void Play()
@@ -39,20 +30,20 @@ public class MainMenuManager : MonoBehaviour
 
     public void Instructions()
     {
-        if (!PopupPanel.open)
-            InstructionsPanel.SetActive(true);
+        // TODO open separate popup or something for game instructions
+        Debug.Log("Instructions");
     }
 
     public void Settings()
     {
-        if (!PopupPanel.open)
-            SettingsPanel.SetActive(true);
+        // TODO open separate popup or something for game settings
+        Debug.Log("Settings");
     }
 
     public void Credits()
     {
-        if (!PopupPanel.open)
-            CreditsPanel.SetActive(true);
+        // TODO open separate popup or something for game credits
+        Debug.Log("Credits");
     }
 
     public void Quit()
