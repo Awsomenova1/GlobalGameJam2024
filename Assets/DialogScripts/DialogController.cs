@@ -44,8 +44,8 @@ public class DialogController : MonoBehaviour
 
     private void Start()
     {
-        setSource(new DialogSource("This[w, 1] is a[ss, .2] [TFX,Wave,5,5,50]tester[/TFX,Wave]! [w, 7] [c][ss, .05] And again to test wrapping! [exit]"));
-        reading = true;
+        //setSource(new DialogSource("This[w, 1] is a[ss, .2] [TFX,Wave,5,5,50]tester[/TFX,Wave]! [w, 7] [c][ss, .05] And again to test wrapping! [exit]"));
+        //reading = true;
     }
 
     // Update is called once per frame
@@ -88,6 +88,8 @@ public class DialogController : MonoBehaviour
             source.clear -= OutputCleared;
             source.addEffect -= AddEffect;
             source.removeEffect -= RemoveEffect;
+            source.exit -= close;
+
         }
         source = newSource;
         text = "";
@@ -96,6 +98,7 @@ public class DialogController : MonoBehaviour
         newSource.clear += OutputCleared;
         newSource.addEffect += AddEffect;
         newSource.removeEffect += RemoveEffect;
+        newSource.exit += close;
 
     }
 
@@ -176,6 +179,13 @@ public class DialogController : MonoBehaviour
                 depth--;
         }
         return length;
+    }
+
+    public void close()
+    {
+        reading = false;
+        collected = false;
+        textDisplay.maxVisibleCharacters = int.MaxValue;
     }
 
 }
