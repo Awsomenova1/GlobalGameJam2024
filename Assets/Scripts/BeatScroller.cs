@@ -17,6 +17,7 @@ public class BeatScroller : MonoBehaviour
     public Vector2 basePosition;
 
     public GameObject keyPrefab;
+    public Animator hitEffects;
 
     public float timeInSequence
     {
@@ -26,15 +27,25 @@ public class BeatScroller : MonoBehaviour
         }
     }
 
+    bool finished = false;
+
     // Start is called before the first frame update
     void Start()
     {
         beatTempo = beatTempo / 60f;
         basePosition = transform.position;
+        //string keysToHit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        for(float i = 1; i <= 60; i += .5f)
+        //for(float i = 1; i <= 60; i += .5f)
+        //{
+        //    KeyCode toHit = (KeyCode)System.Enum.Parse(typeof(KeyCode), "" + keysToHit[(int)(i / .5f) % keysToHit.Length]);
+        //    InputQueue.Add(new ButtonPrompt(i, toHit));
+        //}
+
+        //Makes a minute of button prompts that are at the given tempo
+        for(float i = 0; i < 60; i += 1/beatTempo)
         {
-            InputQueue.Add(new ButtonPrompt(i));
+            InputQueue.Add(new ButtonPrompt(i, KeyCode.Q));
         }
     }
 
@@ -42,28 +53,51 @@ public class BeatScroller : MonoBehaviour
     void Update()
     {
         UpdatePositions();
-        //if (!hasStarted)
-        //{
-        //    if (Input.anyKeyDown)
-        //    {
-        //        hasStarted = true;
-        //    }
-        //}
-        //else
-        //{
-        //    transform.position -= new Vector3(beatTempo * Time.deltaTime, 0f, 0f);
-        //}
+        DetectInputs();
+        if (InputQueue[^1].TimeToHit < timeInSequence - 2 && !finished)
+        {
+            GetFinalStats();
+            finished = true;
+        }
     }
 
     public void DetectInputs()
     {
+        bool hitSomething = false;
+
+
         for(int i = 0; i < InputQueue.Count; i++)
         {
-            if(Input.GetKeyDown(InputQueue[i].keyToHit) && Mathf.Abs(InputQueue[i].TimeToHit - timeInSequence) < .2f)
+            if(Input.GetKeyDown(InputQueue[i].keyToHit) && Mathf.Abs(timeInSequence -InputQueue[i].TimeToHit ) < .2f)
             {
-                
+                if (InputQueue[i].associatedObj != null)
+                {
+                    Destroy(InputQueue[i].associatedObj);
+                    InputQueue[i].hit = true;
+                    InputQueue[i].hitAccuracy = (timeInSequence - InputQueue[i].TimeToHit);
+
+                    if (Mathf.Abs(timeInSequence - InputQueue[i].TimeToHit) < .1f)
+                        hitEffects.Play("clickHit");
+                    else
+                        hitEffects.Play("click");
+
+                    hitSomething = true;
+                    break;
+
+                }
+            }
+
+            if (timeInSequence - InputQueue[i].TimeToHit > .5f && !InputQueue[i].missed && !InputQueue[i].hit)
+            {
+                hitEffects.Play("clickMiss");
+                InputQueue[i].missed = true;
             }
         }
+
+        if (!hitSomething && Input.anyKeyDown)
+            hitEffects.Play("clickWrong");
+
+        
     }
 
     public void UpdatePositions()
@@ -72,10 +106,14 @@ public class BeatScroller : MonoBehaviour
         {
             if (Mathf.Abs(InputQueue[i].TimeToHit - timeInSequence) < 10)
             {
-                if (InputQueue[i].associatedObj == null)
-                    InputQueue[i].associatedObj = Instantiate(keyPrefab, Vector2.right * (InputQueue[i].TimeToHit - timeInSequence) * TimeToDistanceMult, Quaternion.identity, transform);
-
-                InputQueue[i].associatedObj.transform.position = Vector2.right * (InputQueue[i].TimeToHit - timeInSequence) * TimeToDistanceMult;
+                if (InputQueue[i].associatedObj == null && !InputQueue[i].hit)
+                {
+                    InputQueue[i].associatedObj = Instantiate(keyPrefab, transform);
+                    InputQueue[i].associatedObj.GetComponentInChildren<TMPro.TextMeshPro>().text = InputQueue[i].keyToHit.ToString();
+                }
+                
+                if(InputQueue[i].associatedObj != null)
+                    InputQueue[i].associatedObj.transform.localPosition= Vector2.right * (InputQueue[i].TimeToHit - timeInSequence) * TimeToDistanceMult;
 
             }
             else if (InputQueue[i].associatedObj != null)
@@ -94,6 +132,27 @@ public class BeatScroller : MonoBehaviour
         startTime = Time.time;
     }
 
+    public void GetFinalStats()
+    {
+        float avgAccuracy = 0;
+        float numMissed = 0;
+        float numHit = 0;
+        float accuracyRate = 0;
+        for (int i = 0; i < InputQueue.Count; i++)
+        {
+            avgAccuracy += InputQueue[i].hitAccuracy;
+            if (InputQueue[i].hit)
+                numHit++;
+            if (InputQueue[i].missed)
+                numMissed++;
+        }
+        avgAccuracy /= InputQueue.Count;
+        accuracyRate = numHit / InputQueue.Count;
+
+
+        Debug.Log("Accuracy: " + accuracyRate + "%'");
+        Debug.Log("Avg. distance: " + avgAccuracy);
+    }
 
 }
 
@@ -102,12 +161,21 @@ public class ButtonPrompt
     public float TimeToHit;
     public KeyCode keyToHit;
     public GameObject associatedObj;
+    public bool hit = false;
+    public bool missed = false;
+    public float hitAccuracy = 0;
 
 
     public ButtonPrompt(float time)
     {
         TimeToHit = time;
         keyToHit = KeyCode.Space;
+    }
+
+    public ButtonPrompt(float time, KeyCode key)
+    {
+        TimeToHit = time;
+        keyToHit = key;
     }
 
     public static bool operator <(ButtonPrompt a, ButtonPrompt b)
