@@ -30,6 +30,8 @@ public class DialogController : MonoBehaviour
 
     public DialogSource.ReadMode readMode = DialogSource.ReadMode.DEFAULT;
 
+    //Animator of NPC
+    public Animator anim;
 
     bool collected = false;
 
@@ -186,6 +188,11 @@ public class DialogController : MonoBehaviour
         reading = false;
         collected = false;
         textDisplay.maxVisibleCharacters = int.MaxValue;
+    }
+
+    public void playAnimation(string name)
+    {
+        anim.Play("name");
     }
 
 }

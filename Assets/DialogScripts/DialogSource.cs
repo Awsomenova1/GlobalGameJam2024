@@ -46,6 +46,8 @@ public class DialogSource
 
     public event Action<string> removeEffect;
 
+    public event Action<string> playAnimation;
+
     //Is just used for things like DialogNpc to have reactions to certain events
     public event Action<string[]> callEvent;
 
@@ -629,6 +631,15 @@ public class DialogSource
                 else
                     Debug.LogWarning("series takes a series after the variable to read!");
                 break;
+            case "panim":
+                if (input.Length > 1)
+                {
+                    playAnimation?.Invoke(input[1]);
+                }
+                else
+                    Debug.LogWarning("play animation takes a name of an animation to play!");
+                break;
+
 
             #region old audio stuff
             //case "ps":
