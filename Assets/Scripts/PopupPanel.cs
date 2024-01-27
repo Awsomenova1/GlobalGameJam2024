@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PopupPanel : MonoBehaviour
 {
+    [SerializeField] private GameObject CloseButton;
+    private GameObject PreviousButton;
     public static bool open = false;
     private Animator anim;
 
@@ -18,11 +22,14 @@ public class PopupPanel : MonoBehaviour
     {
         anim.SetTrigger("Open");
         open = true;
+        PreviousButton = EventSystem.current.currentSelectedGameObject;
+        EventSystem.current.SetSelectedGameObject(CloseButton);
     }
 
     public void Close()
     {
         anim.SetTrigger("Close");
+        EventSystem.current.SetSelectedGameObject(PreviousButton);
     }
 
     public void Disable()

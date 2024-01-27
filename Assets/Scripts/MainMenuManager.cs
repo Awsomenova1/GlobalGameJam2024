@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject PlayButton;
     [SerializeField] private GameObject InstructionsPanel, SettingsPanel, CreditsPanel;
+    private GameObject currentSelection;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,14 @@ public class MainMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (EventSystem.current.currentSelectedGameObject != null)
+        {
+            currentSelection = EventSystem.current.currentSelectedGameObject;
+        }
+        else
+        {
+            EventSystem.current.SetSelectedGameObject(currentSelection);
+        }
     }
 
     public void Play()
