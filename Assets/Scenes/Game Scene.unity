@@ -295,7 +295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laughter: 0
-  maxLaughter: 10000
   laughSpeed: 1
   laughBarFill: {fileID: 1838579118}
 --- !u!1 &1244275862
@@ -435,7 +434,7 @@ GameObject:
   - component: {fileID: 1673603303}
   - component: {fileID: 1673603302}
   m_Layer: 5
-  m_Name: LaughBarBacking
+  m_Name: LaughBarEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -509,7 +508,7 @@ GameObject:
   - component: {fileID: 1838579117}
   - component: {fileID: 1838579118}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: LaughBarFill (Slider)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
