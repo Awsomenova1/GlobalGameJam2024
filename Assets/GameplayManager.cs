@@ -38,6 +38,8 @@ public class GameplayManager : MonoBehaviour
     {
         meter.laughSpeed = 0;
         IntroSequence();
+        screenWipe.gameObject.SetActive(true);
+        screenWipe.WipeOut();
     }
 
     // Update is called once per frame
