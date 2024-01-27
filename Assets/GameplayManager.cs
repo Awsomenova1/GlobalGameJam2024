@@ -125,11 +125,13 @@ public class GameplayManager : MonoBehaviour
     {
         WinScreen.SetActive(true);
         WinText.SetText("You're a great listener!\nAverage Distance from Center: " + meter.calculateAvgDistance());
+        button.stopInputs = true;
     }
 
     public void Lose()
     {
         LoseScreen.SetActive(true);
+        button.stopInputs = true;
     }
 
     public void PlayAgain()
@@ -156,7 +158,7 @@ public class GameplayManager : MonoBehaviour
         startedSequence = false;
         Debug.Log("Finished sequence");
         Win();
-        button.stopInputs = false;
+
     }
 
     public void UpdateSliderIcons()
