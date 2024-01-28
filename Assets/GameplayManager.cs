@@ -152,7 +152,8 @@ public class GameplayManager : MonoBehaviour
         startedSequence = true;
 
 
-        dialog.setSource(new DialogSource("[c] Blah blah blah."));
+        //dialog.setSource(new DialogSource("[c] Blah blah blah."));
+        dialog.setSource(new DialogSource("[lf,WormMartEmployee.txt]"));
         dialog.reading = true;
         gameSequence.Play("24hrEmployee");
 

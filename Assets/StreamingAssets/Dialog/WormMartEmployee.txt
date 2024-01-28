@@ -1,0 +1,1 @@
+Helleo. This is my dialog. Please wait while further developments occur. [w, 100] How are you reading this? You should have won or lost by now. Please leave me be. [exit]
