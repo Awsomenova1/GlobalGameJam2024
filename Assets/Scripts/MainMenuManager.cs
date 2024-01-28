@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 //holds functions of the main menu and sub menus
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject PlayButton, InstructionsPanel, SettingsPanel, CreditsPanel;
     [SerializeField] private ScreenWipe screenWipe;
+    [SerializeField] private AK.Wwise.Event MenuBack, MenuSelect, MenuNav, MenuAdjust;
+    private bool playing = false, quitting = false;
     private GameObject currentSelection;
 
     // Start is called before the first frame update
@@ -38,6 +41,9 @@ public class MainMenuManager : MonoBehaviour
 
     public void Play()
     {
+        if (playing) return;
+        playing = true;
+        // MenuSelect.Post(gameObject);
         screenWipe.WipeIn();
         screenWipe.PostWipe += LoadGame;
     }
@@ -50,24 +56,36 @@ public class MainMenuManager : MonoBehaviour
 
     public void Instructions()
     {
-        if (!PopupPanel.open)
+        if (!PopupPanel.open && !playing && !quitting)
+        {
             InstructionsPanel.SetActive(true);
+            // MenuSelect.Post(gameObject);
+        }
     }
 
     public void Settings()
     {
-        if (!PopupPanel.open)
+        if (!PopupPanel.open && !playing && !quitting)
+        {
             SettingsPanel.SetActive(true);
+            // MenuSelect.Post(gameObject);
+        }
     }
 
     public void Credits()
     {
-        if (!PopupPanel.open)
+        if (!PopupPanel.open && !playing && !quitting)
+        {
             CreditsPanel.SetActive(true);
+            // MenuSelect.Post(gameObject);
+        }
     }
 
     public void Quit()
     {
+        if (quitting) return;
+        quitting = true;
+        // MenuSelect.Post(gameObject);
         screenWipe.WipeIn();
         screenWipe.PostWipe += ExitGame;
     }

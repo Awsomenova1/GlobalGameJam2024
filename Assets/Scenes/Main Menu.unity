@@ -691,6 +691,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normal: {fileID: 21300000, guid: e8bb642a2ec71a8459a566988655662e, type: 3}
   MainMenu: 1
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 43e2474d692fc1d4fb3ce0bb100dd1dd, type: 2}
 --- !u!114 &622920396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2168,6 +2172,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normal: {fileID: 21300000, guid: aa37451be5b236548b78b97553dd329e, type: 3}
   MainMenu: 1
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 43e2474d692fc1d4fb3ce0bb100dd1dd, type: 2}
 --- !u!114 &1404278596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2396,6 +2404,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normal: {fileID: 21300000, guid: aa37451be5b236548b78b97553dd329e, type: 3}
   MainMenu: 1
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 43e2474d692fc1d4fb3ce0bb100dd1dd, type: 2}
 --- !u!114 &1448008858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3407,6 +3419,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normal: {fileID: 21300000, guid: aa37451be5b236548b78b97553dd329e, type: 3}
   MainMenu: 1
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 43e2474d692fc1d4fb3ce0bb100dd1dd, type: 2}
 --- !u!114 &1668306357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3719,6 +3735,22 @@ MonoBehaviour:
   SettingsPanel: {fileID: 1566320841}
   CreditsPanel: {fileID: 497831704}
   screenWipe: {fileID: 7478041688362608669}
+  MenuBack:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3257089bf26da994f802c954729cdcf1, type: 2}
+  MenuSelect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f91835fd8010ff541b2766cbaee83839, type: 2}
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 43e2474d692fc1d4fb3ce0bb100dd1dd, type: 2}
+  MenuAdjust:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6074dada5310eeb42b79db4eefe73a84, type: 2}
 --- !u!1 &1956739634
 GameObject:
   m_ObjectHideFlags: 0
@@ -4035,6 +4067,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normal: {fileID: 21300000, guid: aa37451be5b236548b78b97553dd329e, type: 3}
   MainMenu: 1
+  MenuNav:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 43e2474d692fc1d4fb3ce0bb100dd1dd, type: 2}
 --- !u!114 &2037198659
 MonoBehaviour:
   m_ObjectHideFlags: 0
