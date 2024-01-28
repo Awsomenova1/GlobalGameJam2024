@@ -15,13 +15,13 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (MainMenu ^ PopupPanel.open)
+        if (MainMenu ^ PopupPanel.visible)
             EventSystem.current.SetSelectedGameObject(gameObject);
     }
 
     public void OnPointerMove(PointerEventData eventData)
     {
-        if (eventData.hovered.Contains(gameObject) && EventSystem.current.currentSelectedGameObject != gameObject && !PopupPanel.open)
+        if (eventData.hovered.Contains(gameObject) && EventSystem.current.currentSelectedGameObject != gameObject && !PopupPanel.visible)
         {
             EventSystem.current.SetSelectedGameObject(gameObject);
         }

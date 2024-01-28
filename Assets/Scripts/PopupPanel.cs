@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class PopupPanel : MonoBehaviour
 {
     [SerializeField] private GameObject PrimaryButton;
     [SerializeField] private bool SelectPrevious;
+    [SerializeField] private Volume PostProcessing;
+    public float animProgress;
     private GameObject PreviousButton;
-    public static bool open = false;
+    public static bool open = false, visible = false;
     private Animator anim;
     private GameObject currentSelection;
 
@@ -31,7 +34,13 @@ public class PopupPanel : MonoBehaviour
             {
                 EventSystem.current.SetSelectedGameObject(currentSelection);
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Close();
+            }
         }
+        PostProcessing.weight = animProgress;
     }
 
     // Start is called before the first frame update
@@ -39,6 +48,7 @@ public class PopupPanel : MonoBehaviour
     {
         anim.SetTrigger("Open");
         open = true;
+        visible = true;
         if (SelectPrevious)
             PreviousButton = EventSystem.current.currentSelectedGameObject;
         EventSystem.current.SetSelectedGameObject(PrimaryButton);
@@ -47,6 +57,7 @@ public class PopupPanel : MonoBehaviour
     public void Close()
     {
         anim.SetTrigger("Close");
+        visible = false;
         if (SelectPrevious)
             EventSystem.current.SetSelectedGameObject(PreviousButton);
     }

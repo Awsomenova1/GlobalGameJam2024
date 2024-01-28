@@ -13,8 +13,6 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID NPC_STOP = 2196625209U;
-        static const AkUniqueID NPC_TALK = 1510544299U;
         static const AkUniqueID PAUSE = 3092587493U;
         static const AkUniqueID RESUME = 953277036U;
         static const AkUniqueID START_MUSIC = 540993415U;
@@ -67,17 +65,6 @@ namespace AK
                 static const AkUniqueID D_NEAR_EMPTY = 1959799710U;
             } // namespace SWITCH
         } // namespace LAUGH_METER
-
-        namespace NPC_VOICE
-        {
-            static const AkUniqueID GROUP = 2571308781U;
-
-            namespace SWITCH
-            {
-                static const AkUniqueID ANGRY = 1206605712U;
-                static const AkUniqueID HAPPY = 1427264549U;
-            } // namespace SWITCH
-        } // namespace NPC_VOICE
 
     } // namespace SWITCHES
 
