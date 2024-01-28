@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{A9C0C10E-055A-46DF-A7EB-1576659DA6E7}" SchemaVersion="119">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{A9C0C10E-055A-46DF-A7EB-1576659DA6E7}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{A9C0C10E-055A-46DF-A7EB-1576659DA6E7}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="SFX" ID="{35766149-40F6-460E-AAC7-D92363F7C868}" ShortID="271941654">
+					<ChildrenList>
+						<SwitchGroup Name="NPC_Dialogue" ID="{916F0609-F8E6-4DA5-AB1C-EC8D67960B49}">
+							<ChildrenList>
+								<Switch Name="Tired" ID="{BACB215F-23E7-4B31-8462-F7B8B9C8883C}"/>
+								<Switch Name="Angry" ID="{965567CA-46FA-47CD-8BD9-175E573B9413}"/>
+							</ChildrenList>
+						</SwitchGroup>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

@@ -1,45 +1,84 @@
 Event	ID	Name			Wwise Object Path	Notes
 	540993415	Start_Music			\Default Work Unit\Music\Start_Music	
-	953277036	Resume			\Default Work Unit\Resume	
+	953277036	Resume			\Default Work Unit\Menu\Resume	
+	1093725892	NPC_Angry			\Default Work Unit\Dialogue\NPC_Angry	
 	1244834824	State_Mediate			\Default Work Unit\Music\Instensity\State_Mediate	
+	1510544299	NPC_Talk			\Default Work Unit\Dialogue\NPC_Talk	
+	2166671746	Menu_Adjust			\Default Work Unit\Menu\Menu_Adjust	
+	2196625209	NPC_Stop			\Default Work Unit\Dialogue\NPC_Stop	
 	2575031991	State_Intense			\Default Work Unit\Music\Instensity\State_Intense	
+	2684797902	Menu_Nav			\Default Work Unit\Menu\Menu_Nav	
 	2837384057	Stop_Music			\Default Work Unit\Music\Stop_Music	
 	2880738500	State_Silent			\Default Work Unit\Music\Instensity\State_Silent	
-	3092587493	Pause			\Default Work Unit\Pause	
+	2914981333	Stop_Menu			\Default Work Unit\Music\Menu\Stop_Menu	
+	2977420043	Start_Menu			\Default Work Unit\Music\Menu\Start_Menu	
+	3063554414	Menu_Back			\Default Work Unit\Menu\Menu_Back	
+	3092587493	Pause			\Default Work Unit\Menu\Pause	
+	3425439425	NPC_Tired			\Default Work Unit\Dialogue\NPC_Tired	
 	3675814650	State_Calm			\Default Work Unit\Music\Instensity\State_Calm	
+	4203375351	Menu_Select			\Default Work Unit\Menu\Menu_Select	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	1541636155	NPC_Dialogue			\Default Work Unit\SFX\NPC_Dialogue	
+
+Switch	ID	Name	Switch Group			Notes
+	1206605712	Angry	NPC_Dialogue			
+	3386657621	Tired	NPC_Dialogue			
 
 State Group	ID	Name			Wwise Object Path	Notes
+	1852808225	Playing			\Default Work Unit\Playing	
 	2470328564	Intensity			\Default Work Unit\Intensity	
 
 State	ID	Name	State Group			Notes
+	89505537	Gameplay	Playing			
+	748895195	None	Playing			
+	2607556080	Menu	Playing			
 	748895195	None	Intensity			
 	3160623154	Silent	Intensity			
 	3753286132	Calm	Intensity			
 	4019181194	Mediate	Intensity			
 	4223512837	Intense	Intensity			
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2133615622	Laugh_Meter			\Default Work Unit\Laugh_Meter	
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	6142316	Intense_Guitar_180bpm_longtail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Guitar_180bpm_longtail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Guitar_180bpm_longtail		4189316
-	66996052	Calm_PianoLH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_PianoLH_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_PianoLH_180bpm_4b_tail		4233760
-	101753864	Calm_2ndbeat_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_2ndbeat_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_2ndbeat_180bpm_4b_tail		4233760
-	124769407	Breakbeat_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Breakbeat_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Breakbeat_180bpm_tail		3927172
-	264731060	Calm_Snare_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_Snare_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_Snare_180bpm_4b_tail		4233760
-	269112471	Calm_Kick_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_Kick_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_Kick_180bpm_4b_tail		4233760
-	298887167	Intense_Soct_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Soct_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Soct_180bpm_tail		3927172
-	316273951	Mediate_PianoRH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_PianoRH_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_PianoRH_180bpm_4b_tail		4233760
-	394227182	Intense_Slead_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Slead_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Slead_180bpm_tail		4189316
-	530961174	Intense_Jupiter_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Jupiter_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Jupiter_180bpm_tail		4713604
-	549676011	Mediate_Sbass_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_Sbass_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_Sbass_180bpm_4b_tail		4233760
-	593321699	Calm_HiHat_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_HiHat_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_HiHat_180bpm_4b_tail		4233760
-	613973448	Mediate_16mm_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_16mm_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_16mm_180bpm_4b_tail		4451460
-	647416999	Mediate_PianoLH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_PianoLH_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_PianoLH_180bpm_4b_tail		4233760
-	783345208	Calm_Bassguitar_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_Bassguitar_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_Bassguitar_180bpm_4b_tail		4233760
-	827364640	Intense_16mm_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_16mm_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_16mm_180bpm_tail		4451460
-	867652906	Mediate_Guitar_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_Guitar_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_Guitar_180bpm_4b_tail		4233760
-	926802467	Calm_PianoRH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_PianoRH_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_PianoRH_180bpm_4b_tail		4233760
-	940001257	Calm_EPiano_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_EPiano_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_EPiano_180bpm_4b_tail		4451460
-	965771257	Mediate_EPiano_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_EPiano_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Mediate\Mediate_Track\Mediate_EPiano_180bpm_4b_tail		4713604
-	1031649684	Intense_Sbass_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Sbass_180bpm_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Sbass_180bpm_tail		3927172
-	1040733307	Intense_Ther_180bpm_longtail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Ther_180bpm_longtail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Instense\Intense_Track\Intense_Ther_180bpm_longtail		4451460
-	1051850607	Calm_Guitar_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_Guitar_180bpm_4b_tail_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Story_Track\Calm\Calm_Track\Calm_Guitar_180bpm_4b_tail		4233760
+	6142316	Intense_Guitar_180bpm_longtail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Guitar_180bpm_longtail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Instense\Intense_Track\Intense_Guitar_180bpm_longtail		340622
+	9238376	Failure	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Failure_05D7DE2D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Story_SFX\Failure		103285
+	60782463	Dialogue 2	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Dialogue 2_665C6DB2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Mood\Calm\Dialogue 2		11751
+	66996052	Calm_PianoLH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_PianoLH_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Calm\Calm_Track\Calm_PianoLH_180bpm_4b_tail		414923
+	89840105	Menu Select	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Menu\Menu Select_05A531A7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Menu Select		3646
+	101753864	Calm_2ndbeat_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_2ndbeat_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Calm\Calm_Track\Calm_2ndbeat_180bpm_4b_tail		191956
+	124769407	Breakbeat_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Breakbeat_180bpm_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Instense\Intense_Track\Breakbeat_180bpm_tail		286325
+	192638632	Menu Back	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Menu\Menu Back_05A531A7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Menu Back		3410
+	264731060	Calm_Snare_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_Snare_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Calm\Calm_Track\Calm_Snare_180bpm_4b_tail		63651
+	269112471	Calm_Kick_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_Kick_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Calm\Calm_Track\Calm_Kick_180bpm_4b_tail		209070
+	298887167	Intense_Soct_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Soct_180bpm_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Instense\Intense_Track\Intense_Soct_180bpm_tail		384500
+	316273951	Mediate_PianoRH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_PianoRH_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Mediate\Mediate_Track\Mediate_PianoRH_180bpm_4b_tail		436336
+	319242125	Menu Adjust	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Menu Adjust_05A531A7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Menu Adjust		3851
+	394227182	Intense_Slead_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Slead_180bpm_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Instense\Intense_Track\Intense_Slead_180bpm_tail		409767
+	419695715	Angry Dialogue 4	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Angry Dialogue 4_86D4D0ED.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Mood\Angry\Angry Dialogue 4		24594
+	422559067	Angry Dialogue	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Angry Dialogue_F34467F0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Mood\Angry\Angry Dialogue		16706
+	452667185	Menu Select Beep	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Menu\Menu Select Beep_05A531A7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Menu Select Beep		2102
+	530961174	Intense_Jupiter_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Jupiter_180bpm_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Instense\Intense_Track\Intense_Jupiter_180bpm_tail		475631
+	549676011	Mediate_Sbass_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_Sbass_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Mediate\Mediate_Track\Mediate_Sbass_180bpm_4b_tail		549824
+	593321699	Calm_HiHat_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_HiHat_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Calm\Calm_Track\Calm_HiHat_180bpm_4b_tail		108780
+	613973448	Mediate_16mm_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_16mm_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Mediate\Mediate_Track\Mediate_16mm_180bpm_4b_tail		423602
+	647416999	Mediate_PianoLH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_PianoLH_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Mediate\Mediate_Track\Mediate_PianoLH_180bpm_4b_tail		459962
+	767485936	Menu Nav	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Menu\Menu Nav_05A531A7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Menu Nav		3680
+	783345208	Calm_Bassguitar_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_Bassguitar_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Calm\Calm_Track\Calm_Bassguitar_180bpm_4b_tail		343524
+	817135513	Dialogue 4	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Dialogue 4_2424721A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Mood\Calm\Dialogue 4		21910
+	827364640	Intense_16mm_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_16mm_180bpm_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Instense\Intense_Track\Intense_16mm_180bpm_tail		402634
+	867652906	Mediate_Guitar_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_Guitar_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Mediate\Mediate_Track\Mediate_Guitar_180bpm_4b_tail		322530
+	872952000	Dialogue 3	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Dialogue 3_4D05A96E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Dialogue\Mood\Calm\Dialogue 3		31606
+	926802467	Calm_PianoRH_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_PianoRH_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Calm\Calm_Track\Calm_PianoRH_180bpm_4b_tail		443043
+	940001257	Calm_EPiano_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_EPiano_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Calm\Calm_Track\Calm_EPiano_180bpm_4b_tail		467992
+	965771257	Mediate_EPiano_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Mediate_EPiano_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Mediate\Mediate_Track\Mediate_EPiano_180bpm_4b_tail		436482
+	999403510	Pause	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Menu\Pause_05A531A7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Menu\Pause		7156
+	1010371254	Menu_Drums_90bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Menu_Drums_90bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Menu\Menu_Track\Menu_Drums_90bpm_4b_tail		684338
+	1031649684	Intense_Sbass_180bpm_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Sbass_180bpm_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Instense\Intense_Track\Intense_Sbass_180bpm_tail		493535
+	1040733307	Intense_Ther_180bpm_longtail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Intense_Ther_180bpm_longtail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Instense\Intense_Track\Intense_Ther_180bpm_longtail		414211
+	1049719941	Menu_Guitars_90bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Menu_Guitars_90bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Menu\Menu_Track\Menu_Guitars_90bpm_4b_tail		890074
+	1051850607	Calm_Guitar_180bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Calm_Guitar_180bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Gameplay\Calm\Calm_Track\Calm_Guitar_180bpm_4b_tail		335456
+	1070698980	Menu_Keyss_90bpm_4b_tail	Y:\Desktop\GGJ2024\GlobalGameJam2024\GlobalGameJam2024_WwiseProject\.cache\Windows\SFX\Menu_Keyss_90bpm_4b_tail_18320D45.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Menu\Menu_Track\Menu_Keyss_90bpm_4b_tail		981990
 

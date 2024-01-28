@@ -30,7 +30,9 @@
 			<StateGroups>
 				<StateGroup Id="1852808225" Name="Playing">
 					<States>
+						<State Id="89505537" Name="Gameplay"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="2607556080" Name="Menu"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="2470328564" Name="Intensity">
@@ -44,6 +46,12 @@
 				</StateGroup>
 			</StateGroups>
 			<SwitchGroups>
+				<SwitchGroup Id="1541636155" Name="NPC_Dialogue">
+					<Switches>
+						<Switch Id="1206605712" Name="Angry"/>
+						<Switch Id="3386657621" Name="Tired"/>
+					</Switches>
+				</SwitchGroup>
 				<SwitchGroup Id="2133615622" Name="Laugh_Meter">
 					<GameParameterRef Id="2133615622"/>
 					<Switches>
@@ -55,108 +63,362 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{93D74EEE-4E5D-615C-F933-06E03D09F5F5}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D8B41707-2389-8080-C412-4B20CE0DE044}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
 				<File Id="6142316" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intense_Guitar_180bpm_longtail.wav</ShortName>
-					<CachePath>SFX/Intense_Guitar_180bpm_longtail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Intense_Guitar_180bpm_longtail_18320D45.wem</CachePath>
+				</File>
+				<File Id="9238376" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Failure.wav</ShortName>
+					<CachePath>SFX/Failure_05D7DE2D.wem</CachePath>
+				</File>
+				<File Id="60782463" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dialogue 2.wav</ShortName>
+					<CachePath>SFX/Dialogue 2_665C6DB2.wem</CachePath>
 				</File>
 				<File Id="66996052" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_PianoLH_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Calm_PianoLH_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Calm_PianoLH_180bpm_4b_tail_18320D45.wem</CachePath>
+				</File>
+				<File Id="89840105" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Menu\Menu Select.wav</ShortName>
+					<CachePath>SFX/Menu/Menu Select_05A531A7.wem</CachePath>
 				</File>
 				<File Id="101753864" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_2ndbeat_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Calm_2ndbeat_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Calm_2ndbeat_180bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="124769407" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Breakbeat_180bpm_tail.wav</ShortName>
-					<CachePath>SFX/Breakbeat_180bpm_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Breakbeat_180bpm_tail_18320D45.wem</CachePath>
+				</File>
+				<File Id="192638632" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Menu\Menu Back.wav</ShortName>
+					<CachePath>SFX/Menu/Menu Back_05A531A7.wem</CachePath>
 				</File>
 				<File Id="264731060" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_Snare_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Calm_Snare_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Calm_Snare_180bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="269112471" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_Kick_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Calm_Kick_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Calm_Kick_180bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="298887167" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intense_Soct_180bpm_tail.wav</ShortName>
-					<CachePath>SFX/Intense_Soct_180bpm_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Intense_Soct_180bpm_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="316273951" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mediate_PianoRH_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Mediate_PianoRH_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Mediate_PianoRH_180bpm_4b_tail_18320D45.wem</CachePath>
+				</File>
+				<File Id="319242125" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Menu Adjust.wav</ShortName>
+					<CachePath>SFX/Menu Adjust_05A531A7.wem</CachePath>
 				</File>
 				<File Id="394227182" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intense_Slead_180bpm_tail.wav</ShortName>
-					<CachePath>SFX/Intense_Slead_180bpm_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Intense_Slead_180bpm_tail_18320D45.wem</CachePath>
+				</File>
+				<File Id="419695715" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Angry Dialogue 4.wav</ShortName>
+					<CachePath>SFX/Angry Dialogue 4_86D4D0ED.wem</CachePath>
+				</File>
+				<File Id="422559067" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Angry Dialogue.wav</ShortName>
+					<CachePath>SFX/Angry Dialogue_F34467F0.wem</CachePath>
+				</File>
+				<File Id="452667185" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Menu\Menu Select Beep.wav</ShortName>
+					<CachePath>SFX/Menu/Menu Select Beep_05A531A7.wem</CachePath>
 				</File>
 				<File Id="530961174" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intense_Jupiter_180bpm_tail.wav</ShortName>
-					<CachePath>SFX/Intense_Jupiter_180bpm_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Intense_Jupiter_180bpm_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="549676011" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mediate_Sbass_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Mediate_Sbass_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Mediate_Sbass_180bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="593321699" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_HiHat_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Calm_HiHat_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Calm_HiHat_180bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="613973448" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mediate_16mm_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Mediate_16mm_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Mediate_16mm_180bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="647416999" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mediate_PianoLH_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Mediate_PianoLH_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Mediate_PianoLH_180bpm_4b_tail_18320D45.wem</CachePath>
+				</File>
+				<File Id="767485936" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Menu\Menu Nav.wav</ShortName>
+					<CachePath>SFX/Menu/Menu Nav_05A531A7.wem</CachePath>
 				</File>
 				<File Id="783345208" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_Bassguitar_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Calm_Bassguitar_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Calm_Bassguitar_180bpm_4b_tail_18320D45.wem</CachePath>
+				</File>
+				<File Id="817135513" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dialogue 4.wav</ShortName>
+					<CachePath>SFX/Dialogue 4_2424721A.wem</CachePath>
 				</File>
 				<File Id="827364640" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intense_16mm_180bpm_tail.wav</ShortName>
-					<CachePath>SFX/Intense_16mm_180bpm_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Intense_16mm_180bpm_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="867652906" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mediate_Guitar_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Mediate_Guitar_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Mediate_Guitar_180bpm_4b_tail_18320D45.wem</CachePath>
+				</File>
+				<File Id="872952000" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dialogue 3.wav</ShortName>
+					<CachePath>SFX/Dialogue 3_4D05A96E.wem</CachePath>
 				</File>
 				<File Id="926802467" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_PianoRH_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Calm_PianoRH_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Calm_PianoRH_180bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="940001257" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_EPiano_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Calm_EPiano_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Calm_EPiano_180bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="965771257" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mediate_EPiano_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Mediate_EPiano_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Mediate_EPiano_180bpm_4b_tail_18320D45.wem</CachePath>
+				</File>
+				<File Id="999403510" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Menu\Pause.wav</ShortName>
+					<CachePath>SFX/Menu/Pause_05A531A7.wem</CachePath>
+				</File>
+				<File Id="1010371254" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Menu_Drums_90bpm_4b_tail.wav</ShortName>
+					<CachePath>SFX/Menu_Drums_90bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="1031649684" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intense_Sbass_180bpm_tail.wav</ShortName>
-					<CachePath>SFX/Intense_Sbass_180bpm_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Intense_Sbass_180bpm_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="1040733307" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intense_Ther_180bpm_longtail.wav</ShortName>
-					<CachePath>SFX/Intense_Ther_180bpm_longtail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Intense_Ther_180bpm_longtail_18320D45.wem</CachePath>
+				</File>
+				<File Id="1049719941" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Menu_Guitars_90bpm_4b_tail.wav</ShortName>
+					<CachePath>SFX/Menu_Guitars_90bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
 				<File Id="1051850607" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_Guitar_180bpm_4b_tail.wav</ShortName>
-					<CachePath>SFX/Calm_Guitar_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/Calm_Guitar_180bpm_4b_tail_18320D45.wem</CachePath>
+				</File>
+				<File Id="1070698980" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Menu_Keyss_90bpm_4b_tail.wav</ShortName>
+					<CachePath>SFX/Menu_Keyss_90bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="3092587493" Name="Pause" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2166671746" Name="Menu_Adjust" DurationType="OneShot" DurationMin="1.4180952" DurationMax="1.4180952">
+					<MediaRefs>
+						<MediaRef Id="319242125"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3063554414" Name="Menu_Back" DurationType="OneShot" DurationMin="1.4180952" DurationMax="1.4180952">
+					<MediaRefs>
+						<MediaRef Id="452667185"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2684797902" Name="Menu_Nav" DurationType="OneShot" DurationMin="1.4180952" DurationMax="1.4180952">
+					<MediaRefs>
+						<MediaRef Id="767485936"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4203375351" Name="Menu_Select" DurationType="OneShot" DurationMin="1.4180952" DurationMax="1.4180952">
+					<MediaRefs>
+						<MediaRef Id="89840105"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1093725892" Name="NPC_Angry" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="1541636155" Id="1206605712" Name="Angry"/>
+					</ActionSetSwitch>
+				</Event>
+				<Event Id="2196625209" Name="NPC_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1541636155" Id="3386657621"/>
+							<MediaRefs>
+								<MediaRef Id="60782463"/>
+								<MediaRef Id="817135513"/>
+								<MediaRef Id="872952000"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1541636155" Id="1206605712"/>
+							<MediaRefs>
+								<MediaRef Id="419695715"/>
+								<MediaRef Id="422559067"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1510544299" Name="NPC_Talk" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1541636155" Id="3386657621"/>
+							<MediaRefs>
+								<MediaRef Id="60782463"/>
+								<MediaRef Id="817135513"/>
+								<MediaRef Id="872952000"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1541636155" Id="1206605712"/>
+							<MediaRefs>
+								<MediaRef Id="419695715"/>
+								<MediaRef Id="422559067"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="3425439425" Name="NPC_Tired" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetSwitch>
+						<ActionSetSwitchEntry GroupId="1541636155" Id="3386657621" Name="Tired"/>
+					</ActionSetSwitch>
+				</Event>
+				<Event Id="3092587493" Name="Pause" DurationType="OneShot" DurationMin="1.4180952" DurationMax="1.4180952">
+					<MediaRefs>
+						<MediaRef Id="999403510"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="953277036" Name="Resume" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2977420043" Name="Start_Menu" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="1010371254"/>
+						<MediaRef Id="1049719941"/>
+						<MediaRef Id="1070698980"/>
+					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1852808225" Id="89505537"/>
+							<Children>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="2470328564" Id="3753286132"/>
+									<MediaRefs>
+										<MediaRef Id="66996052"/>
+										<MediaRef Id="101753864"/>
+										<MediaRef Id="264731060"/>
+										<MediaRef Id="269112471"/>
+										<MediaRef Id="593321699"/>
+										<MediaRef Id="783345208"/>
+										<MediaRef Id="926802467"/>
+										<MediaRef Id="940001257"/>
+										<MediaRef Id="1051850607"/>
+									</MediaRefs>
+								</SwitchContainer>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="2470328564" Id="4223512837"/>
+									<MediaRefs>
+										<MediaRef Id="6142316"/>
+										<MediaRef Id="124769407"/>
+										<MediaRef Id="298887167"/>
+										<MediaRef Id="394227182"/>
+										<MediaRef Id="530961174"/>
+										<MediaRef Id="827364640"/>
+										<MediaRef Id="1031649684"/>
+										<MediaRef Id="1040733307"/>
+									</MediaRefs>
+								</SwitchContainer>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="2470328564" Id="4019181194"/>
+									<MediaRefs>
+										<MediaRef Id="101753864"/>
+										<MediaRef Id="264731060"/>
+										<MediaRef Id="269112471"/>
+										<MediaRef Id="316273951"/>
+										<MediaRef Id="549676011"/>
+										<MediaRef Id="593321699"/>
+										<MediaRef Id="613973448"/>
+										<MediaRef Id="647416999"/>
+										<MediaRef Id="867652906"/>
+										<MediaRef Id="965771257"/>
+									</MediaRefs>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1852808225" Id="2607556080"/>
+							<MediaRefs>
+								<MediaRef Id="1010371254"/>
+								<MediaRef Id="1049719941"/>
+								<MediaRef Id="1070698980"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1852808225" Id="2607556080" Name="Menu"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="540993415" Name="Start_Music" DurationType="Infinite">
 					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1852808225" Id="89505537"/>
+							<Children>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="2470328564" Id="3753286132"/>
+									<MediaRefs>
+										<MediaRef Id="66996052"/>
+										<MediaRef Id="101753864"/>
+										<MediaRef Id="264731060"/>
+										<MediaRef Id="269112471"/>
+										<MediaRef Id="593321699"/>
+										<MediaRef Id="783345208"/>
+										<MediaRef Id="926802467"/>
+										<MediaRef Id="940001257"/>
+										<MediaRef Id="1051850607"/>
+									</MediaRefs>
+								</SwitchContainer>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="2470328564" Id="4223512837"/>
+									<MediaRefs>
+										<MediaRef Id="6142316"/>
+										<MediaRef Id="124769407"/>
+										<MediaRef Id="298887167"/>
+										<MediaRef Id="394227182"/>
+										<MediaRef Id="530961174"/>
+										<MediaRef Id="827364640"/>
+										<MediaRef Id="1031649684"/>
+										<MediaRef Id="1040733307"/>
+									</MediaRefs>
+								</SwitchContainer>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="2470328564" Id="4019181194"/>
+									<MediaRefs>
+										<MediaRef Id="101753864"/>
+										<MediaRef Id="264731060"/>
+										<MediaRef Id="269112471"/>
+										<MediaRef Id="316273951"/>
+										<MediaRef Id="549676011"/>
+										<MediaRef Id="593321699"/>
+										<MediaRef Id="613973448"/>
+										<MediaRef Id="647416999"/>
+										<MediaRef Id="867652906"/>
+										<MediaRef Id="965771257"/>
+									</MediaRefs>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1852808225" Id="2607556080"/>
+							<MediaRefs>
+								<MediaRef Id="1010371254"/>
+								<MediaRef Id="1049719941"/>
+								<MediaRef Id="1070698980"/>
+							</MediaRefs>
+						</SwitchContainer>
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="2470328564" Id="3753286132"/>
 							<MediaRefs>
@@ -263,54 +525,84 @@
 						<ActionSetStateEntry GroupId="2470328564" Id="3160623154" Name="Silent"/>
 					</ActionSetState>
 				</Event>
+				<Event Id="2914981333" Name="Stop_Menu" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="1010371254"/>
+						<MediaRef Id="1049719941"/>
+						<MediaRef Id="1070698980"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2837384057" Name="Stop_Music" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<SwitchContainers>
 						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="2470328564" Id="3753286132"/>
-							<MediaRefs>
-								<MediaRef Id="66996052"/>
-								<MediaRef Id="101753864"/>
-								<MediaRef Id="264731060"/>
-								<MediaRef Id="269112471"/>
-								<MediaRef Id="593321699"/>
-								<MediaRef Id="783345208"/>
-								<MediaRef Id="926802467"/>
-								<MediaRef Id="940001257"/>
-								<MediaRef Id="1051850607"/>
-							</MediaRefs>
+							<SwitchValue GroupType="State" GroupId="1852808225" Id="89505537"/>
+							<Children>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="2470328564" Id="3753286132"/>
+									<MediaRefs>
+										<MediaRef Id="66996052"/>
+										<MediaRef Id="101753864"/>
+										<MediaRef Id="264731060"/>
+										<MediaRef Id="269112471"/>
+										<MediaRef Id="593321699"/>
+										<MediaRef Id="783345208"/>
+										<MediaRef Id="926802467"/>
+										<MediaRef Id="940001257"/>
+										<MediaRef Id="1051850607"/>
+									</MediaRefs>
+								</SwitchContainer>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="2470328564" Id="4223512837"/>
+									<MediaRefs>
+										<MediaRef Id="6142316"/>
+										<MediaRef Id="124769407"/>
+										<MediaRef Id="298887167"/>
+										<MediaRef Id="394227182"/>
+										<MediaRef Id="530961174"/>
+										<MediaRef Id="827364640"/>
+										<MediaRef Id="1031649684"/>
+										<MediaRef Id="1040733307"/>
+									</MediaRefs>
+								</SwitchContainer>
+								<SwitchContainer>
+									<SwitchValue GroupType="State" GroupId="2470328564" Id="4019181194"/>
+									<MediaRefs>
+										<MediaRef Id="101753864"/>
+										<MediaRef Id="264731060"/>
+										<MediaRef Id="269112471"/>
+										<MediaRef Id="316273951"/>
+										<MediaRef Id="549676011"/>
+										<MediaRef Id="593321699"/>
+										<MediaRef Id="613973448"/>
+										<MediaRef Id="647416999"/>
+										<MediaRef Id="867652906"/>
+										<MediaRef Id="965771257"/>
+									</MediaRefs>
+								</SwitchContainer>
+							</Children>
 						</SwitchContainer>
 						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="2470328564" Id="4223512837"/>
+							<SwitchValue GroupType="State" GroupId="1852808225" Id="2607556080"/>
 							<MediaRefs>
-								<MediaRef Id="6142316"/>
-								<MediaRef Id="124769407"/>
-								<MediaRef Id="298887167"/>
-								<MediaRef Id="394227182"/>
-								<MediaRef Id="530961174"/>
-								<MediaRef Id="827364640"/>
-								<MediaRef Id="1031649684"/>
-								<MediaRef Id="1040733307"/>
-							</MediaRefs>
-						</SwitchContainer>
-						<SwitchContainer>
-							<SwitchValue GroupType="State" GroupId="2470328564" Id="4019181194"/>
-							<MediaRefs>
-								<MediaRef Id="101753864"/>
-								<MediaRef Id="264731060"/>
-								<MediaRef Id="269112471"/>
-								<MediaRef Id="316273951"/>
-								<MediaRef Id="549676011"/>
-								<MediaRef Id="593321699"/>
-								<MediaRef Id="613973448"/>
-								<MediaRef Id="647416999"/>
-								<MediaRef Id="867652906"/>
-								<MediaRef Id="965771257"/>
+								<MediaRef Id="1010371254"/>
+								<MediaRef Id="1049719941"/>
+								<MediaRef Id="1070698980"/>
 							</MediaRefs>
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="2133615622" Name="Laugh_Meter"/>
+			</GameParameters>
 			<StateGroups>
+				<StateGroup Id="1852808225" Name="Playing">
+					<States>
+						<State Id="89505537" Name="Gameplay"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="2607556080" Name="Menu"/>
+					</States>
+				</StateGroup>
 				<StateGroup Id="2470328564" Name="Intensity">
 					<States>
 						<State Id="748895195" Name="None"/>
@@ -321,11 +613,19 @@
 					</States>
 				</StateGroup>
 			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="1541636155" Name="NPC_Dialogue">
+					<Switches>
+						<Switch Id="1206605712" Name="Angry"/>
+						<Switch Id="3386657621" Name="Tired"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 		<SoundBank Id="3354297748" Type="User" Language="SFX" Hash="{732593A0-6D58-6209-E7BC-A18431E88222}">
 			<ShortName>Empty</ShortName>
 			<Path>Empty.bnk</Path>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{53F0F636-0097-BBE1-36EC-14883A3E5BB5}</FileHash>
+	<FileHash>{2A6C1579-6504-CD0E-1112-FD2FA107A0F4}</FileHash>
 </SoundBanksInfo>

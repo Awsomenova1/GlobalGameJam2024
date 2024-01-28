@@ -10,12 +10,46 @@
 				</SoundBank>
 				<SoundBank Name="Main" ID="{97875A36-0A81-474B-B38A-F6B43C19E544}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Menu_Select" ID="{E3128D89-5F64-401C-BB13-92AE0959A02E}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="NPC_Tired" ID="{6EC362F5-D8C5-41C6-AD31-EA84BB865569}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Gameplay" ID="{9E3F32EF-CE88-4208-95B5-37616B5944DF}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Pause" ID="{78E9B8A1-0344-4283-BD7B-C7CBC68F3074}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu Select" ID="{F152DADF-D552-4343-9F19-C9E8390766D6}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Music" ID="{DBDDD0B3-B891-434C-97AC-1EF81D59C625}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Start_Music" ID="{F7EFF77D-22EF-436D-87B6-05C26644DD18}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Calm" ID="{011CC6F6-0DC7-445D-9514-663DAA931B1F}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Silence" ID="{C449F70C-4DBF-45D8-BE82-2B34AF5A45CB}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu Select Beep" ID="{EA5A6D79-6416-45EE-9ACF-AADC2D8960A6}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu" ID="{F429665A-AD67-4651-A557-8D2C00D967EA}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu Adjust" ID="{DFCA0055-6CAC-4658-B605-91D17E804FC8}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Instense" ID="{B75CA433-5C61-4698-B1CC-4127D5B328C4}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="NPC_Stop" ID="{1CB91BC4-41D6-4716-B38E-7DCED8012A85}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Music" ID="{F9CC6E94-04B2-4728-A612-8A2DDD13F0DF}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Mood" ID="{288DD627-47F8-475B-BDC6-D6B89CBEF729}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Menu" ID="{AE2D1870-5A49-4795-AE5E-0349525AA7C1}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Story_Track" ID="{2F5EECC4-125A-4A8E-ABD4-7B0E74A6FE63}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Mediate" ID="{8D8BF47D-4CE1-47B3-8E30-682F16B87CB5}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Angry" ID="{E3BE9AB6-DC3B-47DB-9A77-3B07ED0330B9}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Calm" ID="{19D80065-BD05-4839-97B7-C4FDE3A609CC}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu_Back" ID="{9C03189D-7DC7-4866-B8B9-1422C8C67C0C}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="NPC_Angry" ID="{76D354E3-320B-48FA-B43E-B1F251F23BDB}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu_Nav" ID="{77AFAC62-8F8D-49A1-A388-8E442FE2E226}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu_Track" ID="{B9945C4D-06FB-49A6-9EDC-A1E9E50A5292}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Gameplay" ID="{2F5EECC4-125A-4A8E-ABD4-7B0E74A6FE63}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu" ID="{B3C9AF66-BA70-4A93-BCA7-17D9C770C803}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu Back" ID="{98963A17-9F41-4B9A-8DAD-AB17C6A0F7F7}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu" ID="{E02B095B-CFE3-4BE9-87EB-06B45EB4A151}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Dialogue" ID="{5CECFD9B-CC44-4CCC-A023-650FE937778B}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu Nav" ID="{6261A047-6951-4D19-9EC7-9A82873C93DB}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Pause" ID="{1F7B3096-58A4-4D47-84B0-AFD5863F0F0D}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="SFX" ID="{06F5DBBA-C53E-4DD2-BA4A-05DB0DF3A3FD}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Instensity" ID="{3AF256F4-7391-4D64-B8DD-834E9A39C4B9}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Gameplay SFX" ID="{06F5DBBA-C53E-4DD2-BA4A-05DB0DF3A3FD}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Resume" ID="{4F56BA48-2675-4DD9-AB6D-E07E6251F7F6}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Dialogue" ID="{852C54A4-712E-4E3A-AEB7-D680E22219B6}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Music" ID="{55F9DBFB-547C-4EDD-83F5-490EFF8A2FF0}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="NPC_Talk" ID="{809D2DF1-DAF2-4EEB-A636-81FEB1CCE9C7}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Failure" ID="{66126210-FAE6-4F2F-A39E-E4B1D89DBE21}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Story_SFX" ID="{BC49F56A-26C8-4F58-BBC0-71E4DC6C0610}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu_Adjust" ID="{FD9ED91A-6E83-4FD0-BBE9-3197710E7E49}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
