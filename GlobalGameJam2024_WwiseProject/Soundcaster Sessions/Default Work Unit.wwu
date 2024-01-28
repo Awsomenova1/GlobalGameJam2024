@@ -38,9 +38,14 @@
 							<Position X="2" Y="3"/>
 						</Module>
 					</ModuleList>
-					<RTPCValueList ShowAll="true"/>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="Laugh_Meter" ID="{DEC19A5F-D8F2-486F-91A0-34908945FFB1}"/>
+							<Value>44.8693759071118</Value>
+						</RTPCValue>
+					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Intense" ID="{9F146DCB-C38C-4348-BFC1-E4011C4B5FFF}"/>
+						<CurrentStateRef Name="Mediate" ID="{F8390D5C-0711-4361-8CFF-A9FC422598F9}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
