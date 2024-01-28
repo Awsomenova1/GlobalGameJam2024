@@ -81,7 +81,7 @@ public class GameplayManager : MonoBehaviour
         if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Mouse0) && (!won && !lost))
             StartSequence();
 
-        targetSpeed = meter.laughSpeed * 5;
+        targetSpeed = (meter.laughSpeed * 10)/LaughMeter.difficultyScalar;
 
         //updates speed/heat meter visuals
         speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, Time.deltaTime);
