@@ -82,7 +82,7 @@ public class DialogController : MonoBehaviour
         if (collected)
             textDisplay.ForceMeshUpdate();
 
-        if (reading && source.NotWaiting && !meter.inResponseWindow && !GameplayManager.paused && !PopupPanel.open)
+        if (reading && source.NotWaiting && !meter.inResponseWindow && !GameplayManager.paused && !PopupPanel.open && !GameplayManager.quit)
         {
             if (!talking)
             {
