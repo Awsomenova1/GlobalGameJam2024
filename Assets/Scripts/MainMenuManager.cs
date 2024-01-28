@@ -15,11 +15,13 @@ public class MainMenuManager : MonoBehaviour
     private bool playing = false, quitting = false;
     [SerializeField] private Slider musicSlider, soundSlider;
     private GameObject currentSelection;
+    public static bool firstopen = false;
 
     // Start is called before the first frame update
     void Start()
     {
         EventSystem.current.SetSelectedGameObject(PlayButton.gameObject);
+        firstopen = true;
         screenWipe.gameObject.SetActive(true);
         screenWipe.WipeOut();
     }
@@ -27,12 +29,14 @@ public class MainMenuManager : MonoBehaviour
     public void UpdateMusicVolume()
     {
         SettingsManager.currentSettings.musicVolume = musicSlider.value;
+        MenuAdjust.Post(gameObject);
         AkSoundEngine.SetRTPCValue("musicVolume", SettingsManager.currentSettings.musicVolume);
     }
 
     public void UpdateSoundVolume()
     {
         SettingsManager.currentSettings.soundVolume = soundSlider.value;
+        MenuAdjust.Post(gameObject);
         AkSoundEngine.SetRTPCValue("soundVolume", SettingsManager.currentSettings.soundVolume);
     }
 
@@ -57,7 +61,7 @@ public class MainMenuManager : MonoBehaviour
         SettingsManager.SaveSettings();
         if (playing) return;
         playing = true;
-        // MenuSelect.Post(gameObject);
+        MenuSelect.Post(gameObject);
         screenWipe.WipeIn();
         screenWipe.PostWipe += LoadGame;
     }
@@ -65,6 +69,7 @@ public class MainMenuManager : MonoBehaviour
     public void LoadGame()
     {
         screenWipe.PostWipe -= LoadGame;
+        firstopen = false;
         SceneManager.LoadScene("Game Scene");
     }
 
@@ -73,7 +78,7 @@ public class MainMenuManager : MonoBehaviour
         if (!PopupPanel.open && !playing && !quitting)
         {
             InstructionsPanel.SetActive(true);
-            // MenuSelect.Post(gameObject);
+            MenuSelect.Post(gameObject);
         }
     }
 
@@ -84,7 +89,7 @@ public class MainMenuManager : MonoBehaviour
             SettingsPanel.SetActive(true);
             musicSlider.value = SettingsManager.currentSettings.musicVolume;
             soundSlider.value = SettingsManager.currentSettings.soundVolume;
-            // MenuSelect.Post(gameObject);
+            MenuSelect.Post(gameObject);
         }
     }
 
@@ -99,6 +104,7 @@ public class MainMenuManager : MonoBehaviour
         {
             Screen.fullScreenMode = FullScreenMode.Windowed;
         }
+        MenuAdjust.Post(gameObject);
     }
 
     public void Credits()
@@ -106,7 +112,7 @@ public class MainMenuManager : MonoBehaviour
         if (!PopupPanel.open && !playing && !quitting)
         {
             CreditsPanel.SetActive(true);
-            // MenuSelect.Post(gameObject);
+            MenuSelect.Post(gameObject);
         }
     }
 
@@ -114,7 +120,7 @@ public class MainMenuManager : MonoBehaviour
     {
         if (quitting) return;
         quitting = true;
-        // MenuSelect.Post(gameObject);
+        MenuSelect.Post(gameObject);
         screenWipe.WipeIn();
         screenWipe.PostWipe += ExitGame;
     }

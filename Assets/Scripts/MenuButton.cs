@@ -30,6 +30,7 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
 
     public void OnSelect(BaseEventData eventData)
     {
-        // MenuNav.Post(gameObject);
+        if (MainMenuManager.firstopen)
+            MenuNav.Post(gameObject);
     }
 }
