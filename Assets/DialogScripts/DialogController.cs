@@ -16,6 +16,10 @@ public class DialogController : MonoBehaviour
 
     public List<TextEffect> textEffects = new List<TextEffect>();
 
+    public AK.Wwise.Event NPC_Talk, NPC_Stop, NPC_Tired, NPC_Angry;
+
+    public bool talking = false;
+
     public string text
     {
         get
@@ -39,6 +43,7 @@ public class DialogController : MonoBehaviour
     {
         main = this;
         textDisplay.ForceMeshUpdate();
+        NPC_Tired.Post(gameObject);
 
         textDisplay.OnPreRenderText += applyTextEffects;
     }
@@ -69,6 +74,23 @@ public class DialogController : MonoBehaviour
         }
         if (collected)
             textDisplay.ForceMeshUpdate();
+
+        if (reading && !source.waiting)
+        {
+            if (!talking)
+            {
+                NPC_Talk.Post(gameObject);
+                talking = true;
+            }
+        }
+        else
+        {
+            if (talking)
+            {
+                NPC_Stop.Post(gameObject);
+                talking = false;
+            }
+        }
     }
 
 

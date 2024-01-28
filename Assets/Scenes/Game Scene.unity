@@ -5513,6 +5513,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6687954286169256019, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
+      propertyPath: NPC_Stop.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 2477b3278339bb8468c32b21c376dd77, type: 2}
+    - target: {fileID: 6687954286169256019, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
+      propertyPath: NPC_Talk.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: e823f9900b2017f44b5202c38af6cf63, type: 2}
+    - target: {fileID: 6687954286169256019, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
+      propertyPath: NPC_Angry.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: d958a4fffbcfe0340a0f74615882be84, type: 2}
+    - target: {fileID: 6687954286169256019, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
+      propertyPath: NPC_Tired.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 1aed008c5fdacbb48845739043075699, type: 2}
     - target: {fileID: 8073852510127294367, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
       propertyPath: m_Camera
       value: 

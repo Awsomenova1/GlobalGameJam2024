@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{04578CA1-28B0-4666-A678-98C824AAC956}" SchemaVersion="119">
 	<Modulators>
-		<WorkUnit Name="Default Work Unit" ID="{04578CA1-28B0-4666-A678-98C824AAC956}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{04578CA1-28B0-4666-A678-98C824AAC956}" PersistMode="Standalone">
+			<ChildrenList>
+				<ModulatorEnvelope Name="Slow release" ID="{621A0206-A552-4F23-AB7B-ADD8CB837681}" ShortID="918088979">
+					<PropertyList>
+						<Property Name="ModulatorScope" Type="int32" Value="0"/>
+					</PropertyList>
+				</ModulatorEnvelope>
+			</ChildrenList>
+		</WorkUnit>
 	</Modulators>
 </WwiseDocument>

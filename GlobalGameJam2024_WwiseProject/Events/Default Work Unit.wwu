@@ -3,10 +3,14 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{BC9F2040-B8C7-426B-983E-C40031009474}" PersistMode="Standalone">
 			<ChildrenList>
-				<Folder Name="SFX" ID="{06F5DBBA-C53E-4DD2-BA4A-05DB0DF3A3FD}" ShortID="771496091"/>
+				<Folder Name="Gameplay SFX" ID="{06F5DBBA-C53E-4DD2-BA4A-05DB0DF3A3FD}" ShortID="771496091"/>
 				<Folder Name="Music" ID="{F9CC6E94-04B2-4728-A612-8A2DDD13F0DF}" ShortID="1064159583">
 					<ChildrenList>
 						<Event Name="Stop_Music" ID="{55F9DBFB-547C-4EDD-83F5-490EFF8A2FF0}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{6DEF5E5A-F058-4D76-9970-C748AD495D98}" ShortID="360159148">
 									<PropertyList>
@@ -16,28 +20,37 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Story_Track" ID="{2F5EECC4-125A-4A8E-ABD4-7B0E74A6FE63}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}"/>
+											<ObjectRef Name="Music" ID="{DBDDD0B3-B891-434C-97AC-1EF81D59C625}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Start_Music" ID="{F7EFF77D-22EF-436D-87B6-05C26644DD18}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{439D06E5-8101-4848-ACD3-503E9EC713A1}" ShortID="333882355">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Story_Track" ID="{2F5EECC4-125A-4A8E-ABD4-7B0E74A6FE63}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}"/>
+											<ObjectRef Name="Music" ID="{DBDDD0B3-B891-434C-97AC-1EF81D59C625}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 								<Action Name="" ID="{B417DC10-FE92-4BB7-9A3C-5FAD7A8AE5B0}" ShortID="250562238">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Story_Track" ID="{2F5EECC4-125A-4A8E-ABD4-7B0E74A6FE63}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}"/>
+											<ObjectRef Name="Gameplay" ID="{2F5EECC4-125A-4A8E-ABD4-7B0E74A6FE63}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -46,6 +59,10 @@
 						<Folder Name="Instensity" ID="{3AF256F4-7391-4D64-B8DD-834E9A39C4B9}" ShortID="297207905">
 							<ChildrenList>
 								<Event Name="State_Intense" ID="{08006FFD-0925-479A-86BB-26A45EDD1046}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="19"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{D1A22BB0-ED5C-4788-805C-370B046353AA}" ShortID="625477778">
 											<PropertyList>
@@ -60,6 +77,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="State_Calm" ID="{72666D5B-E82C-45F0-B099-87D7987C5EA3}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="19"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{480ED39A-9F5B-4AAB-B64F-4F43CE5307BC}" ShortID="21322604">
 											<PropertyList>
@@ -74,6 +95,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="State_Mediate" ID="{451B8CF3-9A96-43EC-9B70-E1C1B01E3CC0}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="19"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{C6A219C9-2143-4593-A36E-E2A9BF0D824E}" ShortID="242382757">
 											<PropertyList>
@@ -88,6 +113,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="State_Silent" ID="{57332CF3-107E-4B7A-9C94-CA8AD22C38A0}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="19"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{29710612-ECC0-4F4A-9C5A-587F358E3BE5}" ShortID="547117230">
 											<PropertyList>
@@ -103,28 +132,69 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="Menu" ID="{F429665A-AD67-4651-A557-8D2C00D967EA}" ShortID="74807770">
+							<ChildrenList>
+								<Event Name="Start_Menu" ID="{085D843E-3935-4BAD-8E41-B9C8D65AC9E5}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="2"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{F56DA12A-4EE9-4299-81C2-8DDF56B777C0}" ShortID="395720042">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music" ID="{DBDDD0B3-B891-434C-97AC-1EF81D59C625}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{AB4BFD1A-8067-4958-92BC-71A461D579EF}" ShortID="971223814">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Menu" ID="{A4B84789-5E70-4BC3-9CE5-89185CC85EE2}" WorkUnitID="{D24E68CE-F003-4C96-9B0A-398861EF1FAF}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{C7ED187A-5371-4AFB-AA0D-7931B9626FC4}" ShortID="749658324">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Menu" ID="{AE2D1870-5A49-4795-AE5E-0349525AA7C1}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_Menu" ID="{CD319804-EC06-4CD8-A0D3-B5D090983504}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="2"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{697DBC7B-BDA9-4CA9-8387-29ED6BEC60C9}" ShortID="836806939">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Menu" ID="{AE2D1870-5A49-4795-AE5E-0349525AA7C1}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Event Name="Pause" ID="{1F7B3096-58A4-4D47-84B0-AFD5863F0F0D}">
-					<ChildrenList>
-						<Action Name="" ID="{DDEEF926-37DB-4706-A4DD-ECFAA4B9DE9C}" ShortID="779852308">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="8"/>
-							</PropertyList>
-							<ReferenceList/>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Resume" ID="{4F56BA48-2675-4DD9-AB6D-E07E6251F7F6}">
-					<ChildrenList>
-						<Action Name="" ID="{0E62C0CE-1F17-4D76-B157-32666A27DAD9}" ShortID="393963256">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="10"/>
-							</PropertyList>
-							<ReferenceList/>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Folder Name="Dialogue" ID="{852C54A4-712E-4E3A-AEB7-D680E22219B6}" ShortID="120775745">
 					<ChildrenList>
 						<Event Name="NPC_Stop" ID="{1CB91BC4-41D6-4716-B38E-7DCED8012A85}">
@@ -147,6 +217,133 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Mood" ID="{288DD627-47F8-475B-BDC6-D6B89CBEF729}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="NPC_Tired" ID="{6EC362F5-D8C5-41C6-AD31-EA84BB865569}">
+							<ChildrenList>
+								<Action Name="" ID="{6EECA991-53ED-4DC4-9AC1-D7367EA41629}" ShortID="993418693">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="23"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Tired" ID="{BACB215F-23E7-4B31-8462-F7B8B9C8883C}" WorkUnitID="{A9C0C10E-055A-46DF-A7EB-1576659DA6E7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="NPC_Angry" ID="{76D354E3-320B-48FA-B43E-B1F251F23BDB}">
+							<ChildrenList>
+								<Action Name="" ID="{A71417C6-D57F-4387-8DD2-B2C282660A1F}" ShortID="415623405">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="23"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Angry" ID="{965567CA-46FA-47CD-8BD9-175E573B9413}" WorkUnitID="{A9C0C10E-055A-46DF-A7EB-1576659DA6E7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Menu" ID="{B3C9AF66-BA70-4A93-BCA7-17D9C770C803}" ShortID="827094585">
+					<ChildrenList>
+						<Event Name="Pause" ID="{1F7B3096-58A4-4D47-84B0-AFD5863F0F0D}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="17"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{DDEEF926-37DB-4706-A4DD-ECFAA4B9DE9C}" ShortID="779852308">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="8"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
+								<Action Name="" ID="{FB5848C9-6026-4D2D-8429-B62388C31AFC}" ShortID="723049794">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Pause" ID="{78E9B8A1-0344-4283-BD7B-C7CBC68F3074}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Resume" ID="{4F56BA48-2675-4DD9-AB6D-E07E6251F7F6}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="17"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{0E62C0CE-1F17-4D76-B157-32666A27DAD9}" ShortID="393963256">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="10"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Menu_Nav" ID="{77AFAC62-8F8D-49A1-A388-8E442FE2E226}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{F2F3E70B-B0A3-4434-B695-0387010800EA}" ShortID="219286157">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu Nav" ID="{6261A047-6951-4D19-9EC7-9A82873C93DB}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Menu_Select" ID="{E3128D89-5F64-401C-BB13-92AE0959A02E}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{61894296-EFC3-4B4F-8E5A-21EA6CDAD15D}" ShortID="133404823">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu Select" ID="{F152DADF-D552-4343-9F19-C9E8390766D6}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Menu_Back" ID="{9C03189D-7DC7-4866-B8B9-1422C8C67C0C}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{6193664D-3A48-493C-B299-AEA53C432770}" ShortID="390696">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu Select Beep" ID="{EA5A6D79-6416-45EE-9ACF-AADC2D8960A6}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Menu_Adjust" ID="{FD9ED91A-6E83-4FD0-BBE9-3197710E7E49}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Action Name="" ID="{6B3E579A-CB83-4C7E-A038-A136D32E8923}" ShortID="328404108">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu Adjust" ID="{DFCA0055-6CAC-4658-B605-91D17E804FC8}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
