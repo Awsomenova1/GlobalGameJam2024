@@ -8,10 +8,12 @@ using TMPro;
 public class GameplayManager : MonoBehaviour
 {
 
-    public Animator gameSequence;
+    //public Animator gameSequence;
     public LaughMeter meter;
     public DialogController dialog;
     public Slider speedMeter;
+
+    public static GameplayManager main;
 
     public ScreenWipe screenWipe;
 
@@ -41,21 +43,32 @@ public class GameplayManager : MonoBehaviour
     //value to adjust speed/heat meter to
     private float targetSpeed;
     [SerializeField] private GameObject globalWwise;
-    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic;
+    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect;
     [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     private enum MusicState { CALM, MEDIATE, INTENSE };
     private MusicState currentState;
-    public bool won = false, lost = false, playingAgain = false, quit = false;
+    public static bool won = false, lost = false, playingAgain = false, quit = false;
 
     public Button button;
+
+    public Animator npcAnim;
+
+    public Image background;
+
+    public List<Sprite> backgrounds = new List<Sprite>();
 
     // Start is called before the first frame update
     void Start()
     {
+        main = this;
         meter.laughSpeed = 0;
         IntroSequence();
         screenWipe.gameObject.SetActive(true);
         screenWipe.WipeOut();
+        won = false;
+        lost = false;
+        playingAgain = false;
+        quit = false;
     }
 
     // Update is called once per frame
@@ -73,46 +86,49 @@ public class GameplayManager : MonoBehaviour
         if (suspendSequence)
             return;
 
-        if (startedSequence && gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence"))
+        if (startedSequence && (/*gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence") ||*/ !dialog.reading))
             FinishedSequence();
 
-        if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Q))
+        if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Mouse0) && (!won && !lost))
             StartSequence();
 
-        targetSpeed = meter.laughSpeed * 5;
+        targetSpeed = (meter.laughSpeed * 10)/LaughMeter.difficultyScalar;
 
         //updates speed/heat meter visuals
         speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, Time.deltaTime);
-        if(speedMeter.value <= speedMeter.maxValue / 3){
+        if (speedMeter.value <= speedMeter.maxValue / 3)
+        {
             speedIcon.sprite = emote5;
             if (currentState != MusicState.CALM)
             {
                 calm.SetValue();
                 currentState = MusicState.CALM;
             }
-            
+
         }
-        else if(speedMeter.value <= speedMeter.maxValue * 2 / 3){
+        else if (speedMeter.value <= speedMeter.maxValue * 2 / 3)
+        {
             speedIcon.sprite = emote7;
             if (currentState != MusicState.MEDIATE)
             {
                 mediate.SetValue();
                 currentState = MusicState.MEDIATE;
             }
-                
+
         }
-        else{
+        else
+        {
             speedIcon.sprite = emote6;
             if (currentState != MusicState.INTENSE)
             {
                 intense.SetValue();
                 currentState = MusicState.INTENSE;
             }
-                
+
         }
 
         //checks if the player has lost the game, ends play if so
-        if(meter.checkLose())
+        if (meter.checkLose())
         {
             dialog.setSource(new DialogSource("Laughter"));
 
@@ -124,6 +140,8 @@ public class GameplayManager : MonoBehaviour
         }
 
         UpdateSliderIcons();
+
+        npcAnim.SetBool("Talking", DialogController.main.reading && DialogController.main.source.CurrentlySpeaking && !meter.inResponseWindow);
 
     }
 
@@ -144,16 +162,40 @@ public class GameplayManager : MonoBehaviour
     public void UnPause()
     {
         if (!PopupPanel.open) return;
+        // MenuSelect.Post(gameObject);
         ResumeMusic.Post(globalWwise);
         Time.timeScale = 1;
         paused = false;
         PauseMenu.GetComponent<PopupPanel>().Close();
     }
 
+    //close currently opened popup panels
+    public void ClosePanels()
+    {
+        if (PopupPanel.open)
+        {
+            if (PauseMenu.activeSelf == true)
+            {
+                PauseMenu.GetComponent<PopupPanel>().Close();
+            }
+            if (WinScreen.activeSelf == true)
+            {
+                WinScreen.GetComponent<PopupPanel>().Close();
+            }
+            if (LoseScreen.activeSelf == true)
+            {
+                LoseScreen.GetComponent<PopupPanel>().Close();
+            }
+        }
+    }
+
+
     public void QuitToMenu()
     {
         if (quit) return;
         quit = true;
+        // MenuSelect.Post(gameObject);
+        ClosePanels();
         Time.timeScale = 1;
         paused = false;
         StopMusic.Post(globalWwise);
@@ -177,6 +219,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (paused) return;
         won = true;
+        DialogController.main.StopTalk();
         StopMusic.Post(globalWwise);
         WinScreen.SetActive(true);
         WinText.SetText("You made it through without laughing!\n\nFinal Grade: " + meter.calculateGrade());
@@ -187,9 +230,11 @@ public class GameplayManager : MonoBehaviour
     {
         if (paused) return;
         lost = true;
+        DialogController.main.StopTalk();
         StopMusic.Post(globalWwise);
         LoseScreen.SetActive(true);
         button.stopInputs = true;
+        dialog.reading = false;
     }
 
     //resets game
@@ -197,6 +242,12 @@ public class GameplayManager : MonoBehaviour
     {
         if (playingAgain) return;
         playingAgain = true;
+
+        // MenuSelect.Post(gameObject);
+        ClosePanels();
+        won = false;
+        lost = false;
+
         Time.timeScale = 1;
         paused = false;
         screenWipe.WipeIn();
@@ -207,14 +258,15 @@ public class GameplayManager : MonoBehaviour
     public void StartSequence()
     {
         startedSequence = true;
-
+        calm.SetValue(); // start calm music
 
         //dialog.setSource(new DialogSource("[c] Blah blah blah."));
         dialog.setSource(new DialogSource("[lf,WormMartEmployee.txt]"));
         dialog.reading = true;
-        gameSequence.Play("24hrEmployee");
-        
+        //gameSequence.Play("24hrEmployee");
 
+
+        meter.responseQueue.Add(("It's ok!", "It's about time.", "16!?"));
         button.stopInputs = false;
     }
 
@@ -222,6 +274,7 @@ public class GameplayManager : MonoBehaviour
     {
         startedSequence = false;
         Debug.Log("Finished sequence");
+        //gameSequence.Play("NoCurrentSequence");
         while (!won)
         {
             Win();
@@ -247,5 +300,11 @@ public class GameplayManager : MonoBehaviour
         {
             laughIcon.sprite = emote4;
         }
+    }
+
+    public void ChangeBg(int bgId)
+    {
+        background.sprite = backgrounds[bgId];
+        Debug.Log("bg change to " + bgId);
     }
 }

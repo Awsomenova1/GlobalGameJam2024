@@ -31,23 +31,53 @@ public class LaughMeter : MonoBehaviour
     //number of frames since the last time distance recorded
     private int timeSinceCount;
 
-    public static float difficultyScalar = 5;
+    public static float difficultyScalar = 4;
+
+    public List<(string resp1, string resp2, string resp3)> responseQueue = new List<(string resp1, string resp2, string resp3)>();
+
+    public TMPro.TextMeshProUGUI response1;
+    public TMPro.TextMeshProUGUI response2;
+    public TMPro.TextMeshProUGUI response3;
+
+    //Messy, :(
+    public Image responseButton1;
+    public Image responseButton2;
+    public Image responseButton3;
+
+    public Sprite buttonSprite;
+    public Sprite buttonSelectedSprite;
+
+    public bool inResponseWindow = false;
+    private bool inResponseWindowLastFrame = false;
+
+    public int currResponse;
+
+    public Player playerAnim;
+
+    public CanvasGroup responseGroup;
+    public CanvasGroup dialogGroup;
+
+    public int selectedResponse = 0;
+
+    public static LaughMeter main;
 
     // Start is called before the first frame update
     void Start()
     {
+        main = this;
         startLaughter = maxLaughter / 2;
         laughBarFill.minValue = minLaughter;
         laughBarFill.maxValue = maxLaughter;
         laughter = startLaughter;
 
         timeSinceCount = 0;
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(laughter > minLaughter && laughter < maxLaughter){
+        if(laughter > minLaughter && laughter < maxLaughter && !GameplayManager.won && !GameplayManager.lost){
             laughter -= (int)(laughSpeed * difficultyScalar);
         }
         laughBarFill.value = laughter;
@@ -73,7 +103,11 @@ public class LaughMeter : MonoBehaviour
             return false;
         }
     }
-    
+    private void Update()
+    {
+        ResponseUpdates();
+    }
+
     //add current distance from center of bar to running total to average later
     //with threashold > 0, distance is from edge of range around center
     void addDistance(){
@@ -96,6 +130,78 @@ public class LaughMeter : MonoBehaviour
             return 0;
         }
         
+    }
+
+
+    public void ResponseUpdates()
+    {
+        if (inResponseWindow && !inResponseWindowLastFrame)
+        {
+            response1.text = responseQueue[currResponse].resp1;
+            response2.text = responseQueue[currResponse].resp2;
+            response3.text = responseQueue[currResponse].resp3;
+
+
+
+            //Open response windows
+            responseGroup.alpha = 1;
+            responseGroup.interactable = true;
+            responseGroup.blocksRaycasts = true;
+
+            dialogGroup.alpha = 0;
+            dialogGroup.interactable = false;
+            dialogGroup.blocksRaycasts = false;
+            playerAnim.SetResponding(true);
+        }
+        else if (!inResponseWindow && inResponseWindowLastFrame)
+        {
+            //Close dialog windows
+            responseGroup.alpha = 0;
+            responseGroup.interactable = false;
+            responseGroup.blocksRaycasts = false;
+
+            dialogGroup.alpha = 1;
+            dialogGroup.interactable = true;
+            dialogGroup.blocksRaycasts = true;
+
+            playerAnim.SetResponding(false);
+
+            responseButton1.sprite = buttonSprite;
+            responseButton2.sprite = buttonSprite;
+            responseButton3.sprite = buttonSprite;
+
+            currResponse++;
+        }
+        else if (inResponseWindow)
+        {
+
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            {
+                responseButton1.sprite = buttonSprite;
+                responseButton2.sprite = buttonSprite;
+                responseButton3.sprite = buttonSprite;
+
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    responseButton1.sprite = buttonSelectedSprite;
+                    selectedResponse = 1;
+                }
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    responseButton2.sprite = buttonSelectedSprite;
+                    selectedResponse = 2;
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    responseButton3.sprite = buttonSelectedSprite;
+                    selectedResponse = 3;
+                }
+            }
+        }
+
+
+
+        inResponseWindowLastFrame = inResponseWindow;
     }
 
     //calculate a grade for the player based on how well they kept in the center

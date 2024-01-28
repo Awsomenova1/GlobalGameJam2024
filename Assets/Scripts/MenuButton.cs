@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler, IDeselectHandler
+public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler, IDeselectHandler, ISelectHandler
 {
     [SerializeField] private Sprite normal;
     [SerializeField] private bool MainMenu;
+    [SerializeField] private AK.Wwise.Event MenuNav;
     public void OnDeselect(BaseEventData eventData)
     {
         GetComponent<Image>().sprite = normal;
@@ -25,5 +26,10 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
         {
             EventSystem.current.SetSelectedGameObject(gameObject);
         }
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        // MenuNav.Post(gameObject);
     }
 }

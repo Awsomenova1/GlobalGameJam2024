@@ -11,6 +11,7 @@ public class PopupPanel : MonoBehaviour
     [SerializeField] private GameObject PrimaryButton;
     [SerializeField] private bool SelectPrevious, Closable = true;
     [SerializeField] private Volume PostProcessing;
+    [SerializeField] private AK.Wwise.Event MenuBack;
     public float animProgress;
     private GameObject PreviousButton;
     public static bool open = false, visible = false;
@@ -25,7 +26,7 @@ public class PopupPanel : MonoBehaviour
     private void Update()
     {
         open = true;
-
+        
         if (EventSystem.current.currentSelectedGameObject != null)
         {
             currentSelection = EventSystem.current.currentSelectedGameObject;
@@ -56,6 +57,7 @@ public class PopupPanel : MonoBehaviour
 
     public void Close()
     {
+        MenuBack.Post(gameObject);
         anim.SetTrigger("Close");
         visible = false;
         if (SelectPrevious)

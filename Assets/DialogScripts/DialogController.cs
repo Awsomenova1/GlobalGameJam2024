@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DialogController : MonoBehaviour
 {
@@ -15,6 +16,13 @@ public class DialogController : MonoBehaviour
     public bool reading = false;
 
     public List<TextEffect> textEffects = new List<TextEffect>();
+
+    public AK.Wwise.Event NPC_Talk, NPC_Stop, NPC_Tired, NPC_Angry;
+
+    public bool talking = false;
+    public LaughMeter meter;
+
+    
 
     public string text
     {
@@ -35,13 +43,11 @@ public class DialogController : MonoBehaviour
 
     bool collected = false;
 
-    public AK.Wwise.Event NPC_Talk, NPC_Stop;
-    public bool talking = false;
-
     void Awake()
     {
         main = this;
         textDisplay.ForceMeshUpdate();
+        NPC_Tired.Post(gameObject);
 
         textDisplay.OnPreRenderText += applyTextEffects;
     }
@@ -50,6 +56,12 @@ public class DialogController : MonoBehaviour
     {
         //setSource(new DialogSource("This[w, 1] is a[ss, .2] [TFX,Wave,5,5,50]tester[/TFX,Wave]! [w, 7] [c][ss, .05] And again to test wrapping! [exit]"));
         //reading = true;
+    }
+
+    public void StopTalk()
+    {
+        NPC_Stop.Post(gameObject);
+        talking = false;
     }
 
     // Update is called once per frame
@@ -73,23 +85,22 @@ public class DialogController : MonoBehaviour
         if (collected)
             textDisplay.ForceMeshUpdate();
 
-        // TODO this part should play NPC sounds *if* we have stuff configured correctly in WWise
-        // if (reading && !source.waiting)
-        // {
-        //     if (!talking)
-        //     {
-        //         NPC_Talk.Post(gameObject);
-        //         talking = true;
-        //     }
-        // }
-        // else
-        // {
-        //     if (talking)
-        //     {
-        //         NPC_Stop.Post(gameObject);
-        //         talking = false;
-        //     }
-        // }
+        if (reading && source.NotWaiting && !meter.inResponseWindow && !GameplayManager.paused && !PopupPanel.open && !GameplayManager.quit)
+        {
+            if (!talking)
+            {
+                NPC_Talk.Post(gameObject);
+                talking = true;
+            }
+        }
+        else
+        {
+            if (talking)
+            {
+                NPC_Stop.Post(gameObject);
+                talking = false;
+            }
+        }
     }
 
 
@@ -103,6 +114,7 @@ public class DialogController : MonoBehaviour
             source.exit -= close;
             source.playAnimation -= playAnimation;
             source.ps -= PlaySound;
+            source.setEmot -= SetEmotion;
 
         }
         source = newSource;
@@ -115,6 +127,7 @@ public class DialogController : MonoBehaviour
         newSource.exit += close;
         source.playAnimation += playAnimation;
         source.ps += PlaySound;
+        source.setEmot += SetEmotion;
 
     }
 
@@ -212,5 +225,10 @@ public class DialogController : MonoBehaviour
     public void PlaySound(string name, float volume, bool loop)
     {
 
+    }
+
+    public void SetEmotion(int emotionId)
+    {
+        anim.SetFloat("Emotion", emotionId);
     }
 }
