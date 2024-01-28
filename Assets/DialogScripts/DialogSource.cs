@@ -200,6 +200,7 @@ public class DialogSource
         position = 0;
         charCount = 0;
         waiting = false;
+        Debug.Log("Expected time: " + GetTimeToReachPoint(dialog.Length - 1));
     }
 
     public void changeToBlock(string block)
@@ -640,31 +641,36 @@ public class DialogSource
                     Debug.LogWarning("play animation takes a name of an animation to play!");
                 break;
 
+            case "out":
+                Debug.Log("Hit out at: " + Time.time);
+                break;
+
+            case "ps":
+                if (input.Length == 2)
+                {
+                    playSound(input[1]);
+                }
+                else if (input.Length == 3)
+                {
+                    playSound(input[1], float.Parse(input[2]));
+                }
+                else if (input.Length == 4)
+                {
+                    bool loop = false;
+                    if (input[3].Trim().ToLower() == "true" || input[3].Trim().ToLower() == "t")
+                        loop = true;
+                    else if (input[3].Trim().ToLower() == "false" || input[3].Trim().ToLower() == "f")
+                        loop = false;
+                    else
+                        Debug.LogWarning("Invalid format for play sound [ps] loop parameter! Defaulting to false");
+                    playSound(input[1], float.Parse(input[2]), loop);
+                }
+                else
+                    Debug.LogWarning("Invalid number of parameters for play sound [ps]!");
+                break;
 
             #region old audio stuff
-            //case "ps":
-            //    if (input.Length == 2)
-            //    {
-            //        playSound(input[1]);
-            //    }
-            //    else if (input.Length == 3)
-            //    {
-            //        playSound(input[1], float.Parse(input[2]));
-            //    }
-            //    else if (input.Length == 4)
-            //    {
-            //        bool loop = false;
-            //        if (input[3].Trim().ToLower() == "true" || input[3].Trim().ToLower() == "t")
-            //            loop = true;
-            //        else if (input[3].Trim().ToLower() == "false" || input[3].Trim().ToLower() == "f")
-            //            loop = false;
-            //        else
-            //            Debug.LogWarning("Invalid format for play sound [ps] loop parameter! Defaulting to false");
-            //        playSound(input[1], float.Parse(input[2]), loop);
-            //    }
-            //    else
-            //        Debug.LogWarning("Invalid number of parameters for play sound [ps]!");
-            //    break;
+
 
             //case "es":
             //    if (input.Length == 1)
@@ -771,5 +777,63 @@ public class DialogSource
     //public void applyMixerEffect(string mixer, string effect, float value, float duration = 0)
     //{
     //    AudioManager.instance.ApplyMixerEffect(mixer, effect, value, duration);
+    //}
+
+    public float GetTimeToReachPoint(int toPosition, int fromPosition = 0)
+    {
+        int position = fromPosition;
+        float totalTime = 0;
+        float waitTime = speed;
+
+        while (position < toPosition)
+        {
+            if (dialog[position] == '[')
+            {
+                int endPos = getCommandEnd(dialog, position);
+                List<string> parameters = new List<string>();
+                int depth = 0;
+
+                int lastProcessPosition = position;
+                for (int i = lastProcessPosition; i <= endPos; i++)
+                {
+                    if (dialog[i] == '[')
+                        depth++;
+                    if (dialog[i] == ']')
+                        depth--;
+                    if ((dialog[i] == ',' && depth == 1) || i == endPos)
+                    {
+                        parameters.Add(dialog.Substring(lastProcessPosition + 1, i - lastProcessPosition - 1));
+                        lastProcessPosition = i;
+                    }
+                }
+
+                if (parameters[0] == "ss")
+                    waitTime = float.Parse(parameters[1]);
+                if (parameters[0] == "w")
+                    totalTime += float.Parse(parameters[1]);
+
+                position = endPos;
+            }
+
+            totalTime += waitTime;
+            position++;
+        }
+        return totalTime;
+    }
+
+    //public bool TimeAccuracyTest()
+    //{
+    //    float startTime = Time.time;
+    //    DialogSource source = new DialogSource("Tester [ss, .05] again [w, .5] here");
+
+    //    bool pass = true;
+
+    //    //pass &= (Mathf.Abs(source.GetTimeToReachPoint(6) - (.075f * 6)) <= .075f);
+
+    //    //pass &= (Mathf.Abs(source.GetTimeToReachPoint(23) - (.075f * 6 + .05f * 6)) <= .075f);
+
+    //    return pass;
+
+        
     //}
 }

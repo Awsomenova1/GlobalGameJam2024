@@ -103,7 +103,7 @@ public class GameplayManager : MonoBehaviour
 
     public void IntroSequence()
     {
-        dialog.setSource(new DialogSource("This guys about to talk to you. [exit]"));
+        dialog.setSource(new DialogSource("[ss, .025]This guys about to talk to you. [exit]"));
         dialog.reading = true;
     }
 
@@ -173,9 +173,11 @@ public class GameplayManager : MonoBehaviour
         startedSequence = true;
 
 
-        dialog.setSource(new DialogSource("[c] Blah blah blah."));
+        //dialog.setSource(new DialogSource("[c] Blah blah blah."));
+        dialog.setSource(new DialogSource("[lf,WormMartEmployee.txt]"));
         dialog.reading = true;
         gameSequence.Play("24hrEmployee");
+        
 
         button.stopInputs = false;
     }

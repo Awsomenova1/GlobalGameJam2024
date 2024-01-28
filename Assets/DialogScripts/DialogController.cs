@@ -41,7 +41,6 @@ public class DialogController : MonoBehaviour
         textDisplay.ForceMeshUpdate();
 
         textDisplay.OnPreRenderText += applyTextEffects;
-
     }
 
     private void Start()
@@ -54,16 +53,6 @@ public class DialogController : MonoBehaviour
     void Update()
     {
         OtherUpdate();
-        return;
-        //if (reading)
-        //{
-        //    textDisplay.text = source.read(readMode);
-        //    textDisplay.ForceMeshUpdate();
-            
-        //}
-        
-        //if (main == null || main != this)
-        //    main = this;
     }
     void OtherUpdate()
     {
@@ -92,6 +81,7 @@ public class DialogController : MonoBehaviour
             source.removeEffect -= RemoveEffect;
             source.exit -= close;
             source.playAnimation -= playAnimation;
+            source.ps -= PlaySound;
 
         }
         source = newSource;
@@ -103,6 +93,7 @@ public class DialogController : MonoBehaviour
         newSource.removeEffect += RemoveEffect;
         newSource.exit += close;
         source.playAnimation += playAnimation;
+        source.ps += PlaySound;
 
     }
 
@@ -197,4 +188,8 @@ public class DialogController : MonoBehaviour
         anim.Play("name");
     }
 
+    public void PlaySound(string name, float volume, bool loop)
+    {
+
+    }
 }

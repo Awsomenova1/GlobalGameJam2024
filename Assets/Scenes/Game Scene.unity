@@ -804,8 +804,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dialog goes here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bafb2c662a0e18945aab46cc5cb3df4f, type: 2}
+  m_sharedMaterial: {fileID: 4424666662835920466, guid: bafb2c662a0e18945aab46cc5cb3df4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4deeb39cbcf78c7429fa90fbb3acb81d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5652c7f49e08ef4e8648dcbe7e3a41d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2045,7 +2045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &628705878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4877,6 +4877,7 @@ GameObject:
   - component: {fileID: 1326872294}
   - component: {fileID: 1326872293}
   - component: {fileID: 1326872292}
+  - component: {fileID: 1326872296}
   m_Layer: 0
   m_Name: SpeechBubble
   m_TagString: Untagged
@@ -4902,7 +4903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30, y: 263}
+  m_AnchoredPosition: {x: 30, y: 179}
   m_SizeDelta: {x: 292.6275, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326872292
@@ -4918,7 +4919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 20
+    m_Left: 30
     m_Right: 20
     m_Top: 20
     m_Bottom: 20
@@ -4983,6 +4984,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326872290}
   m_CullTransparentMesh: 1
+--- !u!95 &1326872296
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326872290}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5469c2f490a4d0643a69d0f3650cc0f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1334417547
 GameObject:
   m_ObjectHideFlags: 0
@@ -5144,7 +5166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8cfb5be702657124e8f4fb94f01c0761, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2bc72dcebc67244f84eca7e0da50f49, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
