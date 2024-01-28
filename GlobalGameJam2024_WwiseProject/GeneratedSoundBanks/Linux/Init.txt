@@ -12,7 +12,9 @@ State Group	ID	Name			Wwise Object Path	Notes
 	2470328564	Intensity			\Default Work Unit\Intensity	
 
 State	ID	Name	State Group			Notes
+	89505537	Gameplay	Playing			
 	748895195	None	Playing			
+	2607556080	Menu	Playing			
 	748895195	None	Intensity			
 	3160623154	Silent	Intensity			
 	3753286132	Calm	Intensity			
