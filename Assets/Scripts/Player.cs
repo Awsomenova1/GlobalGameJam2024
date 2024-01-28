@@ -34,4 +34,9 @@ public class Player : MonoBehaviour
         }
         anim.SetInteger("LaughLevel", laughLevel);
     }
+
+    public void SetResponding(bool state)
+    {
+        anim.SetBool("Talking", state);
+    }
 }

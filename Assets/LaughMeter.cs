@@ -35,12 +35,20 @@ public class LaughMeter : MonoBehaviour
 
     public List<(string resp1, string resp2, string resp3)> responseQueue = new List<(string resp1, string resp2, string resp3)>();
 
+    public TMPro.TextMeshProUGUI response1;
+    public TMPro.TextMeshProUGUI response2;
+    public TMPro.TextMeshProUGUI response3;
+
+
     public bool inResponseWindow = false;
     private bool inResponseWindowLastFrame = false;
 
     public int currResponse;
 
     public Player playerAnim;
+
+    public CanvasGroup responseGroup;
+    public CanvasGroup dialogGroup;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +59,7 @@ public class LaughMeter : MonoBehaviour
         laughter = startLaughter;
 
         timeSinceCount = 0;
+
     }
 
     // Update is called once per frame
@@ -80,7 +89,11 @@ public class LaughMeter : MonoBehaviour
             return false;
         }
     }
-    
+    private void Update()
+    {
+        ResponseUpdates();
+    }
+
     //add current distance from center of bar to running total to average later
     //with threashold > 0, distance is from edge of range around center
     void addDistance(){
@@ -110,11 +123,35 @@ public class LaughMeter : MonoBehaviour
     {
         if (inResponseWindow && !inResponseWindowLastFrame)
         {
+            response1.text = responseQueue[currResponse].resp1;
+            response2.text = responseQueue[currResponse].resp2;
+            response3.text = responseQueue[currResponse].resp3;
+
+
+
             //Open response windows
+            responseGroup.alpha = 1;
+            responseGroup.interactable = true;
+            responseGroup.blocksRaycasts = true;
+
+            dialogGroup.alpha = 0;
+            dialogGroup.interactable = false;
+            dialogGroup.blocksRaycasts = false;
+            playerAnim.SetResponding(true);
         }
         else if (!inResponseWindow && inResponseWindowLastFrame)
         {
-            //Close response windows
+            //Close dialog windows
+            responseGroup.alpha = 0;
+            responseGroup.interactable = false;
+            responseGroup.blocksRaycasts = false;
+
+            dialogGroup.alpha = 1;
+            dialogGroup.interactable = true;
+            dialogGroup.blocksRaycasts = true;
+
+            playerAnim.SetResponding(false);
+
             currResponse++;
         }
         else if (inResponseWindow)

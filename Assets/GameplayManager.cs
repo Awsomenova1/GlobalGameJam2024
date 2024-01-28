@@ -180,10 +180,13 @@ public class GameplayManager : MonoBehaviour
         //dialog.setSource(new DialogSource("[c] Blah blah blah."));
         dialog.setSource(new DialogSource("[lf,WormMartEmployee.txt]"));
         dialog.reading = true;
+        Debug.Log("started at: " + Time.time);
         gameSequence.Play("24hrEmployee");
         
 
         button.stopInputs = false;
+
+        meter.responseQueue.Add(("It’s ok!", "It's about time.", "16!?"));
     }
 
     public void FinishedSequence()
