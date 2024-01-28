@@ -72,6 +72,7 @@ public class GameplayManager : MonoBehaviour
 
         targetSpeed = meter.laughSpeed * 5;
 
+        //updates speed/heat meter visuals
         speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, Time.deltaTime);
         if(speedMeter.value <= speedMeter.maxValue / 3){
             speedIcon.sprite = emote5;
@@ -83,6 +84,7 @@ public class GameplayManager : MonoBehaviour
             speedIcon.sprite = emote6;
         }
 
+        //checks if the player has lost the game, ends play if so
         if(meter.checkLose())
         {
             dialog.setSource(new DialogSource("Laughter"));
@@ -152,6 +154,7 @@ public class GameplayManager : MonoBehaviour
         button.stopInputs = true;
     }
 
+    //resets game
     public void PlayAgain()
     {
         if (!PopupPanel.open) return;
@@ -161,6 +164,7 @@ public class GameplayManager : MonoBehaviour
         screenWipe.WipeIn();
         screenWipe.PostWipe += ReloadGame;
     }
+    //syncs clocks for start of gameplay
     public void StartSequence()
     {
         startedSequence = true;
@@ -181,6 +185,7 @@ public class GameplayManager : MonoBehaviour
 
     }
 
+    //updates slider icon for laughter bar
     public void UpdateSliderIcons()
     {
         if (Mathf.Abs(LaughMeter.laughter - 5000) > -1 && Mathf.Abs(LaughMeter.laughter - 5000) <= 1000)
