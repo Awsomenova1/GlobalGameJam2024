@@ -147,7 +147,7 @@ public class GameplayManager : MonoBehaviour
 
     public void IntroSequence()
     {
-        dialog.setSource(new DialogSource("[ss, .025]Left click to start! [exit]"));
+        dialog.setSource(new DialogSource("[ss, .025]This guys about to talk to you. [exit]"));
         dialog.reading = true;
     }
 

@@ -1,0 +1,33 @@
+Switch Group	ID	Name			Wwise Object Path	Notes
+	2133615622	Laugh_Meter			\Music\Laugh_Meter	
+
+Switch	ID	Name	Switch Group			Notes
+	1892317246	A_Full	Laugh_Meter			
+	1959799710	D_Near_Empty	Laugh_Meter			
+	2988341216	C_Half	Laugh_Meter			
+	4039310350	B_Near_Full	Laugh_Meter			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1852808225	Playing			\Default Work Unit\Playing	
+	2470328564	Intensity			\Default Work Unit\Intensity	
+
+State	ID	Name	State Group			Notes
+	89505537	Gameplay	Playing			
+	748895195	None	Playing			
+	2607556080	Menu	Playing			
+	748895195	None	Intensity			
+	3160623154	Silent	Intensity			
+	3753286132	Calm	Intensity			
+	4019181194	Mediate	Intensity			
+	4223512837	Intense	Intensity			
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	2223886005	Story_FX			\Default Work Unit\Master Audio Bus\Story_FX	
+	3017890412	User_Interface			\Default Work Unit\Master Audio Bus\User_Interface	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+
