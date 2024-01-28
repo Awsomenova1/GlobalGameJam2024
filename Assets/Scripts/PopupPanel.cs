@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class PopupPanel : MonoBehaviour
 {
     [SerializeField] private GameObject PrimaryButton;
     [SerializeField] private bool SelectPrevious;
+    [SerializeField] private Volume PostProcessing;
+    public float animProgress;
     private GameObject PreviousButton;
     public static bool open = false;
     private Animator anim;
@@ -32,6 +35,7 @@ public class PopupPanel : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(currentSelection);
             }
         }
+        PostProcessing.weight = animProgress;
     }
 
     // Start is called before the first frame update
