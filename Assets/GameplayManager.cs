@@ -41,10 +41,11 @@ public class GameplayManager : MonoBehaviour
     //value to adjust speed/heat meter to
     private float targetSpeed;
     [SerializeField] private GameObject globalWwise;
-    [SerializeField] private AK.Wwise.Event FadeOut;
-    [SerializeField] private AK.Wwise.State calm, mediate, intense;
+    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic;
+    [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     private enum MusicState { CALM, MEDIATE, INTENSE };
     private MusicState currentState;
+    public bool won = false, lost = false, playingAgain = false, quit = false;
 
     public Button button;
 
@@ -63,7 +64,7 @@ public class GameplayManager : MonoBehaviour
         //pause/unpause the game when pause button pressed, but only if screen wipe is over
         if (Input.GetKeyDown(KeyCode.Escape) && ScreenWipe.over)
         {
-            if (!paused && !PopupPanel.open)
+            if (!paused && !PopupPanel.open && !won && !lost)
                 Pause();
             else if (paused && PopupPanel.open)
                 UnPause();
@@ -82,44 +83,46 @@ public class GameplayManager : MonoBehaviour
 
         //updates speed/heat meter visuals
         speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, Time.deltaTime);
-        if(speedMeter.value <= speedMeter.maxValue / 3){
+        if (speedMeter.value <= speedMeter.maxValue / 3)
+        {
             speedIcon.sprite = emote5;
             if (currentState != MusicState.CALM)
             {
                 calm.SetValue();
                 currentState = MusicState.CALM;
-                Debug.Log("Set calm");
             }
-            
+
         }
-        else if(speedMeter.value <= speedMeter.maxValue * 2 / 3){
+        else if (speedMeter.value <= speedMeter.maxValue * 2 / 3)
+        {
             speedIcon.sprite = emote7;
             if (currentState != MusicState.MEDIATE)
             {
                 mediate.SetValue();
                 currentState = MusicState.MEDIATE;
-                Debug.Log("Set mediate");
             }
-                
+
         }
-        else{
+        else
+        {
             speedIcon.sprite = emote6;
             if (currentState != MusicState.INTENSE)
             {
                 intense.SetValue();
                 currentState = MusicState.INTENSE;
-                Debug.Log("Set intense");
             }
-                
+
         }
 
         //checks if the player has lost the game, ends play if so
-        if(meter.checkLose())
+        if (meter.checkLose())
         {
             dialog.setSource(new DialogSource("Laughter"));
+
             dialog.reading = true;
             suspendSequence = true;
-            Lose();
+            while (!lost)
+                Lose();
             button.stopInputs = true;
         }
 
@@ -135,7 +138,7 @@ public class GameplayManager : MonoBehaviour
 
     public void Pause()
     {
-        FadeOut.Post(globalWwise);
+        PauseMusic.Post(globalWwise);
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
         paused = true;
@@ -144,6 +147,7 @@ public class GameplayManager : MonoBehaviour
     public void UnPause()
     {
         if (!PopupPanel.open) return;
+        ResumeMusic.Post(globalWwise);
         Time.timeScale = 1;
         paused = false;
         PauseMenu.GetComponent<PopupPanel>().Close();
@@ -151,10 +155,11 @@ public class GameplayManager : MonoBehaviour
 
     public void QuitToMenu()
     {
-        if (!PopupPanel.open) return;
+        if (quit) return;
+        quit = true;
         Time.timeScale = 1;
         paused = false;
-        PopupPanel.open = false;
+        StopMusic.Post(globalWwise);
         screenWipe.WipeIn();
         screenWipe.PostWipe += LoadMenu;
     }
@@ -173,6 +178,9 @@ public class GameplayManager : MonoBehaviour
 
     public void Win()
     {
+        if (paused) return;
+        won = true;
+        StopMusic.Post(globalWwise);
         WinScreen.SetActive(true);
         WinText.SetText("You made it through without laughing!\n\nFinal Grade: " + meter.calculateGrade());
         button.stopInputs = true;
@@ -180,6 +188,9 @@ public class GameplayManager : MonoBehaviour
 
     public void Lose()
     {
+        if (paused) return;
+        lost = true;
+        StopMusic.Post(globalWwise);
         LoseScreen.SetActive(true);
         button.stopInputs = true;
     }
@@ -187,13 +198,13 @@ public class GameplayManager : MonoBehaviour
     //resets game
     public void PlayAgain()
     {
-        if (!PopupPanel.open) return;
-        PopupPanel.open = false;
+        if (playingAgain) return;
+        playingAgain = true;
         Time.timeScale = 1;
         paused = false;
         screenWipe.WipeIn();
+        StopMusic.Post(globalWwise);
         screenWipe.PostWipe += ReloadGame;
-        FadeOut.Post(globalWwise);
     }
     //syncs clocks for start of gameplay
     public void StartSequence()
@@ -204,21 +215,21 @@ public class GameplayManager : MonoBehaviour
         //dialog.setSource(new DialogSource("[c] Blah blah blah."));
         dialog.setSource(new DialogSource("[lf,WormMartEmployee.txt]"));
         dialog.reading = true;
-        Debug.Log("started at: " + Time.time);
         gameSequence.Play("24hrEmployee");
-        
 
+
+        meter.responseQueue.Add(("Itï¿½s ok!", "It's about time.", "16!?"));
         button.stopInputs = false;
-
-        meter.responseQueue.Add(("It’s ok!", "It's about time.", "16!?"));
     }
 
     public void FinishedSequence()
     {
         startedSequence = false;
         Debug.Log("Finished sequence");
-        Win();
-
+        while (!won)
+        {
+            Win();
+        }
     }
 
     //updates slider icon for laughter bar

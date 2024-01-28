@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class PopupPanel : MonoBehaviour
 {
     [SerializeField] private GameObject PrimaryButton;
-    [SerializeField] private bool SelectPrevious;
+    [SerializeField] private bool SelectPrevious, Closable = true;
     [SerializeField] private Volume PostProcessing;
     public float animProgress;
     private GameObject PreviousButton;
@@ -24,22 +24,22 @@ public class PopupPanel : MonoBehaviour
 
     private void Update()
     {
-        if (open)
+        open = true;
+        
+        if (EventSystem.current.currentSelectedGameObject != null)
         {
-            if (EventSystem.current.currentSelectedGameObject != null)
-            {
-                currentSelection = EventSystem.current.currentSelectedGameObject;
-            }
-            else
-            {
-                EventSystem.current.SetSelectedGameObject(currentSelection);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Close();
-            }
+            currentSelection = EventSystem.current.currentSelectedGameObject;
         }
+        else
+        {
+            EventSystem.current.SetSelectedGameObject(currentSelection);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && Closable)
+        {
+            Close();
+        }
+        
         PostProcessing.weight = animProgress;
     }
 
