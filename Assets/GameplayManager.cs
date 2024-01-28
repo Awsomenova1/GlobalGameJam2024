@@ -45,7 +45,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     private enum MusicState { CALM, MEDIATE, INTENSE };
     private MusicState currentState;
-    public bool won = false, lost = false, playingAgain = false, quit = false;
+    public static bool won = false, lost = false, playingAgain = false, quit = false;
 
     public Button button;
 
@@ -81,7 +81,7 @@ public class GameplayManager : MonoBehaviour
         if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Mouse0) && (!won && !lost))
             StartSequence();
 
-        targetSpeed = meter.laughSpeed * 5;
+        targetSpeed = (meter.laughSpeed * 10)/LaughMeter.difficultyScalar;
 
         //updates speed/heat meter visuals
         speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, Time.deltaTime);
