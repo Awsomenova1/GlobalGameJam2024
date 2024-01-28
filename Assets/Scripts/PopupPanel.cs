@@ -34,6 +34,11 @@ public class PopupPanel : MonoBehaviour
             {
                 EventSystem.current.SetSelectedGameObject(currentSelection);
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Close();
+            }
         }
         PostProcessing.weight = animProgress;
     }
