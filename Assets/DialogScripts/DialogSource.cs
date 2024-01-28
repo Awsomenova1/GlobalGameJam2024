@@ -62,6 +62,24 @@ public class DialogSource
     public const string BLOCKS_SIGNATURE = "-Blocks";
 
     public bool skippingText = false;
+
+    public bool CurrentlySpeaking
+    {
+        get
+        {
+            return Time.time - (waitStart + waitTime - .5f) > 0;
+            //Old: Time.time > waitStart + waitTime, showed every little pause
+        }
+    }
+
+    public bool NotWaiting
+    {
+        get
+        {
+            return Time.time > waitStart + waitTime;
+        }
+    }
+
     //number of characters/second
     /*Dialogue guide:
      * [] is escape

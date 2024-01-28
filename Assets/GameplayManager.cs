@@ -49,6 +49,8 @@ public class GameplayManager : MonoBehaviour
 
     public Button button;
 
+    public Animator npcAnim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -127,6 +129,8 @@ public class GameplayManager : MonoBehaviour
         }
 
         UpdateSliderIcons();
+
+        npcAnim.SetBool("Talking", DialogController.main.reading && DialogController.main.source.CurrentlySpeaking && !meter.inResponseWindow);
 
     }
 
@@ -245,7 +249,7 @@ public class GameplayManager : MonoBehaviour
         gameSequence.Play("24hrEmployee");
 
 
-        meter.responseQueue.Add(("It�s ok!", "It's about time.", "16!?"));
+        meter.responseQueue.Add(("It's ok!", "It's about time.", "16!?"));
         button.stopInputs = false;
     }
 

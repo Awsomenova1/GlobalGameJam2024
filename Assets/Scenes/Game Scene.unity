@@ -2176,6 +2176,7 @@ MonoBehaviour:
   playingAgain: 0
   quit: 0
   button: {fileID: 1553205886}
+  npcAnim: {fileID: 1913363891}
 --- !u!4 &789484925
 Transform:
   m_ObjectHideFlags: 0
@@ -5311,6 +5312,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 560026996816832373, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
   m_PrefabInstance: {fileID: 799903608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1913363891 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6878829763805394482, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
+  m_PrefabInstance: {fileID: 1588188988187724616}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1946155031 stripped
 MonoBehaviour:
