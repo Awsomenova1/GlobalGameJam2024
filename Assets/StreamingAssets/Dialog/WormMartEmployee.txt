@@ -10,5 +10,6 @@
 [c] Don't even get me started about my co-workers![w,.3] There are only like 4 of us despite it being a full-sized Walmart.[w,2]
 [c] Karey's the janitor,[w,.15] Maya is our manager,[w,.15] Devin does delivery and brings in the shipments,[w,.15] and I d[ss, .15]o...[ss,.05]everything else.[w,2]
 [c] It's been 8 days since I last saw a bed and I've been on shift for the last 40 hours.[w,.15] I've had to drink so much coffee my blood is 60% caffeine.[w,2]
-[c] Ah sorry for taking so long to scan your stuff,[w,.15] my elbow is locking up,[w,.15] it usually does after the 10th hour of scanning.[w,.3] I was looking into getting a chiropractor for it,[w,.15] not that I can afford one anyway.[w,.15] This job only pays me 7 cents an hour. [w, 2]
+[c] Ah sorry for taking so long to scan your stuff,[w,.15] my elbow is locking up,[w,.15] it usually does after the 10th hour of scanning. [w,2]
+[c] I was looking into getting a chiropractor for it,[w,.15] not that I can afford one anyway.[w,.15] This job only pays me 7 cents an hour. [w, 2] [exit]
 
