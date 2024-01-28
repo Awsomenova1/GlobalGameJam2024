@@ -237,6 +237,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 6858318343520088966}
   reading: 0
+  NPC_Talk:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e823f9900b2017f44b5202c38af6cf63, type: 2}
+  NPC_Stop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2477b3278339bb8468c32b21c376dd77, type: 2}
+  NPC_Tired:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1aed008c5fdacbb48845739043075699, type: 2}
+  NPC_Angry:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d958a4fffbcfe0340a0f74615882be84, type: 2}
+  talking: 0
+  meter: {fileID: 3213196244282227703}
   readMode: 0
   anim: {fileID: 6878829763805394482}
 --- !u!1 &821911165985736914
@@ -514,7 +532,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753819989165442228}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 83170d5041384b142b962c688ce7e0de, type: 2}
   m_CullingMode: 0
@@ -1445,7 +1463,7 @@ MonoBehaviour:
     m_Right: 20
     m_Top: 20
     m_Bottom: 20
-  m_ChildAlignment: 0
+  m_ChildAlignment: 8
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1

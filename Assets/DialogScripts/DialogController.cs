@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DialogController : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class DialogController : MonoBehaviour
 
     public bool talking = false;
     public LaughMeter meter;
+
+    
 
     public string text
     {
@@ -82,7 +85,7 @@ public class DialogController : MonoBehaviour
         if (collected)
             textDisplay.ForceMeshUpdate();
 
-        if (reading && source.NotWaiting && !meter.inResponseWindow && !GameplayManager.paused && !PopupPanel.open)
+        if (reading && source.NotWaiting && !meter.inResponseWindow && !GameplayManager.paused && !PopupPanel.open && !GameplayManager.quit)
         {
             if (!talking)
             {
@@ -111,6 +114,7 @@ public class DialogController : MonoBehaviour
             source.exit -= close;
             source.playAnimation -= playAnimation;
             source.ps -= PlaySound;
+            source.setEmot -= SetEmotion;
 
         }
         source = newSource;
@@ -123,6 +127,7 @@ public class DialogController : MonoBehaviour
         newSource.exit += close;
         source.playAnimation += playAnimation;
         source.ps += PlaySound;
+        source.setEmot += SetEmotion;
 
     }
 
@@ -220,5 +225,10 @@ public class DialogController : MonoBehaviour
     public void PlaySound(string name, float volume, bool loop)
     {
 
+    }
+
+    public void SetEmotion(int emotionId)
+    {
+        anim.SetFloat("Emotion", emotionId);
     }
 }

@@ -8,10 +8,12 @@ using TMPro;
 public class GameplayManager : MonoBehaviour
 {
 
-    public Animator gameSequence;
+    //public Animator gameSequence;
     public LaughMeter meter;
     public DialogController dialog;
     public Slider speedMeter;
+
+    public static GameplayManager main;
 
     public ScreenWipe screenWipe;
 
@@ -45,19 +47,28 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     private enum MusicState { CALM, MEDIATE, INTENSE };
     private MusicState currentState;
-    public bool won = false, lost = false, playingAgain = false, quit = false;
+    public static bool won = false, lost = false, playingAgain = false, quit = false;
 
     public Button button;
 
     public Animator npcAnim;
 
+    public Image background;
+
+    public List<Sprite> backgrounds = new List<Sprite>();
+
     // Start is called before the first frame update
     void Start()
     {
+        main = this;
         meter.laughSpeed = 0;
         IntroSequence();
         screenWipe.gameObject.SetActive(true);
         screenWipe.WipeOut();
+        won = false;
+        lost = false;
+        playingAgain = false;
+        quit = false;
     }
 
     // Update is called once per frame
@@ -75,13 +86,13 @@ public class GameplayManager : MonoBehaviour
         if (suspendSequence)
             return;
 
-        if (startedSequence && (gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence") || !dialog.reading))
+        if (startedSequence && (/*gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence") ||*/ !dialog.reading))
             FinishedSequence();
 
-        if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Q) && (!won && !lost))
+        if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Mouse0) && (!won && !lost))
             StartSequence();
 
-        targetSpeed = meter.laughSpeed * 5;
+        targetSpeed = (meter.laughSpeed * 10)/LaughMeter.difficultyScalar;
 
         //updates speed/heat meter visuals
         speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, Time.deltaTime);
@@ -143,7 +154,6 @@ public class GameplayManager : MonoBehaviour
     public void Pause()
     {
         PauseMusic.Post(globalWwise);
-        DialogController.main.StopTalk();
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
         paused = true;
@@ -253,7 +263,7 @@ public class GameplayManager : MonoBehaviour
         //dialog.setSource(new DialogSource("[c] Blah blah blah."));
         dialog.setSource(new DialogSource("[lf,WormMartEmployee.txt]"));
         dialog.reading = true;
-        gameSequence.Play("24hrEmployee");
+        //gameSequence.Play("24hrEmployee");
 
 
         meter.responseQueue.Add(("It's ok!", "It's about time.", "16!?"));
@@ -264,7 +274,7 @@ public class GameplayManager : MonoBehaviour
     {
         startedSequence = false;
         Debug.Log("Finished sequence");
-        gameSequence.Play("NoCurrentSequence");
+        //gameSequence.Play("NoCurrentSequence");
         while (!won)
         {
             Win();
@@ -290,5 +300,11 @@ public class GameplayManager : MonoBehaviour
         {
             laughIcon.sprite = emote4;
         }
+    }
+
+    public void ChangeBg(int bgId)
+    {
+        background.sprite = backgrounds[bgId];
+        Debug.Log("bg change to " + bgId);
     }
 }

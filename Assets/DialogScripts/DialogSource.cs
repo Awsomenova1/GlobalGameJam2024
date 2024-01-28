@@ -48,6 +48,8 @@ public class DialogSource
 
     public event Action<string> playAnimation;
 
+    public event Action<int> setEmot;
+
     //Is just used for things like DialogNpc to have reactions to certain events
     public event Action<string[]> callEvent;
 
@@ -369,7 +371,7 @@ public class DialogSource
         //Whitelist so that typewrite only runs certain commands (ones that collect didn't run)
         if(mode == ReadMode.TYPEWRITE)
         {
-            if (input[0] != "w" && input[0] != "c" && input[0] != "exit" && input[0] != "ss" && input[0] != "out")
+            if (input[0] != "w" && input[0] != "c" && input[0] != "exit" && input[0] != "ss" && input[0] != "out" && input[0] != "sh" && input[0] != "se" && input[0] != "cbg")
             {
                 return;
             }
@@ -377,7 +379,7 @@ public class DialogSource
 
         if(mode == ReadMode.COLLECT)
         {
-            if (input[0] == "ss" || input[0] == "out")
+            if (input[0] == "ss" || input[0] == "out" || input[0] == "sh" || input[0] == "se" || input[0] == "cbg")
                 return;
         }
 
@@ -685,6 +687,32 @@ public class DialogSource
                 }
                 else
                     Debug.LogWarning("Invalid number of parameters for play sound [ps]!");
+                break;
+            case "sh": //Set heat/difficulty
+                if(input.Length == 2)
+                {
+                    LaughMeter.main.laughSpeed = int.Parse(input[1]);
+                }
+                else
+                    Debug.LogWarning("Invalid number of parameters for set heat [sh]!");
+                break;
+            case "se": //set emotion
+                if(input.Length == 2)
+                {
+                    setEmot?.Invoke(int.Parse(input[1]));
+                }
+                else
+                    Debug.LogWarning("Invalid number of parameters for set emotion[se]!");
+                break;
+
+
+            case "cbg": //Change background
+                if(input.Length == 2)
+                {
+                    GameplayManager.main.ChangeBg(int.Parse(input[1]));
+                }
+                else
+                    Debug.LogWarning("Invalid number of parameters for change background[cbg]!");
                 break;
 
             #region old audio stuff

@@ -59,9 +59,12 @@ public class LaughMeter : MonoBehaviour
 
     public int selectedResponse = 0;
 
+    public static LaughMeter main;
+
     // Start is called before the first frame update
     void Start()
     {
+        main = this;
         startLaughter = maxLaughter / 2;
         laughBarFill.minValue = minLaughter;
         laughBarFill.maxValue = maxLaughter;

@@ -13,6 +13,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private ScreenWipe screenWipe;
     [SerializeField] private AK.Wwise.Event MenuBack, MenuSelect, MenuNav, MenuAdjust;
     private bool playing = false, quitting = false;
+    [SerializeField] private Slider musicSlider, soundSlider;
     private GameObject currentSelection;
 
     // Start is called before the first frame update
@@ -21,6 +22,18 @@ public class MainMenuManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(PlayButton.gameObject);
         screenWipe.gameObject.SetActive(true);
         screenWipe.WipeOut();
+    }
+
+    public void UpdateMusicVolume()
+    {
+        SettingsManager.currentSettings.musicVolume = musicSlider.value;
+        AkSoundEngine.SetRTPCValue("musicVolume", SettingsManager.currentSettings.musicVolume);
+    }
+
+    public void UpdateSoundVolume()
+    {
+        SettingsManager.currentSettings.soundVolume = soundSlider.value;
+        AkSoundEngine.SetRTPCValue("soundVolume", SettingsManager.currentSettings.soundVolume);
     }
 
     // Update is called once per frame
@@ -41,6 +54,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void Play()
     {
+        SettingsManager.SaveSettings();
         if (playing) return;
         playing = true;
         // MenuSelect.Post(gameObject);
@@ -68,7 +82,22 @@ public class MainMenuManager : MonoBehaviour
         if (!PopupPanel.open && !playing && !quitting)
         {
             SettingsPanel.SetActive(true);
+            musicSlider.value = SettingsManager.currentSettings.musicVolume;
+            soundSlider.value = SettingsManager.currentSettings.soundVolume;
             // MenuSelect.Post(gameObject);
+        }
+    }
+
+    public void ToggleFullscreen()
+    {
+        SettingsManager.currentSettings.fullscreen = !SettingsManager.currentSettings.fullscreen;
+        if (SettingsManager.currentSettings.fullscreen)
+        {
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+        }
+        else
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
         }
     }
 
@@ -98,5 +127,10 @@ public class MainMenuManager : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    void OnApplicationQuit()
+    {
+        SettingsManager.SaveSettings();
     }
 }
