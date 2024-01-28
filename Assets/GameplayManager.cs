@@ -75,10 +75,10 @@ public class GameplayManager : MonoBehaviour
         if (suspendSequence)
             return;
 
-        if (startedSequence && gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence"))
+        if (startedSequence && (gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence") || !dialog.reading))
             FinishedSequence();
 
-        if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Q))
+        if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Q) && (!won && !lost))
             StartSequence();
 
         targetSpeed = meter.laughSpeed * 5;
@@ -221,6 +221,7 @@ public class GameplayManager : MonoBehaviour
         StopMusic.Post(globalWwise);
         LoseScreen.SetActive(true);
         button.stopInputs = true;
+        dialog.reading = false;
     }
 
     //resets game
@@ -260,6 +261,7 @@ public class GameplayManager : MonoBehaviour
     {
         startedSequence = false;
         Debug.Log("Finished sequence");
+        gameSequence.Play("NoCurrentSequence");
         while (!won)
         {
             Win();
