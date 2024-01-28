@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DialogController : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class DialogController : MonoBehaviour
 
     public bool talking = false;
     public LaughMeter meter;
+
+    
 
     public string text
     {
