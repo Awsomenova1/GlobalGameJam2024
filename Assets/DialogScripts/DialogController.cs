@@ -55,6 +55,12 @@ public class DialogController : MonoBehaviour
         //reading = true;
     }
 
+    public void StopTalk()
+    {
+        NPC_Stop.Post(gameObject);
+        talking = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -76,7 +82,7 @@ public class DialogController : MonoBehaviour
         if (collected)
             textDisplay.ForceMeshUpdate();
 
-        if (reading && source.NotWaiting && !meter.inResponseWindow)
+        if (reading && source.NotWaiting && !meter.inResponseWindow && !GameplayManager.paused && !PopupPanel.open)
         {
             if (!talking)
             {
