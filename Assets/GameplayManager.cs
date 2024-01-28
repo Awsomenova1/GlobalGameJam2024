@@ -21,10 +21,15 @@ public class GameplayManager : MonoBehaviour
     public Image speedIcon;
     public Image laughIcon;
 
+    //images for laugh bar face icon
     public Sprite emote1;
     public Sprite emote2;
     public Sprite emote3;
     public Sprite emote4;
+    //images for speed/heat bar face icon
+    public Sprite emote5;
+    public Sprite emote6;
+    public Sprite emote7;
 
     public static bool paused;
     [SerializeField] private GameObject PauseMenu;
@@ -171,22 +176,22 @@ public class GameplayManager : MonoBehaviour
     {
         if (Mathf.Abs(LaughMeter.laughter - 5000) > -1 && Mathf.Abs(LaughMeter.laughter - 5000) <= 1000)
         {
-            speedIcon.sprite = emote1;
+            speedIcon.sprite = emote5;
             laughIcon.sprite = emote1;
         }
         else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 2600)
         {
-            speedIcon.sprite = emote2;
+            speedIcon.sprite = emote7;
             laughIcon.sprite = emote2;
         }
         else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 3800)
         {
-            speedIcon.sprite = emote3;
+            speedIcon.sprite = emote6;
             laughIcon.sprite = emote3;
         }
         else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 5000)
         {
-            speedIcon.sprite = emote4;
+            speedIcon.sprite = emote6;
             laughIcon.sprite = emote4;
         }
     }
