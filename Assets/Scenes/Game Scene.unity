@@ -1835,6 +1835,9 @@ MonoBehaviour:
   emote2: {fileID: 21300000, guid: ac6711e2aeee69b458bc855de99d18fd, type: 3}
   emote3: {fileID: 21300000, guid: 625873e90f627a34b875fe6b4d15e328, type: 3}
   emote4: {fileID: 21300000, guid: f8fa68cd2bd6d4148bb514552213d239, type: 3}
+  emote5: {fileID: 21300000, guid: 37228bf7b956a6e409673ac06d5e4bf6, type: 3}
+  emote6: {fileID: 21300000, guid: 0892676d4a0b22d438c1e5a11975c176, type: 3}
+  emote7: {fileID: 21300000, guid: e555b16b49cd3574ba1ef73468f692ff, type: 3}
   PauseMenu: {fileID: 456324228}
   WinScreen: {fileID: 1840864332}
   WinText: {fileID: 500706855}
@@ -4868,7 +4871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ad7e8e5bb885cad4cadc3007cab04205, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37228bf7b956a6e409673ac06d5e4bf6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

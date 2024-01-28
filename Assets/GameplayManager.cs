@@ -72,7 +72,16 @@ public class GameplayManager : MonoBehaviour
 
         targetSpeed = meter.laughSpeed * 5;
 
-        speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, 0.1f);
+        speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, Time.deltaTime);
+        if(speedMeter.value <= speedMeter.maxValue / 3){
+            speedIcon.sprite = emote5;
+        }
+        else if(speedMeter.value <= speedMeter.maxValue * 2 / 3){
+            speedIcon.sprite = emote7;
+        }
+        else{
+            speedIcon.sprite = emote6;
+        }
 
         if(meter.checkLose())
         {
@@ -176,22 +185,18 @@ public class GameplayManager : MonoBehaviour
     {
         if (Mathf.Abs(LaughMeter.laughter - 5000) > -1 && Mathf.Abs(LaughMeter.laughter - 5000) <= 1000)
         {
-            speedIcon.sprite = emote5;
             laughIcon.sprite = emote1;
         }
         else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 2600)
         {
-            speedIcon.sprite = emote7;
             laughIcon.sprite = emote2;
         }
         else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 3800)
         {
-            speedIcon.sprite = emote6;
             laughIcon.sprite = emote3;
         }
         else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 5000)
         {
-            speedIcon.sprite = emote6;
             laughIcon.sprite = emote4;
         }
     }
