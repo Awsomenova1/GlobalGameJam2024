@@ -42,6 +42,9 @@ public class GameplayManager : MonoBehaviour
     private float targetSpeed;
     [SerializeField] private GameObject globalWwise;
     [SerializeField] private AK.Wwise.Event FadeOut;
+    [SerializeField] private AK.Wwise.State calm, mediate, intense;
+    private enum MusicState { CALM, MEDIATE, INTENSE };
+    private MusicState currentState;
 
     public Button button;
 
@@ -81,12 +84,33 @@ public class GameplayManager : MonoBehaviour
         speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, Time.deltaTime);
         if(speedMeter.value <= speedMeter.maxValue / 3){
             speedIcon.sprite = emote5;
+            if (currentState != MusicState.CALM)
+            {
+                calm.SetValue();
+                currentState = MusicState.CALM;
+                Debug.Log("Set calm");
+            }
+            
         }
         else if(speedMeter.value <= speedMeter.maxValue * 2 / 3){
             speedIcon.sprite = emote7;
+            if (currentState != MusicState.MEDIATE)
+            {
+                mediate.SetValue();
+                currentState = MusicState.MEDIATE;
+                Debug.Log("Set mediate");
+            }
+                
         }
         else{
             speedIcon.sprite = emote6;
+            if (currentState != MusicState.INTENSE)
+            {
+                intense.SetValue();
+                currentState = MusicState.INTENSE;
+                Debug.Log("Set intense");
+            }
+                
         }
 
         //checks if the player has lost the game, ends play if so
