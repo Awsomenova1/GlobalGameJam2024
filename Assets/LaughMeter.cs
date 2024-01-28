@@ -33,13 +33,6 @@ public class LaughMeter : MonoBehaviour
 
     public static float difficultyScalar = 5;
 
-    public List<(string resp1, string resp2, string resp3)> responseQueue = new List<(string resp1, string resp2, string resp3)>();
-
-    public bool inResponseWindow = false;
-    private bool inResponseWindowLastFrame = false;
-
-    public int currResponse;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -98,26 +91,29 @@ public class LaughMeter : MonoBehaviour
         
     }
 
-    public void ResponseUpdates()
-    {
-        if(inResponseWindow && !inResponseWindowLastFrame)
-        {
-            //Open response windows
-        }
-        else if(!inResponseWindow && inResponseWindowLastFrame)
-        {
-            //Close response windows
-            currResponse++;
-        }
-        else if(inResponseWindow)
-        {
-            //Take input for responses
-        }
+    //calculate a grade for the player based on how well they kept in the center
+    public string calculateGrade(){
+        float avgDist = calculateAvgDistance();
 
-
-
-        inResponseWindowLastFrame = inResponseWindow;
+        // TODO adjust hex codes later
+        if(avgDist == 0f){
+            return "<color=\"pink\">S";
+        }
+        else if(avgDist <= 100){
+            return "<color=\"blue\">A";
+        }
+        else if(avgDist <= 500){
+            return "<color=\"green\">B";
+        }
+        else if(avgDist <= 1000){
+            return "<color=\"yellow\">C";
+        }
+        else if(avgDist <= 2000){
+            return "<color=\"orange\">D";
+        }
+        else{
+            return "<color=#FF0000>F"; // this is how you do it as a hex code fyi (red)
+        }
     }
-
 
 }

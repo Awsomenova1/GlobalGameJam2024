@@ -128,7 +128,7 @@ public class GameplayManager : MonoBehaviour
     public void Win()
     {
         WinScreen.SetActive(true);
-        WinText.SetText("You're a great listener!\nAverage Distance from Center: " + meter.calculateAvgDistance());
+        WinText.SetText("You made it through without laughing!\nFinal Grade: " + meter.calculateGrade());
         button.stopInputs = true;
     }
 
@@ -142,6 +142,8 @@ public class GameplayManager : MonoBehaviour
     {
         if (!PopupPanel.open) return;
         PopupPanel.open = false;
+        Time.timeScale = 1;
+        paused = false;
         screenWipe.WipeIn();
         screenWipe.PostWipe += ReloadGame;
     }
