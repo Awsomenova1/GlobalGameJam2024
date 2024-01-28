@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//controls "wipe" effect that occurs between scene changes
 public class ScreenWipe : MonoBehaviour
 {
     public Action PostWipe;

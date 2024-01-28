@@ -18,6 +18,7 @@ public class GameplayManager : MonoBehaviour
     public bool startedSequence = false;
     public bool suspendSequence = false;
 
+    //icons for speed/heat and laugh meters
     public Image speedIcon;
     public Image laughIcon;
 
@@ -37,6 +38,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI WinText;
     [SerializeField] private GameObject LoseScreen;
 
+    //value to adjust speed/heat meter to
     private float targetSpeed;
 
     public Button button;
@@ -53,6 +55,7 @@ public class GameplayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //pause/unpause the game when pause button pressed, but only if screen wipe is over
         if (Input.GetKeyDown(KeyCode.Escape) && ScreenWipe.over)
         {
             if (!paused && !PopupPanel.open)
@@ -188,7 +191,7 @@ public class GameplayManager : MonoBehaviour
     //updates slider icon for laughter bar
     public void UpdateSliderIcons()
     {
-        if (Mathf.Abs(LaughMeter.laughter - 5000) > -1 && Mathf.Abs(LaughMeter.laughter - 5000) <= 1000)
+        if (Mathf.Abs(LaughMeter.laughter - 5000) <= 1000)
         {
             laughIcon.sprite = emote1;
         }

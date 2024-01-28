@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
+//holds functions of the main menu and sub menus
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject PlayButton, InstructionsPanel, SettingsPanel, CreditsPanel;
