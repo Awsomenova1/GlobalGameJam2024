@@ -35,6 +35,9 @@ public class DialogController : MonoBehaviour
 
     bool collected = false;
 
+    public AK.Wwise.Event NPC_Talk, NPC_Stop;
+    public bool talking = false;
+
     void Awake()
     {
         main = this;
@@ -69,6 +72,24 @@ public class DialogController : MonoBehaviour
         }
         if (collected)
             textDisplay.ForceMeshUpdate();
+
+        // TODO this part should play NPC sounds *if* we have stuff configured correctly in WWise
+        // if (reading && !source.waiting)
+        // {
+        //     if (!talking)
+        //     {
+        //         NPC_Talk.Post(gameObject);
+        //         talking = true;
+        //     }
+        // }
+        // else
+        // {
+        //     if (talking)
+        //     {
+        //         NPC_Stop.Post(gameObject);
+        //         talking = false;
+        //     }
+        // }
     }
 
 
