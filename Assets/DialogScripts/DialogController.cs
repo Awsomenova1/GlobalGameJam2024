@@ -19,6 +19,7 @@ public class DialogController : MonoBehaviour
     public AK.Wwise.Event NPC_Talk, NPC_Stop, NPC_Tired, NPC_Angry;
 
     public bool talking = false;
+    public LaughMeter meter;
 
     public string text
     {
@@ -75,7 +76,7 @@ public class DialogController : MonoBehaviour
         if (collected)
             textDisplay.ForceMeshUpdate();
 
-        if (reading && !source.waiting)
+        if (reading && source.NotWaiting && !meter.inResponseWindow)
         {
             if (!talking)
             {
