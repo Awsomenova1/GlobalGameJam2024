@@ -9,7 +9,14 @@
 					<GameSyncExclusionList/>
 				</SoundBank>
 				<SoundBank Name="Main" ID="{97875A36-0A81-474B-B38A-F6B43C19E544}">
-					<ObjectInclusionList/>
+					<ObjectInclusionList>
+						<ObjectRef Name="Music" ID="{F9CC6E94-04B2-4728-A612-8A2DDD13F0DF}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu" ID="{AE2D1870-5A49-4795-AE5E-0349525AA7C1}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Story_Track" ID="{2F5EECC4-125A-4A8E-ABD4-7B0E74A6FE63}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Pause" ID="{1F7B3096-58A4-4D47-84B0-AFD5863F0F0D}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SFX" ID="{06F5DBBA-C53E-4DD2-BA4A-05DB0DF3A3FD}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Resume" ID="{4F56BA48-2675-4DD9-AB6D-E07E6251F7F6}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>

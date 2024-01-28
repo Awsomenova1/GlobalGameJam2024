@@ -123,6 +123,35 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Dialogue" ID="{852C54A4-712E-4E3A-AEB7-D680E22219B6}" ShortID="120775745">
+					<ChildrenList>
+						<Event Name="NPC_Stop" ID="{1CB91BC4-41D6-4716-B38E-7DCED8012A85}">
+							<ChildrenList>
+								<Action Name="" ID="{620BCF7E-D192-4BED-ABC7-7989A4136E1E}" ShortID="712102094">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mood" ID="{288DD627-47F8-475B-BDC6-D6B89CBEF729}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="NPC_Talk" ID="{809D2DF1-DAF2-4EEB-A636-81FEB1CCE9C7}">
+							<ChildrenList>
+								<Action Name="" ID="{38660C62-3709-4514-8252-6267E3426774}" ShortID="548940421">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mood" ID="{288DD627-47F8-475B-BDC6-D6B89CBEF729}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

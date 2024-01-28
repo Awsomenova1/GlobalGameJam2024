@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae828aed378f7d7409749451218d34b2, type: 3}
+  m_Name: ADD3F2AA-C60E-4AFA-9F33-AA48A9AF24F6
+  m_EditorClassIdentifier: 
+  objectName: Intensity
+  id: 2470328564
+  guid: ADD3F2AA-C60E-4AFA-9F33-AA48A9AF24F6

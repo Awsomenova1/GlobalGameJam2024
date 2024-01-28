@@ -18,13 +18,19 @@ public class GameplayManager : MonoBehaviour
     public bool startedSequence = false;
     public bool suspendSequence = false;
 
+    //icons for speed/heat and laugh meters
     public Image speedIcon;
     public Image laughIcon;
 
+    //images for laugh bar face icon
     public Sprite emote1;
     public Sprite emote2;
     public Sprite emote3;
     public Sprite emote4;
+    //images for speed/heat bar face icon
+    public Sprite emote5;
+    public Sprite emote6;
+    public Sprite emote7;
 
     public static bool paused;
     [SerializeField] private GameObject PauseMenu;
@@ -32,6 +38,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI WinText;
     [SerializeField] private GameObject LoseScreen;
 
+    //value to adjust speed/heat meter to
     private float targetSpeed;
 
     public Button button;
@@ -48,6 +55,7 @@ public class GameplayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //pause/unpause the game when pause button pressed, but only if screen wipe is over
         if (Input.GetKeyDown(KeyCode.Escape) && ScreenWipe.over)
         {
             if (!paused && !PopupPanel.open)
@@ -67,8 +75,19 @@ public class GameplayManager : MonoBehaviour
 
         targetSpeed = meter.laughSpeed * 5;
 
-        speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, 0.1f);
+        //updates speed/heat meter visuals
+        speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, Time.deltaTime);
+        if(speedMeter.value <= speedMeter.maxValue / 3){
+            speedIcon.sprite = emote5;
+        }
+        else if(speedMeter.value <= speedMeter.maxValue * 2 / 3){
+            speedIcon.sprite = emote7;
+        }
+        else{
+            speedIcon.sprite = emote6;
+        }
 
+        //checks if the player has lost the game, ends play if so
         if(meter.checkLose())
         {
             dialog.setSource(new DialogSource("Laughter"));
@@ -128,7 +147,7 @@ public class GameplayManager : MonoBehaviour
     public void Win()
     {
         WinScreen.SetActive(true);
-        WinText.SetText("You made it through without laughing!\nFinal Grade: " + meter.calculateGrade());
+        WinText.SetText("You made it through without laughing!\n\nFinal Grade: " + meter.calculateGrade());
         button.stopInputs = true;
     }
 
@@ -138,6 +157,7 @@ public class GameplayManager : MonoBehaviour
         button.stopInputs = true;
     }
 
+    //resets game
     public void PlayAgain()
     {
         if (!PopupPanel.open) return;
@@ -147,6 +167,7 @@ public class GameplayManager : MonoBehaviour
         screenWipe.WipeIn();
         screenWipe.PostWipe += ReloadGame;
     }
+    //syncs clocks for start of gameplay
     public void StartSequence()
     {
         startedSequence = true;
@@ -168,26 +189,23 @@ public class GameplayManager : MonoBehaviour
 
     }
 
+    //updates slider icon for laughter bar
     public void UpdateSliderIcons()
     {
-        if (Mathf.Abs(LaughMeter.laughter - 5000) > -1 && Mathf.Abs(LaughMeter.laughter - 5000) <= 1000)
+        if (Mathf.Abs(LaughMeter.laughter - 5000) <= 1000)
         {
-            speedIcon.sprite = emote1;
             laughIcon.sprite = emote1;
         }
         else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 2600)
         {
-            speedIcon.sprite = emote2;
             laughIcon.sprite = emote2;
         }
         else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 3800)
         {
-            speedIcon.sprite = emote3;
             laughIcon.sprite = emote3;
         }
         else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 5000)
         {
-            speedIcon.sprite = emote4;
             laughIcon.sprite = emote4;
         }
     }

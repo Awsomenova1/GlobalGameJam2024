@@ -52,6 +52,7 @@ public class LaughMeter : MonoBehaviour
         }
         laughBarFill.value = laughter;
 
+        //once per second, add current distance to running total to average later
         timeSinceCount += 1;
         if(timeSinceCount >= timeToCount){
             addDistance();
@@ -61,6 +62,7 @@ public class LaughMeter : MonoBehaviour
         //decayRateForBpm = (180 * bpm/60)/60 = 180 * bpm/360, 180 is recovery rate
     }
 
+    //check if the player has exceeded loss threasholds
     public bool checkLose(){
         if(laughter >= maxLaughter || laughter <= minLaughter){
             return true;
@@ -70,6 +72,8 @@ public class LaughMeter : MonoBehaviour
         }
     }
     
+    //add current distance from center of bar to running total to average later
+    //with threashold > 0, distance is from edge of range around center
     void addDistance(){
         if(laughter > startLaughter + threashold || laughter < startLaughter + threashold){
             totalDistance += System.Math.Abs(laughter - (startLaughter + threashold));
@@ -80,6 +84,7 @@ public class LaughMeter : MonoBehaviour
         countDistance += 1;
     }
 
+    //calculate and report the average distance from center
     public float calculateAvgDistance(){
         try {
             return totalDistance / countDistance;
@@ -95,24 +100,23 @@ public class LaughMeter : MonoBehaviour
     public string calculateGrade(){
         float avgDist = calculateAvgDistance();
 
-        // TODO adjust hex codes later
         if(avgDist == 0f){
             return "<color=\"pink\">S";
         }
         else if(avgDist <= 100){
-            return "<color=\"blue\">A";
+            return "<color=#6d84ff>A";
         }
         else if(avgDist <= 500){
-            return "<color=\"green\">B";
+            return "<color=#6dd037>B";
         }
         else if(avgDist <= 1000){
-            return "<color=\"yellow\">C";
+            return "<color=#ebd000>C";
         }
         else if(avgDist <= 2000){
-            return "<color=\"orange\">D";
+            return "<color=#ff9849>D";
         }
         else{
-            return "<color=#FF0000>F"; // this is how you do it as a hex code fyi (red)
+            return "<color=#FF0000>F";
         }
     }
 

@@ -53,15 +53,25 @@
 						<Switch Id="4039310350" Name="B_Near_Full"/>
 					</Switches>
 				</SwitchGroup>
+				<SwitchGroup Id="2571308781" Name="NPC_Voice">
+					<Switches>
+						<Switch Id="1206605712" Name="Angry"/>
+						<Switch Id="1427264549" Name="Happy"/>
+					</Switches>
+				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{93D74EEE-4E5D-615C-F933-06E03D09F5F5}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{921EDE78-7DA4-68EB-2D48-3BC5CB4418B2}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
 				<File Id="6142316" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intense_Guitar_180bpm_longtail.wav</ShortName>
 					<CachePath>SFX/Intense_Guitar_180bpm_longtail_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="60782463" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dialogue 2.wav</ShortName>
+					<CachePath>SFX/Dialogue 2_12B7B794.wem</CachePath>
 				</File>
 				<File Id="66996052" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_PianoLH_180bpm_4b_tail.wav</ShortName>
@@ -70,6 +80,10 @@
 				<File Id="101753864" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_2ndbeat_180bpm_4b_tail.wav</ShortName>
 					<CachePath>SFX/Calm_2ndbeat_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="104667160" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Angry Dialogue 2.wav</ShortName>
+					<CachePath>SFX/Angry Dialogue 2_6A0D491A.wem</CachePath>
 				</File>
 				<File Id="124769407" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Breakbeat_180bpm_tail.wav</ShortName>
@@ -95,6 +109,14 @@
 					<ShortName>Intense_Slead_180bpm_tail.wav</ShortName>
 					<CachePath>SFX/Intense_Slead_180bpm_tail_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="419695715" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Angry Dialogue 4.wav</ShortName>
+					<CachePath>SFX/Angry Dialogue 4_7ED01B16.wem</CachePath>
+				</File>
+				<File Id="422559067" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Angry Dialogue.wav</ShortName>
+					<CachePath>SFX/Angry Dialogue_BB50B6BD.wem</CachePath>
+				</File>
 				<File Id="530961174" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intense_Jupiter_180bpm_tail.wav</ShortName>
 					<CachePath>SFX/Intense_Jupiter_180bpm_tail_FBC78EF0.wem</CachePath>
@@ -119,6 +141,10 @@
 					<ShortName>Calm_Bassguitar_180bpm_4b_tail.wav</ShortName>
 					<CachePath>SFX/Calm_Bassguitar_180bpm_4b_tail_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="817135513" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dialogue 4.wav</ShortName>
+					<CachePath>SFX/Dialogue 4_490AB5FB.wem</CachePath>
+				</File>
 				<File Id="827364640" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intense_16mm_180bpm_tail.wav</ShortName>
 					<CachePath>SFX/Intense_16mm_180bpm_tail_FBC78EF0.wem</CachePath>
@@ -126,6 +152,10 @@
 				<File Id="867652906" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mediate_Guitar_180bpm_4b_tail.wav</ShortName>
 					<CachePath>SFX/Mediate_Guitar_180bpm_4b_tail_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="872952000" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dialogue 3.wav</ShortName>
+					<CachePath>SFX/Dialogue 3_A5E69D88.wem</CachePath>
 				</File>
 				<File Id="926802467" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_PianoRH_180bpm_4b_tail.wav</ShortName>
@@ -153,6 +183,62 @@
 				</File>
 			</Media>
 			<Events>
+				<Event Id="2196625209" Name="NPC_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2571308781" Id="1206605712"/>
+							<MediaRefs>
+								<MediaRef Id="104667160"/>
+								<MediaRef Id="419695715"/>
+								<MediaRef Id="422559067"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2571308781" Id="1427264549" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="60782463"/>
+								<MediaRef Id="817135513"/>
+								<MediaRef Id="872952000"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1510544299" Name="NPC_Talk" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2571308781" Id="1206605712"/>
+							<MediaRefs>
+								<MediaRef Id="104667160"/>
+								<MediaRef Id="419695715"/>
+								<MediaRef Id="422559067"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2571308781" Id="1427264549" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="60782463"/>
+								<MediaRef Id="817135513"/>
+								<MediaRef Id="872952000"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2571308781" Id="1206605712"/>
+							<MediaRefs>
+								<MediaRef Id="104667160"/>
+								<MediaRef Id="419695715"/>
+								<MediaRef Id="422559067"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2571308781" Id="1427264549" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="60782463"/>
+								<MediaRef Id="817135513"/>
+								<MediaRef Id="872952000"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="3092587493" Name="Pause" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="953277036" Name="Resume" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="540993415" Name="Start_Music" DurationType="Infinite">
@@ -310,6 +396,9 @@
 					</SwitchContainers>
 				</Event>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="2133615622" Name="Laugh_Meter"/>
+			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="2470328564" Name="Intensity">
 					<States>
@@ -321,11 +410,19 @@
 					</States>
 				</StateGroup>
 			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="2571308781" Name="NPC_Voice">
+					<Switches>
+						<Switch Id="1206605712" Name="Angry"/>
+						<Switch Id="1427264549" Name="Happy"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 		<SoundBank Id="3354297748" Type="User" Language="SFX" Hash="{732593A0-6D58-6209-E7BC-A18431E88222}">
 			<ShortName>Empty</ShortName>
 			<Path>Empty.bnk</Path>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AA5A3C48-BFA0-947C-D860-80400F8533E8}</FileHash>
+	<FileHash>{0890AF4F-67FB-087A-D7B7-53D5C9A52EF7}</FileHash>
 </SoundBanksInfo>
