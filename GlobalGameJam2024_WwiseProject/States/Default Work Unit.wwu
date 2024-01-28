@@ -18,6 +18,8 @@
 				<StateGroup Name="Playing" ID="{ED081FF0-140F-4C28-B333-051C2F61067E}">
 					<ChildrenList>
 						<State Name="None" ID="{6D6020C0-4FFE-4989-B687-1F7E1FA12270}"/>
+						<State Name="Menu" ID="{A4B84789-5E70-4BC3-9CE5-89185CC85EE2}"/>
+						<State Name="Gameplay" ID="{38915574-B55C-4542-AE15-9880DE2879E2}"/>
 					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>

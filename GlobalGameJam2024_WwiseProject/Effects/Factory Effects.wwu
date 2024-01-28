@@ -108,7 +108,7 @@
 							<PropertyList>
 								<Property Name="Ratio" Type="Real32" Value="50"/>
 								<Property Name="ReleaseTime" Type="Real32" Value="0.1"/>
-								<Property Name="Threshold" Type="Real32" Value="-50"/>
+								<Property Name="Threshold" Type="Real32" Value="-37.4"/>
 							</PropertyList>
 						</Effect>
 						<Effect Name="Noise_Gate_Slow_Attack" ID="{8D16DAF8-FD63-4A83-894E-2E82DA790C71}" PluginName="Wwise Expander" CompanyID="0" PluginID="109" PluginType="3">

@@ -13,13 +13,23 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID MENU_ADJUST = 2166671746U;
+        static const AkUniqueID MENU_BACK = 3063554414U;
+        static const AkUniqueID MENU_NAV = 2684797902U;
+        static const AkUniqueID MENU_SELECT = 4203375351U;
+        static const AkUniqueID NPC_ANGRY = 1093725892U;
+        static const AkUniqueID NPC_STOP = 2196625209U;
+        static const AkUniqueID NPC_TALK = 1510544299U;
+        static const AkUniqueID NPC_TIRED = 3425439425U;
         static const AkUniqueID PAUSE = 3092587493U;
         static const AkUniqueID RESUME = 953277036U;
+        static const AkUniqueID START_MENU = 2977420043U;
         static const AkUniqueID START_MUSIC = 540993415U;
         static const AkUniqueID STATE_CALM = 3675814650U;
         static const AkUniqueID STATE_INTENSE = 2575031991U;
         static const AkUniqueID STATE_MEDIATE = 1244834824U;
         static const AkUniqueID STATE_SILENT = 2880738500U;
+        static const AkUniqueID STOP_MENU = 2914981333U;
         static const AkUniqueID STOP_MUSIC = 2837384057U;
     } // namespace EVENTS
 
@@ -45,6 +55,8 @@ namespace AK
 
             namespace STATE
             {
+                static const AkUniqueID GAMEPLAY = 89505537U;
+                static const AkUniqueID MENU = 2607556080U;
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace PLAYING
@@ -65,6 +77,17 @@ namespace AK
                 static const AkUniqueID D_NEAR_EMPTY = 1959799710U;
             } // namespace SWITCH
         } // namespace LAUGH_METER
+
+        namespace NPC_DIALOGUE
+        {
+            static const AkUniqueID GROUP = 1541636155U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID ANGRY = 1206605712U;
+                static const AkUniqueID TIRED = 3386657621U;
+            } // namespace SWITCH
+        } // namespace NPC_DIALOGUE
 
     } // namespace SWITCHES
 

@@ -14,12 +14,32 @@
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Menu_Back" ID="{9C03189D-7DC7-4866-B8B9-1422C8C67C0C}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Menu_Select" ID="{E3128D89-5F64-401C-BB13-92AE0959A02E}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Menu_Nav" ID="{77AFAC62-8F8D-49A1-A388-8E442FE2E226}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="0" Y="4"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Stop_Music" ID="{55F9DBFB-547C-4EDD-83F5-490EFF8A2FF0}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Resume" ID="{4F56BA48-2675-4DD9-AB6D-E07E6251F7F6}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
 							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Start_Menu" ID="{085D843E-3935-4BAD-8E41-B9C8D65AC9E5}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_Menu" ID="{CD319804-EC06-4CD8-A0D3-B5D090983504}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="1" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="State_Calm" ID="{72666D5B-E82C-45F0-B099-87D7987C5EA3}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
@@ -45,9 +65,37 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Mediate" ID="{F8390D5C-0711-4361-8CFF-A9FC422598F9}"/>
+						<CurrentStateRef Name="Intense" ID="{9F146DCB-C38C-4348-BFC1-E4011C4B5FFF}"/>
+						<CurrentStateRef Name="Menu" ID="{A4B84789-5E70-4BC3-9CE5-89185CC85EE2}"/>
 					</CurrentStateList>
-					<CurrentSwitchList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Angry" ID="{965567CA-46FA-47CD-8BD9-175E573B9413}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Dialogue" ID="{025ABAF4-69E6-4711-9D30-140DF9C5F32A}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="NPC_Angry" ID="{76D354E3-320B-48FA-B43E-B1F251F23BDB}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="NPC_Tired" ID="{6EC362F5-D8C5-41C6-AD31-EA84BB865569}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="NPC_Stop" ID="{1CB91BC4-41D6-4716-B38E-7DCED8012A85}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="NPC_Talk" ID="{809D2DF1-DAF2-4EEB-A636-81FEB1CCE9C7}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Angry" ID="{965567CA-46FA-47CD-8BD9-175E573B9413}"/>
+					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>

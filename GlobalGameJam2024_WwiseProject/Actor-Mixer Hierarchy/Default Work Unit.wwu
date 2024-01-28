@@ -3,16 +3,6 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" PersistMode="Standalone">
 			<ChildrenList>
-				<ActorMixer Name="Menu" ID="{D1DD13C0-51BB-4FF1-9040-F0DE2CADBC42}" ShortID="307437577">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
-						</Reference>
-					</ReferenceList>
-				</ActorMixer>
 				<ActorMixer Name="Story_SFX" ID="{BC49F56A-26C8-4F58-BBC0-71E4DC6C0610}" ShortID="77003234">
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -22,6 +12,46 @@
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Failure" ID="{66126210-FAE6-4F2F-A39E-E4B1D89DBE21}" ShortID="689118332">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Failure" ID="{BA104A57-432F-40F7-87B3-4C1ADE3F59C7}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.543924171937344"/>
+										<Property Name="FadeInShape" Type="int16" Value="3"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Failure.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="9238376"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Failure" ID="{BA104A57-432F-40F7-87B3-4C1ADE3F59C7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<Reference>
+								<Local>
+									<EffectSlot Name="" ID="{6CB97207-6EFF-45F5-A856-CDB78042032D}" ShortID="499242099">
+										<ReferenceList/>
+									</EffectSlot>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
 				</ActorMixer>
 				<ActorMixer Name="Gameplay" ID="{9E3F32EF-CE88-4208-95B5-37616B5944DF}" ShortID="23030961">
 					<ReferenceList>
@@ -51,9 +81,15 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
 								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="NPC_Dialogue" ID="{916F0609-F8E6-4DA5-AB1C-EC8D67960B49}" WorkUnitID="{A9C0C10E-055A-46DF-A7EB-1576659DA6E7}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="Calm" ID="{19D80065-BD05-4839-97B7-C4FDE3A609CC}" ShortID="251348073">
+									<PropertyList>
+										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
@@ -95,6 +131,11 @@
 										</Sound>
 										<Sound Name="Dialogue 3" ID="{E8154C65-D287-4B63-9B3D-AD385FF4BC51}" ShortID="312882650">
 											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>33</Value>
+													</ValueList>
+												</Property>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="MakeUpGain" Type="Real64">
 													<ValueList>
@@ -113,9 +154,8 @@
 											<ChildrenList>
 												<AudioFileSource Name="Dialogue 3" ID="{2A0622A7-2D03-426C-83FC-E0C0C830291F}">
 													<PropertyList>
-														<Property Name="LoopBegin" Type="Real64" Value="0"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimEnd" Type="Real64" Value="1.54813143971039"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.47975655078665"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Dialogue 3.wav</AudioFile>
@@ -166,6 +206,9 @@
 									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Angry" ID="{E3BE9AB6-DC3B-47DB-9A77-3B07ED0330B9}" ShortID="569791126">
+									<PropertyList>
+										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
@@ -177,6 +220,11 @@
 									<ChildrenList>
 										<Sound Name="Angry Dialogue 2" ID="{CF98012C-7B09-4A89-AA8D-37E345331349}" ShortID="969776906">
 											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="Pitch" Type="int32">
 													<ModifierList>
@@ -329,8 +377,180 @@
 										<ItemRef Name="Angry" ID="{E3BE9AB6-DC3B-47DB-9A77-3B07ED0330B9}"/>
 									</GroupingBehavior>
 								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Tired" ID="{BACB215F-23E7-4B31-8462-F7B8B9C8883C}"/>
+										<ItemList>
+											<ItemRef Name="Calm" ID="{19D80065-BD05-4839-97B7-C4FDE3A609CC}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Angry" ID="{965567CA-46FA-47CD-8BD9-175E573B9413}"/>
+										<ItemList>
+											<ItemRef Name="Angry" ID="{E3BE9AB6-DC3B-47DB-9A77-3B07ED0330B9}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Menu" ID="{E02B095B-CFE3-4BE9-87EB-06B45EB4A151}" ShortID="299467902">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Menu Back" ID="{98963A17-9F41-4B9A-8DAD-AB17C6A0F7F7}" ShortID="342552628">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Menu Back" ID="{D464C35C-AF4C-4784-BC59-2BBFDD4B6AD4}">
+									<Language>SFX</Language>
+									<AudioFile>Menu\Menu Back.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="192638632"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Menu Back" ID="{D464C35C-AF4C-4784-BC59-2BBFDD4B6AD4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Menu Nav" ID="{6261A047-6951-4D19-9EC7-9A82873C93DB}" ShortID="1044504564">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Menu Nav" ID="{CC6D14DA-BB6F-49C3-8C39-DB1E5A306B06}">
+									<Language>SFX</Language>
+									<AudioFile>Menu\Menu Nav.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="767485936"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Menu Nav" ID="{CC6D14DA-BB6F-49C3-8C39-DB1E5A306B06}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Menu Select Beep" ID="{EA5A6D79-6416-45EE-9ACF-AADC2D8960A6}" ShortID="950615132">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Menu Select Beep" ID="{FF94B248-7D11-4A3A-BEAC-734190D9C0F9}">
+									<Language>SFX</Language>
+									<AudioFile>Menu\Menu Select Beep.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="452667185"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Menu Select Beep" ID="{FF94B248-7D11-4A3A-BEAC-734190D9C0F9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Menu Select" ID="{F152DADF-D552-4343-9F19-C9E8390766D6}" ShortID="823485349">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Menu Select" ID="{C3696792-65CB-4B35-88D5-C7E264F2AED6}">
+									<Language>SFX</Language>
+									<AudioFile>Menu\Menu Select.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="89840105"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Menu Select" ID="{C3696792-65CB-4B35-88D5-C7E264F2AED6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Pause" ID="{78E9B8A1-0344-4283-BD7B-C7CBC68F3074}" ShortID="31159911">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Pause" ID="{3E8926BA-9BEE-4FA2-A1F4-62B72A42A923}">
+									<Language>SFX</Language>
+									<AudioFile>Menu\Pause.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="999403510"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Pause" ID="{3E8926BA-9BEE-4FA2-A1F4-62B72A42A923}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Menu Adjust" ID="{DFCA0055-6CAC-4658-B605-91D17E804FC8}" ShortID="233806158">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Menu Adjust" ID="{071F98A0-C21A-4C37-9B3A-1CE2A938ED61}">
+									<Language>SFX</Language>
+									<AudioFile>Menu Adjust.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="319242125"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Menu Adjust" ID="{071F98A0-C21A-4C37-9B3A-1CE2A938ED61}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>
