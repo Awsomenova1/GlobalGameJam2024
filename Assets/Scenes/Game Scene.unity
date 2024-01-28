@@ -4426,7 +4426,7 @@ MonoBehaviour:
   button: {fileID: 1553205887}
   not_pressed: {fileID: 21300000, guid: f3b396816e818474fb0ad2d5aac78097, type: 3}
   pressed: {fileID: -2413806693520163455, guid: fc15058e77eb6fc4aa9a77695e457eb4, type: 3}
-  buttonToPress: 113
+  buttonToPress: 323
   laughMeter: {fileID: 1166480476}
   laughRecovery: 180
   stopInputs: 1
