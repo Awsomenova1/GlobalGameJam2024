@@ -2072,12 +2072,14 @@ MonoBehaviour:
     groupIdInternal: 0
     groupGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 725f05599daa3c94a89a7e7d91044621, type: 2}
-  won: 0
-  lost: 0
-  playingAgain: 0
-  quit: 0
   button: {fileID: 1553205886}
   npcAnim: {fileID: 1913363891}
+  background: {fileID: 1723287814}
+  backgrounds:
+  - {fileID: 21300000, guid: 2cd3f2559e834b04ea64d02444f242e5, type: 3}
+  - {fileID: 21300000, guid: 460f8ba2481800247bce9cb54fa5c51a, type: 3}
+  - {fileID: 21300000, guid: 24867c4229b9c31478de2c900fcec397, type: 3}
+  - {fileID: 21300000, guid: 28e58f9467ff10745a85c8ffac0f81f4, type: 3}
 --- !u!4 &789484925
 Transform:
   m_ObjectHideFlags: 0
@@ -5042,6 +5044,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1723287814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4494498464440828423, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
+  m_PrefabInstance: {fileID: 1588188988187724616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1840864332 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 560026996816832373, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
@@ -5243,66 +5256,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1413964259777386894, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1413964259777386894, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1413964259777386894, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -460
-      objectReference: {fileID: 0}
-    - target: {fileID: 1413964259777386894, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -110
-      objectReference: {fileID: 0}
-    - target: {fileID: 3202878993830283099, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126001686994400637, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126001686994400637, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126001686994400637, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 650
-      objectReference: {fileID: 0}
-    - target: {fileID: 5126001686994400637, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -110
-      objectReference: {fileID: 0}
     - target: {fileID: 6674297214044280301, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6687954286169256019, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: meter
-      value: 
-      objectReference: {fileID: 1166480476}
-    - target: {fileID: 6687954286169256019, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: NPC_Stop.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 2477b3278339bb8468c32b21c376dd77, type: 2}
-    - target: {fileID: 6687954286169256019, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: NPC_Talk.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: e823f9900b2017f44b5202c38af6cf63, type: 2}
-    - target: {fileID: 6687954286169256019, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: NPC_Angry.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: d958a4fffbcfe0340a0f74615882be84, type: 2}
-    - target: {fileID: 6687954286169256019, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: NPC_Tired.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 1aed008c5fdacbb48845739043075699, type: 2}
     - target: {fileID: 8073852510127294367, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
       propertyPath: m_Camera
       value: 
@@ -5318,14 +5275,6 @@ PrefabInstance:
     - target: {fileID: 9018503394410359610, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9018503394410359610, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 9018503394410359610, guid: 2b048787fd151bc43be39239df15c3eb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -13,6 +13,8 @@ public class GameplayManager : MonoBehaviour
     public DialogController dialog;
     public Slider speedMeter;
 
+    public static GameplayManager main;
+
     public ScreenWipe screenWipe;
 
     public bool startedSequence = false;
@@ -51,9 +53,14 @@ public class GameplayManager : MonoBehaviour
 
     public Animator npcAnim;
 
+    public Image background;
+
+    public List<Sprite> backgrounds = new List<Sprite>();
+
     // Start is called before the first frame update
     void Start()
     {
+        main = this;
         meter.laughSpeed = 0;
         IntroSequence();
         screenWipe.gameObject.SetActive(true);
@@ -290,5 +297,11 @@ public class GameplayManager : MonoBehaviour
         {
             laughIcon.sprite = emote4;
         }
+    }
+
+    public void ChangeBg(int bgId)
+    {
+        background.sprite = backgrounds[bgId];
+        Debug.Log("bg change to " + bgId);
     }
 }
