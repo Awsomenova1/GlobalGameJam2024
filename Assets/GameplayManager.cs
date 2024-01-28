@@ -75,10 +75,10 @@ public class GameplayManager : MonoBehaviour
         if (suspendSequence)
             return;
 
-        if (startedSequence && gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence"))
+        if (startedSequence && (gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence") || !dialog.reading))
             FinishedSequence();
 
-        if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Q))
+        if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Q) && (!won && !lost))
             StartSequence();
 
         targetSpeed = meter.laughSpeed * 5;
@@ -143,6 +143,7 @@ public class GameplayManager : MonoBehaviour
     public void Pause()
     {
         PauseMusic.Post(globalWwise);
+        DialogController.main.StopTalk();
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
         paused = true;
@@ -208,6 +209,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (paused) return;
         won = true;
+        DialogController.main.StopTalk();
         StopMusic.Post(globalWwise);
         WinScreen.SetActive(true);
         WinText.SetText("You made it through without laughing!\n\nFinal Grade: " + meter.calculateGrade());
@@ -218,9 +220,11 @@ public class GameplayManager : MonoBehaviour
     {
         if (paused) return;
         lost = true;
+        DialogController.main.StopTalk();
         StopMusic.Post(globalWwise);
         LoseScreen.SetActive(true);
         button.stopInputs = true;
+        dialog.reading = false;
     }
 
     //resets game
@@ -260,6 +264,7 @@ public class GameplayManager : MonoBehaviour
     {
         startedSequence = false;
         Debug.Log("Finished sequence");
+        gameSequence.Play("NoCurrentSequence");
         while (!won)
         {
             Win();
