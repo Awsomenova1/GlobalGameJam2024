@@ -143,6 +143,7 @@ public class GameplayManager : MonoBehaviour
     public void Pause()
     {
         PauseMusic.Post(globalWwise);
+        DialogController.main.StopTalk();
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
         paused = true;
@@ -208,6 +209,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (paused) return;
         won = true;
+        DialogController.main.StopTalk();
         StopMusic.Post(globalWwise);
         WinScreen.SetActive(true);
         WinText.SetText("You made it through without laughing!\n\nFinal Grade: " + meter.calculateGrade());
@@ -218,6 +220,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (paused) return;
         lost = true;
+        DialogController.main.StopTalk();
         StopMusic.Post(globalWwise);
         LoseScreen.SetActive(true);
         button.stopInputs = true;
