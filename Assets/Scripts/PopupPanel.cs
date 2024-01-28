@@ -13,7 +13,7 @@ public class PopupPanel : MonoBehaviour
     [SerializeField] private Volume PostProcessing;
     public float animProgress;
     private GameObject PreviousButton;
-    public static bool open = false;
+    public static bool open = false, visible = false;
     private Animator anim;
     private GameObject currentSelection;
 
@@ -43,6 +43,7 @@ public class PopupPanel : MonoBehaviour
     {
         anim.SetTrigger("Open");
         open = true;
+        visible = true;
         if (SelectPrevious)
             PreviousButton = EventSystem.current.currentSelectedGameObject;
         EventSystem.current.SetSelectedGameObject(PrimaryButton);
@@ -51,6 +52,7 @@ public class PopupPanel : MonoBehaviour
     public void Close()
     {
         anim.SetTrigger("Close");
+        visible = false;
         if (SelectPrevious)
             EventSystem.current.SetSelectedGameObject(PreviousButton);
     }
