@@ -45,7 +45,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     private enum MusicState { CALM, MEDIATE, INTENSE };
     private MusicState currentState;
-    public bool won = false, lost = false, playingAgain = false, quit = false;
+    public static bool won = false, lost = false, playingAgain = false, quit = false;
 
     public Button button;
 

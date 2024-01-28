@@ -13,6 +13,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private ScreenWipe screenWipe;
     [SerializeField] private AK.Wwise.Event MenuBack, MenuSelect, MenuNav, MenuAdjust;
     private bool playing = false, quitting = false;
+    public static bool fullscreen = true;
     private GameObject currentSelection;
 
     // Start is called before the first frame update
@@ -69,6 +70,21 @@ public class MainMenuManager : MonoBehaviour
         {
             SettingsPanel.SetActive(true);
             // MenuSelect.Post(gameObject);
+        }
+    }
+
+    public void ToggleFullscreen()
+    {
+        fullscreen = !fullscreen;
+        if (fullscreen)
+        {
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+            Debug.Log("enter fullscreen");
+        }
+        else
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+            Debug.Log("exit fullscreen");
         }
     }
 
