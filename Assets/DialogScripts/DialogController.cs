@@ -43,6 +43,7 @@ public class DialogController : MonoBehaviour
     {
         main = this;
         textDisplay.ForceMeshUpdate();
+        NPC_Tired.Post(gameObject);
 
         textDisplay.OnPreRenderText += applyTextEffects;
     }
