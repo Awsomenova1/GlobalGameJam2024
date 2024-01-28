@@ -150,10 +150,27 @@ public class GameplayManager : MonoBehaviour
         PauseMenu.GetComponent<PopupPanel>().Close();
     }
 
+    //close currently opened popup panels
+    public void ClosePanels(){
+        if (PopupPanel.open){
+            if(PauseMenu.activeSelf == true){
+                PauseMenu.GetComponent<PopupPanel>().Close();
+            }
+            if(WinScreen.activeSelf == true){
+                WinScreen.GetComponent<PopupPanel>().Close();
+            }
+            if(LoseScreen.activeSelf == true){
+                LoseScreen.GetComponent<PopupPanel>().Close();
+            }
+        }
+    }
+    
+
     public void QuitToMenu()
     {
         if (quit) return;
         quit = true;
+        ClosePanels();
         Time.timeScale = 1;
         paused = false;
         StopMusic.Post(globalWwise);
@@ -197,18 +214,8 @@ public class GameplayManager : MonoBehaviour
     {
         if (playingAgain) return;
         playingAgain = true;
-
-        if (PopupPanel.open){
-            if(PauseMenu.activeSelf == true){
-                PauseMenu.GetComponent<PopupPanel>().Close();
-            }
-            else if(WinScreen.activeSelf == true){
-                WinScreen.GetComponent<PopupPanel>().Close();
-            }
-            else if(LoseScreen.activeSelf == true){
-                LoseScreen.GetComponent<PopupPanel>().Close();
-            }
-        }
+        
+        ClosePanels();
         won = false;
         lost = false;
 
