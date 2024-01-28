@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{3D6DB4FC-C8BF-4793-BC67-443A9ECB6282}" SchemaVersion="119">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{3D6DB4FC-C8BF-4793-BC67-443A9ECB6282}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{3D6DB4FC-C8BF-4793-BC67-443A9ECB6282}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Test_1" ID="{F607F61D-AE6B-48DF-AA4D-D08C3173B190}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Start_Music" ID="{F7EFF77D-22EF-436D-87B6-05C26644DD18}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Pause" ID="{1F7B3096-58A4-4D47-84B0-AFD5863F0F0D}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_Music" ID="{55F9DBFB-547C-4EDD-83F5-490EFF8A2FF0}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Resume" ID="{4F56BA48-2675-4DD9-AB6D-E07E6251F7F6}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="State_Calm" ID="{72666D5B-E82C-45F0-B099-87D7987C5EA3}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="State_Intense" ID="{08006FFD-0925-479A-86BB-26A45EDD1046}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="State_Mediate" ID="{451B8CF3-9A96-43EC-9B70-E1C1B01E3CC0}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="State_Silent" ID="{57332CF3-107E-4B7A-9C94-CA8AD22C38A0}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Calm" ID="{18485634-69F0-4E3D-9BBF-0E1795F534F1}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

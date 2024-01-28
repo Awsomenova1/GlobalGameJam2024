@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C7FD6D62-263F-457B-ADBC-D4C08EB7A67D}" SchemaVersion="119">
+	<Switches>
+		<WorkUnit Name="Music" ID="{C7FD6D62-263F-457B-ADBC-D4C08EB7A67D}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Laugh_Meter" ID="{AA67A1F0-34FA-4E70-9D22-B0047C63E8CF}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="A_Full" ID="{EDF1F27F-5E1B-4367-A92E-F72E2FC76D0E}"/>
+						<Switch Name="B_Near_Full" ID="{8EE52C65-12DC-4110-B8B1-9B21560C5D79}"/>
+						<Switch Name="D_Near_Empty" ID="{98CB3E8D-981C-4ABA-A936-C3B9B781BAD0}"/>
+						<Switch Name="C_Half" ID="{54B67905-DC6C-44A1-9072-7A8BBB13F40B}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="Laugh_Meter" ID="{DEC19A5F-D8F2-486F-91A0-34908945FFB1}"/>
+						<Curve Name="" ID="{BEFFDD21-EE89-48BD-94D1-E7CFC403DA17}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>0</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>0.001</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>24.91987</XPos>
+									<YPos>4</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>49.91987</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>75</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>100</XPos>
+									<YPos>0</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>
