@@ -9,7 +9,10 @@
 					<GameSyncExclusionList/>
 				</SoundBank>
 				<SoundBank Name="Main" ID="{97875A36-0A81-474B-B38A-F6B43C19E544}">
-					<ObjectInclusionList/>
+					<ObjectInclusionList>
+						<ObjectRef Name="Default Work Unit" ID="{BC9F2040-B8C7-426B-983E-C40031009474}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Default Work Unit" ID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>

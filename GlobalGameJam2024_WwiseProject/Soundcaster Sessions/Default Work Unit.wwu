@@ -40,7 +40,7 @@
 					</ModuleList>
 					<RTPCValueList ShowAll="true"/>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Calm" ID="{18485634-69F0-4E3D-9BBF-0E1795F534F1}"/>
+						<CurrentStateRef Name="Intense" ID="{9F146DCB-C38C-4348-BFC1-E4011C4B5FFF}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>

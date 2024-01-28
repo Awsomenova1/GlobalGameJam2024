@@ -23,7 +23,7 @@
 						</Reference>
 					</ReferenceList>
 				</ActorMixer>
-				<ActorMixer Name="UI_Gameplay" ID="{9E3F32EF-CE88-4208-95B5-37616B5944DF}" ShortID="23030961">
+				<ActorMixer Name="Gameplay" ID="{9E3F32EF-CE88-4208-95B5-37616B5944DF}" ShortID="23030961">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
