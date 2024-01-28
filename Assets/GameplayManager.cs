@@ -41,7 +41,7 @@ public class GameplayManager : MonoBehaviour
     //value to adjust speed/heat meter to
     private float targetSpeed;
     [SerializeField] private GameObject globalWwise;
-    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic;
+    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic, MenuSelect;
     [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     private enum MusicState { CALM, MEDIATE, INTENSE };
     private MusicState currentState;
@@ -151,6 +151,7 @@ public class GameplayManager : MonoBehaviour
     public void UnPause()
     {
         if (!PopupPanel.open) return;
+        // MenuSelect.Post(gameObject);
         ResumeMusic.Post(globalWwise);
         Time.timeScale = 1;
         paused = false;
@@ -182,6 +183,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (quit) return;
         quit = true;
+        // MenuSelect.Post(gameObject);
         ClosePanels();
         Time.timeScale = 1;
         paused = false;
@@ -227,6 +229,7 @@ public class GameplayManager : MonoBehaviour
         if (playingAgain) return;
         playingAgain = true;
 
+        // MenuSelect.Post(gameObject);
         ClosePanels();
         won = false;
         lost = false;
@@ -241,7 +244,7 @@ public class GameplayManager : MonoBehaviour
     public void StartSequence()
     {
         startedSequence = true;
-
+        calm.SetValue(); // start calm music
 
         //dialog.setSource(new DialogSource("[c] Blah blah blah."));
         dialog.setSource(new DialogSource("[lf,WormMartEmployee.txt]"));
