@@ -644,31 +644,32 @@ public class DialogSource
                 Debug.Log("Hit out at: " + Time.time);
                 break;
 
+            case "ps":
+                if (input.Length == 2)
+                {
+                    playSound(input[1]);
+                }
+                else if (input.Length == 3)
+                {
+                    playSound(input[1], float.Parse(input[2]));
+                }
+                else if (input.Length == 4)
+                {
+                    bool loop = false;
+                    if (input[3].Trim().ToLower() == "true" || input[3].Trim().ToLower() == "t")
+                        loop = true;
+                    else if (input[3].Trim().ToLower() == "false" || input[3].Trim().ToLower() == "f")
+                        loop = false;
+                    else
+                        Debug.LogWarning("Invalid format for play sound [ps] loop parameter! Defaulting to false");
+                    playSound(input[1], float.Parse(input[2]), loop);
+                }
+                else
+                    Debug.LogWarning("Invalid number of parameters for play sound [ps]!");
+                break;
 
             #region old audio stuff
-            //case "ps":
-            //    if (input.Length == 2)
-            //    {
-            //        playSound(input[1]);
-            //    }
-            //    else if (input.Length == 3)
-            //    {
-            //        playSound(input[1], float.Parse(input[2]));
-            //    }
-            //    else if (input.Length == 4)
-            //    {
-            //        bool loop = false;
-            //        if (input[3].Trim().ToLower() == "true" || input[3].Trim().ToLower() == "t")
-            //            loop = true;
-            //        else if (input[3].Trim().ToLower() == "false" || input[3].Trim().ToLower() == "f")
-            //            loop = false;
-            //        else
-            //            Debug.LogWarning("Invalid format for play sound [ps] loop parameter! Defaulting to false");
-            //        playSound(input[1], float.Parse(input[2]), loop);
-            //    }
-            //    else
-            //        Debug.LogWarning("Invalid number of parameters for play sound [ps]!");
-            //    break;
+
 
             //case "es":
             //    if (input.Length == 1)

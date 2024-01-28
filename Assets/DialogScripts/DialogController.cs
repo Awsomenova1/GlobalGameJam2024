@@ -91,6 +91,7 @@ public class DialogController : MonoBehaviour
             source.removeEffect -= RemoveEffect;
             source.exit -= close;
             source.playAnimation -= playAnimation;
+            source.ps -= PlaySound;
 
         }
         source = newSource;
@@ -102,6 +103,7 @@ public class DialogController : MonoBehaviour
         newSource.removeEffect += RemoveEffect;
         newSource.exit += close;
         source.playAnimation += playAnimation;
+        source.ps += PlaySound;
 
     }
 
@@ -196,4 +198,8 @@ public class DialogController : MonoBehaviour
         anim.Play("name");
     }
 
+    public void PlaySound(string name, float volume, bool loop)
+    {
+
+    }
 }
