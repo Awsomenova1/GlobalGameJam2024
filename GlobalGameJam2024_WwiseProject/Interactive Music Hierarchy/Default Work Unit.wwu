@@ -6,10 +6,10 @@
 				<MusicSwitchContainer Name="Music" ID="{DBDDD0B3-B891-434C-97AC-1EF81D59C625}" ShortID="388211684">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+							<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+							<ObjectRef Name="Music" ID="{3DAAFC80-87CF-44CA-A1AE-D790A498CDC2}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
 						</Reference>
 						<Reference Name="TransitionRoot">
 							<Custom>
@@ -118,7 +118,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -237,7 +237,7 @@
 								<MusicPlaylistContainer Name="Calm" ID="{011CC6F6-0DC7-445D-9514-663DAA931B1F}" ShortID="280721164">
 									<ReferenceList>
 										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+											<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -309,7 +309,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+													<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -1032,7 +1032,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+											<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -1082,7 +1082,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+													<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -1589,7 +1589,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+											<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -1643,7 +1643,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+													<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -2386,7 +2386,7 @@
 								<MusicPlaylistContainer Name="Silence" ID="{C449F70C-4DBF-45D8-BE82-2B34AF5A45CB}" ShortID="959114322">
 									<ReferenceList>
 										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+											<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -2432,7 +2432,7 @@
 										<MusicSegment Name="Silence" ID="{2E440D95-5451-4E7A-9744-414460B7645C}" ShortID="213766486">
 											<ReferenceList>
 												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+													<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -2541,49 +2541,6 @@
 										</Local>
 									</Reference>
 								</ObjectList>
-								<ObjectList Name="RTPC">
-									<Reference>
-										<Local>
-											<RTPC Name="" ID="{F034E7C2-5A35-44BC-96DE-F37AAC590DAB}" ShortID="510679242">
-												<PropertyList>
-													<Property Name="PropertyName" Type="string" Value="Lowpass"/>
-												</PropertyList>
-												<ReferenceList>
-													<Reference Name="ControlInput">
-														<ObjectRef Name="Laugh_Meter" ID="{DEC19A5F-D8F2-486F-91A0-34908945FFB1}" WorkUnitID="{3541F5E9-EEF4-4D53-9C3F-3253377BBAE3}"/>
-													</Reference>
-													<Reference Name="Curve">
-														<Custom>
-															<Curve Name="" ID="{CC42FB76-2A75-41A3-9563-8DFE104725B9}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="65537"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>56</YPos>
-																		<Flags>5</Flags>
-																		<SegmentShape>Exp1</SegmentShape>
-																	</Point>
-																	<Point>
-																		<XPos>45</XPos>
-																		<YPos>1</YPos>
-																		<Flags>0</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>100</XPos>
-																		<YPos>0</YPos>
-																		<Flags>37</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</RTPC>
-										</Local>
-									</Reference>
-								</ObjectList>
 							</ObjectLists>
 						</MusicSwitchContainer>
 						<MusicPlaylistContainer Name="Menu" ID="{AE2D1870-5A49-4795-AE5E-0349525AA7C1}" ShortID="486418857">
@@ -2592,7 +2549,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -2641,7 +2598,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+											<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -3077,6 +3034,108 @@
 											</ObjectList>
 										</ObjectLists>
 									</MultiSwitchEntry>
+								</Local>
+							</Reference>
+						</ObjectList>
+						<ObjectList Name="RTPC">
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{509FE0A7-7A03-42CF-9D07-C6C6E20C058A}" ShortID="951566112">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Laughter" ID="{DEC19A5F-D8F2-486F-91A0-34908945FFB1}" WorkUnitID="{3541F5E9-EEF4-4D53-9C3F-3253377BBAE3}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{F10E1281-D7E0-48BD-813B-B25E6629B6EB}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>25</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>2500</XPos>
+																<YPos>0</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>4990.75786</XPos>
+																<YPos>-1</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>7500</XPos>
+																<YPos>-1</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>10000</XPos>
+																<YPos>25</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{22B8B9E2-24F2-411C-8172-62F396B04BE0}" ShortID="929589875">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Laughter" ID="{DEC19A5F-D8F2-486F-91A0-34908945FFB1}" WorkUnitID="{3541F5E9-EEF4-4D53-9C3F-3253377BBAE3}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{FD42D16F-E331-4267-B7CC-B25C0AAA4694}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>2500</XPos>
+																<YPos>-3.87</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>4990.75786</XPos>
+																<YPos>-3.80675</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>7500</XPos>
+																<YPos>-3.60468</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>10000</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
 								</Local>
 							</Reference>
 						</ObjectList>

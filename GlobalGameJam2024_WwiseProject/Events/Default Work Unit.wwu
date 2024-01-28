@@ -3,7 +3,77 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{BC9F2040-B8C7-426B-983E-C40031009474}" PersistMode="Standalone">
 			<ChildrenList>
-				<Folder Name="Gameplay SFX" ID="{06F5DBBA-C53E-4DD2-BA4A-05DB0DF3A3FD}" ShortID="771496091"/>
+				<Folder Name="Gameplay SFX" ID="{06F5DBBA-C53E-4DD2-BA4A-05DB0DF3A3FD}" ShortID="771496091">
+					<ChildrenList>
+						<Event Name="QTE_Hit" ID="{067A9902-7951-4CDB-AB9D-3702C2C13BC9}">
+							<ChildrenList>
+								<Action Name="" ID="{9F47BA48-DA59-4030-A239-22D7654379EB}" ShortID="1052530729">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Hit" ID="{DFF17FA6-7BE6-47EA-BFC7-FA57A87BF386}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="QTE_Miss" ID="{F1FECA7E-8889-43A1-A0D2-A14A15F9CDE3}">
+							<ChildrenList>
+								<Action Name="" ID="{83967307-C981-4C2C-BA66-7D8AB3DE11C8}" ShortID="35965471">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Miss" ID="{C1E71B44-CEE3-49DA-8305-488DC58D048A}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="QTE_Perfect" ID="{EC58BA0B-0229-4FE4-8450-725327824BE4}">
+							<ChildrenList>
+								<Action Name="" ID="{A66595A4-07B3-4D7E-953B-AEA7FB43D96D}" ShortID="446052951">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Hit" ID="{DFF17FA6-7BE6-47EA-BFC7-FA57A87BF386}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{AFD857EA-61DF-4EF2-9CBA-084609728DF9}" ShortID="513480929">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Chime" ID="{F7E2772E-BC46-45F0-A033-1CE8F83C8ADC}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Game_Over" ID="{7025CBBC-867D-454D-8438-40B1CC0FC185}">
+							<ChildrenList>
+								<Action Name="" ID="{BE5C6C93-E473-4E2F-AA16-AECFFA3BFACF}" ShortID="651446426">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
+								<Action Name="" ID="{19A9A146-2443-4A45-A53F-2DC3BC6DD283}" ShortID="833844887">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Failure" ID="{66126210-FAE6-4F2F-A39E-E4B1D89DBE21}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E555C147-FD9A-420D-934C-58718A5C653F}" ShortID="171735143">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Calm" ID="{18485634-69F0-4E3D-9BBF-0E1795F534F1}" WorkUnitID="{D24E68CE-F003-4C96-9B0A-398861EF1FAF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 				<Folder Name="Music" ID="{F9CC6E94-04B2-4728-A612-8A2DDD13F0DF}" ShortID="1064159583">
 					<ChildrenList>
 						<Event Name="Stop_Music" ID="{55F9DBFB-547C-4EDD-83F5-490EFF8A2FF0}">
@@ -198,6 +268,10 @@
 				<Folder Name="Dialogue" ID="{852C54A4-712E-4E3A-AEB7-D680E22219B6}" ShortID="120775745">
 					<ChildrenList>
 						<Event Name="NPC_Stop" ID="{1CB91BC4-41D6-4716-B38E-7DCED8012A85}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{620BCF7E-D192-4BED-ABC7-7989A4136E1E}" ShortID="712102094">
 									<PropertyList>
@@ -212,6 +286,10 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="NPC_Talk" ID="{809D2DF1-DAF2-4EEB-A636-81FEB1CCE9C7}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{38660C62-3709-4514-8252-6267E3426774}" ShortID="548940421">
 									<ReferenceList>
@@ -223,6 +301,10 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="NPC_Tired" ID="{6EC362F5-D8C5-41C6-AD31-EA84BB865569}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{6EECA991-53ED-4DC4-9AC1-D7367EA41629}" ShortID="993418693">
 									<PropertyList>
@@ -237,6 +319,10 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="NPC_Angry" ID="{76D354E3-320B-48FA-B43E-B1F251F23BDB}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{A71417C6-D57F-4387-8DD2-B2C282660A1F}" ShortID="415623405">
 									<PropertyList>
@@ -266,6 +352,16 @@
 									</PropertyList>
 									<ReferenceList/>
 								</Action>
+								<Action Name="" ID="{D80EC5C4-B3F0-42C8-8EC6-87FD1EC44981}" ShortID="726731998">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="7"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Dialogue" ID="{5CECFD9B-CC44-4CCC-A023-650FE937778B}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{FB5848C9-6026-4D2D-8429-B62388C31AFC}" ShortID="723049794">
 									<ReferenceList>
 										<Reference Name="Target">
@@ -286,6 +382,16 @@
 										<Property Name="ActionType" Type="int16" Value="10"/>
 									</PropertyList>
 									<ReferenceList/>
+								</Action>
+								<Action Name="" ID="{DA69435C-025D-4D92-ACC6-0E6D0E0D620F}" ShortID="1063553578">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="9"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Dialogue" ID="{5CECFD9B-CC44-4CCC-A023-650FE937778B}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>

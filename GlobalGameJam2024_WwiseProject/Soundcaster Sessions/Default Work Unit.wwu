@@ -42,6 +42,10 @@
 							<Position X="1" Y="3"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Game_Over" ID="{7025CBBC-867D-454D-8438-40B1CC0FC185}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="1" Y="4"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="State_Calm" ID="{72666D5B-E82C-45F0-B099-87D7987C5EA3}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
 							<Position X="2" Y="0"/>
 						</Module>
@@ -57,19 +61,51 @@
 							<ObjectRef Name="State_Silent" ID="{57332CF3-107E-4B7A-9C94-CA8AD22C38A0}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
 							<Position X="2" Y="3"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="NPC_Angry" ID="{76D354E3-320B-48FA-B43E-B1F251F23BDB}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="NPC_Stop" ID="{1CB91BC4-41D6-4716-B38E-7DCED8012A85}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="NPC_Talk" ID="{809D2DF1-DAF2-4EEB-A636-81FEB1CCE9C7}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="NPC_Tired" ID="{6EC362F5-D8C5-41C6-AD31-EA84BB865569}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}"/>
+							<Position X="3" Y="3"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
-							<GameParameterRef Name="Laugh_Meter" ID="{DEC19A5F-D8F2-486F-91A0-34908945FFB1}"/>
-							<Value>44.8693759071118</Value>
+							<GameParameterRef Name="soundVolume" ID="{27B74186-F695-4285-A6EA-4337A8A36171}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Laughter" ID="{DEC19A5F-D8F2-486F-91A0-34908945FFB1}"/>
+							<Value>7449.16820702403</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="voiceVolume" ID="{4C769D97-5E63-4C6C-89FC-91101B88701A}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="masterVolume" ID="{111C7E0E-BA1D-4C99-A650-3CEDA7E282F8}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="musicVolume" ID="{EB5E9AAD-0A97-4FF7-B265-C94AF68FD40F}"/>
+							<Value>100</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Intense" ID="{9F146DCB-C38C-4348-BFC1-E4011C4B5FFF}"/>
+						<CurrentStateRef Name="Calm" ID="{18485634-69F0-4E3D-9BBF-0E1795F534F1}"/>
 						<CurrentStateRef Name="Menu" ID="{A4B84789-5E70-4BC3-9CE5-89185CC85EE2}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Angry" ID="{965567CA-46FA-47CD-8BD9-175E573B9413}"/>
+						<CurrentSwitchRef Name="Tired" ID="{BACB215F-23E7-4B31-8462-F7B8B9C8883C}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Dialogue" ID="{025ABAF4-69E6-4711-9D30-140DF9C5F32A}">

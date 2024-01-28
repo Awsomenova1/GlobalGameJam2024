@@ -3,7 +3,15 @@
 	<GameParameters>
 		<WorkUnit Name="Default Work Unit" ID="{3541F5E9-EEF4-4D53-9C3F-3253377BBAE3}" PersistMode="Standalone">
 			<ChildrenList>
-				<GameParameter Name="Laugh_Meter" ID="{DEC19A5F-D8F2-486F-91A0-34908945FFB1}"/>
+				<GameParameter Name="Laughter" ID="{DEC19A5F-D8F2-486F-91A0-34908945FFB1}">
+					<PropertyList>
+						<Property Name="Max" Type="Real64" Value="10000"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="soundVolume" ID="{27B74186-F695-4285-A6EA-4337A8A36171}"/>
+				<GameParameter Name="voiceVolume" ID="{4C769D97-5E63-4C6C-89FC-91101B88701A}"/>
+				<GameParameter Name="musicVolume" ID="{EB5E9AAD-0A97-4FF7-B265-C94AF68FD40F}"/>
+				<GameParameter Name="masterVolume" ID="{111C7E0E-BA1D-4C99-A650-3CEDA7E282F8}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

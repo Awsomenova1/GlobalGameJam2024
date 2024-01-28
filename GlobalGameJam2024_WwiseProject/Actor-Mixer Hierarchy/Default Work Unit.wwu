@@ -6,17 +6,17 @@
 				<ActorMixer Name="Story_SFX" ID="{BC49F56A-26C8-4F58-BBC0-71E4DC6C0610}" ShortID="77003234">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+							<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+							<ObjectRef Name="SFX" ID="{786E75D6-0CE3-41CB-9313-BAF06114CDE6}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="Failure" ID="{66126210-FAE6-4F2F-A39E-E4B1D89DBE21}" ShortID="689118332">
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -45,9 +45,7 @@
 						<ObjectList Name="Effects">
 							<Reference>
 								<Local>
-									<EffectSlot Name="" ID="{6CB97207-6EFF-45F5-A856-CDB78042032D}" ShortID="499242099">
-										<ReferenceList/>
-									</EffectSlot>
+									<EffectSlot Name="" ID="{6CB97207-6EFF-45F5-A856-CDB78042032D}" ShortID="499242099"/>
 								</Local>
 							</Reference>
 						</ObjectList>
@@ -56,27 +54,115 @@
 				<ActorMixer Name="Gameplay" ID="{9E3F32EF-CE88-4208-95B5-37616B5944DF}" ShortID="23030961">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+							<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+							<ObjectRef Name="SFX" ID="{786E75D6-0CE3-41CB-9313-BAF06114CDE6}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Chime" ID="{F7E2772E-BC46-45F0-A033-1CE8F83C8ADC}" ShortID="643160814">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>1640</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Chime" ID="{1F9242DA-D577-4E4A-82B8-B312ACC8052F}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.24083813678143"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.459781897491821"/>
+										<Property Name="FadeOutShape" Type="int16" Value="7"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.689672846237732"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.70776133354105"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Chime.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="240832617"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Chime" ID="{1F9242DA-D577-4E4A-82B8-B312ACC8052F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Hit" ID="{DFF17FA6-7BE6-47EA-BFC7-FA57A87BF386}" ShortID="249077274">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Hit" ID="{249D4E98-D103-4A6F-8AA7-D376031E2105}">
+									<Language>SFX</Language>
+									<AudioFile>Hit.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="572561407"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Hit" ID="{249D4E98-D103-4A6F-8AA7-D376031E2105}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Miss" ID="{C1E71B44-CEE3-49DA-8305-488DC58D048A}" ShortID="587327491">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Miss" ID="{E4C3B222-2DEF-47F3-9777-AD4FB58AD29F}">
+									<Language>SFX</Language>
+									<AudioFile>Miss.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="834450179"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Miss" ID="{E4C3B222-2DEF-47F3-9777-AD4FB58AD29F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Dialogue" ID="{5CECFD9B-CC44-4CCC-A023-650FE937778B}" ShortID="435798231">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+							<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+							<ObjectRef Name="SFX" ID="{786E75D6-0CE3-41CB-9313-BAF06114CDE6}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<SwitchContainer Name="Mood" ID="{288DD627-47F8-475B-BDC6-D6B89CBEF729}" ShortID="570968795">
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -92,7 +178,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+											<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -105,7 +191,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+													<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -145,7 +231,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+													<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -179,7 +265,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+													<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -211,7 +297,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+											<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -247,7 +333,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+													<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -293,7 +379,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+													<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -341,7 +427,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+													<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -398,17 +484,17 @@
 				<ActorMixer Name="Menu" ID="{E02B095B-CFE3-4BE9-87EB-06B45EB4A151}" ShortID="299467902">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+							<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
+							<ObjectRef Name="SFX" ID="{786E75D6-0CE3-41CB-9313-BAF06114CDE6}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="Menu Back" ID="{98963A17-9F41-4B9A-8DAD-AB17C6A0F7F7}" ShortID="342552628">
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -430,7 +516,7 @@
 						<Sound Name="Menu Nav" ID="{6261A047-6951-4D19-9EC7-9A82873C93DB}" ShortID="1044504564">
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -451,6 +537,7 @@
 						</Sound>
 						<Sound Name="Menu Select Beep" ID="{EA5A6D79-6416-45EE-9ACF-AADC2D8960A6}" ShortID="950615132">
 							<PropertyList>
+								<Property Name="OverrideConversion" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-6</Value>
@@ -459,7 +546,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -481,7 +568,7 @@
 						<Sound Name="Menu Select" ID="{F152DADF-D552-4343-9F19-C9E8390766D6}" ShortID="823485349">
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -510,7 +597,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
@@ -532,7 +619,7 @@
 						<Sound Name="Menu Adjust" ID="{DFCA0055-6CAC-4658-B605-91D17E804FC8}" ShortID="233806158">
 							<ReferenceList>
 								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
+									<ObjectRef Name="One-shot sounds" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{0EE8A72A-0BA3-4B4A-B962-F0781C9815B9}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B73E5503-A1DA-4071-A941-F904675F149A}"/>
