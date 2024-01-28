@@ -100,24 +100,23 @@ public class LaughMeter : MonoBehaviour
     public string calculateGrade(){
         float avgDist = calculateAvgDistance();
 
-        // TODO adjust hex codes later
         if(avgDist == 0f){
             return "<color=\"pink\">S";
         }
         else if(avgDist <= 100){
-            return "<color=\"blue\">A";
+            return "<color=#6d84ff>A";
         }
         else if(avgDist <= 500){
-            return "<color=\"green\">B";
+            return "<color=#6dd037>B";
         }
         else if(avgDist <= 1000){
-            return "<color=\"yellow\">C";
+            return "<color=#ebd000>C";
         }
         else if(avgDist <= 2000){
-            return "<color=\"orange\">D";
+            return "<color=#ff9849>D";
         }
         else{
-            return "<color=#FF0000>F"; // this is how you do it as a hex code fyi (red)
+            return "<color=#FF0000>F";
         }
     }
 

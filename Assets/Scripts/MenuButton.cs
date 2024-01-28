@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandler, IDeselectHandler
 {
     [SerializeField] private Sprite normal;
+    [SerializeField] private bool MainMenu;
     public void OnDeselect(BaseEventData eventData)
     {
         GetComponent<Image>().sprite = normal;
@@ -14,7 +15,7 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (!PopupPanel.open)
+        if (MainMenu ^ PopupPanel.open)
             EventSystem.current.SetSelectedGameObject(gameObject);
     }
 

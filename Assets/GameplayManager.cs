@@ -147,7 +147,7 @@ public class GameplayManager : MonoBehaviour
     public void Win()
     {
         WinScreen.SetActive(true);
-        WinText.SetText("You made it through without laughing!\nFinal Grade: " + meter.calculateGrade());
+        WinText.SetText("You made it through without laughing!\n\nFinal Grade: " + meter.calculateGrade());
         button.stopInputs = true;
     }
 

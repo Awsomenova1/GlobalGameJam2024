@@ -7,11 +7,13 @@ using UnityEngine.UI;
 public class MenuButtonAlternator : MonoBehaviour, ISelectHandler
 {
     [SerializeField] private GameObject PlayButton;
+    [SerializeField] private UnityEngine.UI.Button UpButton;
 
     public void OnSelect(BaseEventData eventData)
     {
         Navigation nav = PlayButton.GetComponent<UnityEngine.UI.Button>().navigation;
         nav.selectOnDown = GetComponent<UnityEngine.UI.Button>();
+        nav.selectOnUp = UpButton;
         PlayButton.GetComponent<UnityEngine.UI.Button>().navigation = nav;
     }
 }
