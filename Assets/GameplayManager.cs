@@ -84,7 +84,7 @@ public class GameplayManager : MonoBehaviour
 
     public void IntroSequence()
     {
-        dialog.setSource(new DialogSource("This guys about to talk to you. [exit]"));
+        dialog.setSource(new DialogSource("[ss, .025]This guys about to talk to you. [exit]"));
         dialog.reading = true;
     }
 
