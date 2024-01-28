@@ -62,6 +62,24 @@ public class DialogSource
     public const string BLOCKS_SIGNATURE = "-Blocks";
 
     public bool skippingText = false;
+
+    public bool CurrentlySpeaking
+    {
+        get
+        {
+            return Time.time - (waitStart + waitTime - .5f) > 0;
+            //Old: Time.time > waitStart + waitTime, showed every little pause
+        }
+    }
+
+    public bool NotWaiting
+    {
+        get
+        {
+            return Time.time > waitStart + waitTime;
+        }
+    }
+
     //number of characters/second
     /*Dialogue guide:
      * [] is escape
@@ -351,7 +369,7 @@ public class DialogSource
         //Whitelist so that typewrite only runs certain commands (ones that collect didn't run)
         if(mode == ReadMode.TYPEWRITE)
         {
-            if (input[0] != "w" && input[0] != "c" && input[0] != "exit" && input[0] != "ss")
+            if (input[0] != "w" && input[0] != "c" && input[0] != "exit" && input[0] != "ss" && input[0] != "out")
             {
                 return;
             }
@@ -359,7 +377,7 @@ public class DialogSource
 
         if(mode == ReadMode.COLLECT)
         {
-            if (input[0] == "ss")
+            if (input[0] == "ss" || input[0] == "out")
                 return;
         }
 

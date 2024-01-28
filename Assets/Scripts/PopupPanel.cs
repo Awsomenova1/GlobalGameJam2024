@@ -25,7 +25,7 @@ public class PopupPanel : MonoBehaviour
     private void Update()
     {
         open = true;
-
+        
         if (EventSystem.current.currentSelectedGameObject != null)
         {
             currentSelection = EventSystem.current.currentSelectedGameObject;

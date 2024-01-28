@@ -49,6 +49,8 @@ public class GameplayManager : MonoBehaviour
 
     public Button button;
 
+    public Animator npcAnim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,36 +85,39 @@ public class GameplayManager : MonoBehaviour
 
         //updates speed/heat meter visuals
         speedMeter.value = Mathf.Lerp(speedMeter.value, targetSpeed, Time.deltaTime);
-        if(speedMeter.value <= speedMeter.maxValue / 3){
+        if (speedMeter.value <= speedMeter.maxValue / 3)
+        {
             speedIcon.sprite = emote5;
             if (currentState != MusicState.CALM)
             {
                 calm.SetValue();
                 currentState = MusicState.CALM;
             }
-            
+
         }
-        else if(speedMeter.value <= speedMeter.maxValue * 2 / 3){
+        else if (speedMeter.value <= speedMeter.maxValue * 2 / 3)
+        {
             speedIcon.sprite = emote7;
             if (currentState != MusicState.MEDIATE)
             {
                 mediate.SetValue();
                 currentState = MusicState.MEDIATE;
             }
-                
+
         }
-        else{
+        else
+        {
             speedIcon.sprite = emote6;
             if (currentState != MusicState.INTENSE)
             {
                 intense.SetValue();
                 currentState = MusicState.INTENSE;
             }
-                
+
         }
 
         //checks if the player has lost the game, ends play if so
-        if(meter.checkLose())
+        if (meter.checkLose())
         {
             dialog.setSource(new DialogSource("Laughter"));
 
@@ -124,6 +129,8 @@ public class GameplayManager : MonoBehaviour
         }
 
         UpdateSliderIcons();
+
+        npcAnim.SetBool("Talking", DialogController.main.reading && DialogController.main.source.CurrentlySpeaking && !meter.inResponseWindow);
 
     }
 
@@ -151,20 +158,25 @@ public class GameplayManager : MonoBehaviour
     }
 
     //close currently opened popup panels
-    public void ClosePanels(){
-        if (PopupPanel.open){
-            if(PauseMenu.activeSelf == true){
+    public void ClosePanels()
+    {
+        if (PopupPanel.open)
+        {
+            if (PauseMenu.activeSelf == true)
+            {
                 PauseMenu.GetComponent<PopupPanel>().Close();
             }
-            if(WinScreen.activeSelf == true){
+            if (WinScreen.activeSelf == true)
+            {
                 WinScreen.GetComponent<PopupPanel>().Close();
             }
-            if(LoseScreen.activeSelf == true){
+            if (LoseScreen.activeSelf == true)
+            {
                 LoseScreen.GetComponent<PopupPanel>().Close();
             }
         }
     }
-    
+
 
     public void QuitToMenu()
     {
@@ -214,7 +226,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (playingAgain) return;
         playingAgain = true;
-        
+
         ClosePanels();
         won = false;
         lost = false;
@@ -235,8 +247,9 @@ public class GameplayManager : MonoBehaviour
         dialog.setSource(new DialogSource("[lf,WormMartEmployee.txt]"));
         dialog.reading = true;
         gameSequence.Play("24hrEmployee");
-        
 
+
+        meter.responseQueue.Add(("It's ok!", "It's about time.", "16!?"));
         button.stopInputs = false;
     }
 
