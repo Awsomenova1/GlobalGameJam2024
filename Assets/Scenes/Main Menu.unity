@@ -1292,7 +1292,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayButton: {fileID: 622920390}
-  UpButton: {fileID: 0}
+  UpButton: {fileID: 1668306353}
+  DownButton: {fileID: 1404278591}
 --- !u!114 &1404278595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1399,6 +1400,7 @@ GameObject:
   - component: {fileID: 1448008854}
   - component: {fileID: 1448008857}
   - component: {fileID: 1448008858}
+  - component: {fileID: 1448008859}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -1548,6 +1550,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normal: {fileID: 21300000, guid: aa37451be5b236548b78b97553dd329e, type: 3}
   hover: {fileID: 21300000, guid: 384f5f7c4707d994485d30957c7528ce, type: 3}
+--- !u!114 &1448008859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448008852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4773c046399e82c488c4d3dac8b759ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayButton: {fileID: 622920390}
+  UpButton: {fileID: 1448008854}
+  DownButton: {fileID: 2037198654}
 --- !u!1 &1499980536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,6 +2225,7 @@ GameObject:
   - component: {fileID: 1668306353}
   - component: {fileID: 1668306356}
   - component: {fileID: 1668306357}
+  - component: {fileID: 1668306358}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -2357,6 +2375,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normal: {fileID: 21300000, guid: aa37451be5b236548b78b97553dd329e, type: 3}
   hover: {fileID: 21300000, guid: 384f5f7c4707d994485d30957c7528ce, type: 3}
+--- !u!114 &1668306358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668306351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4773c046399e82c488c4d3dac8b759ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayButton: {fileID: 622920390}
+  UpButton: {fileID: 1668306353}
+  DownButton: {fileID: 1404278591}
 --- !u!1 &1734804117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2714,7 +2747,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayButton: {fileID: 622920390}
-  UpButton: {fileID: 0}
+  UpButton: {fileID: 1448008854}
+  DownButton: {fileID: 2037198654}
 --- !u!114 &2037198658
 MonoBehaviour:
   m_ObjectHideFlags: 0
