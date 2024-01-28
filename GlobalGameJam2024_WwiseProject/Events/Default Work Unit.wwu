@@ -11,6 +11,8 @@
 								<Action Name="" ID="{6DEF5E5A-F058-4D76-9970-C748AD495D98}" ShortID="360159148">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">

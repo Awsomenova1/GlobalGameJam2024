@@ -40,6 +40,8 @@ public class GameplayManager : MonoBehaviour
 
     //value to adjust speed/heat meter to
     private float targetSpeed;
+    [SerializeField] private GameObject globalWwise;
+    [SerializeField] private AK.Wwise.Event FadeOut;
 
     public Button button;
 
@@ -109,6 +111,7 @@ public class GameplayManager : MonoBehaviour
 
     public void Pause()
     {
+        FadeOut.Post(globalWwise);
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
         paused = true;
@@ -166,6 +169,7 @@ public class GameplayManager : MonoBehaviour
         paused = false;
         screenWipe.WipeIn();
         screenWipe.PostWipe += ReloadGame;
+        FadeOut.Post(globalWwise);
     }
     //syncs clocks for start of gameplay
     public void StartSequence()
