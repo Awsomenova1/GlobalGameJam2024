@@ -65,6 +65,10 @@ public class GameplayManager : MonoBehaviour
         IntroSequence();
         screenWipe.gameObject.SetActive(true);
         screenWipe.WipeOut();
+        won = false;
+        lost = false;
+        playingAgain = false;
+        quit = false;
     }
 
     // Update is called once per frame
@@ -150,7 +154,6 @@ public class GameplayManager : MonoBehaviour
     public void Pause()
     {
         PauseMusic.Post(globalWwise);
-        DialogController.main.StopTalk();
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
         paused = true;
