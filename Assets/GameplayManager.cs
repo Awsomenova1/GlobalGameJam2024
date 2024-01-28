@@ -177,6 +177,7 @@ public class GameplayManager : MonoBehaviour
         dialog.setSource(new DialogSource("[lf,WormMartEmployee.txt]"));
         dialog.reading = true;
         gameSequence.Play("24hrEmployee");
+        
 
         button.stopInputs = false;
     }

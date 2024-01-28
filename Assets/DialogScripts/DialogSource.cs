@@ -200,6 +200,7 @@ public class DialogSource
         position = 0;
         charCount = 0;
         waiting = false;
+        Debug.Log("Expected time: " + GetTimeToReachPoint(dialog.Length - 1));
     }
 
     public void changeToBlock(string block)

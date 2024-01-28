@@ -53,16 +53,6 @@ public class DialogController : MonoBehaviour
     void Update()
     {
         OtherUpdate();
-        return;
-        //if (reading)
-        //{
-        //    textDisplay.text = source.read(readMode);
-        //    textDisplay.ForceMeshUpdate();
-            
-        //}
-        
-        //if (main == null || main != this)
-        //    main = this;
     }
     void OtherUpdate()
     {
