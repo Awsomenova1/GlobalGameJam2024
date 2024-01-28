@@ -78,7 +78,7 @@ public class GameplayManager : MonoBehaviour
         if (startedSequence && (/*gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence") ||*/ !dialog.reading))
             FinishedSequence();
 
-        if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Q) && (!won && !lost))
+        if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Mouse0) && (!won && !lost))
             StartSequence();
 
         targetSpeed = meter.laughSpeed * 5;
