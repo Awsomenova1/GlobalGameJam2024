@@ -895,6 +895,15 @@ MonoBehaviour:
   reading: 0
   readMode: 0
   anim: {fileID: 335645821}
+  NPC_Talk:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  NPC_Stop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  talking: 0
 --- !u!1 &209847748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,10 +2497,22 @@ MonoBehaviour:
   WinText: {fileID: 500706855}
   LoseScreen: {fileID: 1072652608}
   globalWwise: {fileID: 1244275862}
-  FadeOut:
+  PauseMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f8d906bdf8e66cb47b46331f8d5f9f83, type: 2}
+  ResumeMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f45e7e70e2f245346941f2a4c640ec39, type: 2}
+  StopMusic:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: b8e8223536f09b2468553b0b5dec1ff8, type: 2}
+  StartMusic:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cde46a2f0d94d9447b699ceed39d8b71, type: 2}
   calm:
     idInternal: 0
     valueGuidInternal: 
@@ -2510,6 +2531,20 @@ MonoBehaviour:
     groupIdInternal: 0
     groupGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 4f4b829c6e4574347b1aa5f59ff17ccb, type: 2}
+  silent:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 30f51872218d1f54684b1089c5fca3e3, type: 2}
+  none:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 725f05599daa3c94a89a7e7d91044621, type: 2}
+  won: 0
+  lost: 0
   button: {fileID: 1553205886}
 --- !u!4 &789484925
 Transform:
@@ -2789,6 +2824,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6356120279326138087, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769761966344297684, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
+      propertyPath: Closable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7769761966344297684, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
@@ -4029,6 +4068,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6356120279326138087, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
       propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769761966344297684, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}
+      propertyPath: Closable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7769761966344297684, guid: cc63bf9a3e63d2f49b6ed9c979b2a2d2, type: 3}

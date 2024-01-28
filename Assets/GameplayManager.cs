@@ -41,10 +41,11 @@ public class GameplayManager : MonoBehaviour
     //value to adjust speed/heat meter to
     private float targetSpeed;
     [SerializeField] private GameObject globalWwise;
-    [SerializeField] private AK.Wwise.Event FadeOut;
-    [SerializeField] private AK.Wwise.State calm, mediate, intense;
+    [SerializeField] private AK.Wwise.Event PauseMusic, ResumeMusic, StopMusic, StartMusic;
+    [SerializeField] private AK.Wwise.State calm, mediate, intense, silent, none;
     private enum MusicState { CALM, MEDIATE, INTENSE };
     private MusicState currentState;
+    public bool won = false, lost = false, playingAgain = false, quit = false;
 
     public Button button;
 
@@ -63,7 +64,7 @@ public class GameplayManager : MonoBehaviour
         //pause/unpause the game when pause button pressed, but only if screen wipe is over
         if (Input.GetKeyDown(KeyCode.Escape) && ScreenWipe.over)
         {
-            if (!paused && !PopupPanel.open)
+            if (!paused && !PopupPanel.open && !won && !lost)
                 Pause();
             else if (paused && PopupPanel.open)
                 UnPause();
@@ -88,7 +89,6 @@ public class GameplayManager : MonoBehaviour
             {
                 calm.SetValue();
                 currentState = MusicState.CALM;
-                Debug.Log("Set calm");
             }
             
         }
@@ -98,7 +98,6 @@ public class GameplayManager : MonoBehaviour
             {
                 mediate.SetValue();
                 currentState = MusicState.MEDIATE;
-                Debug.Log("Set mediate");
             }
                 
         }
@@ -108,7 +107,6 @@ public class GameplayManager : MonoBehaviour
             {
                 intense.SetValue();
                 currentState = MusicState.INTENSE;
-                Debug.Log("Set intense");
             }
                 
         }
@@ -117,9 +115,11 @@ public class GameplayManager : MonoBehaviour
         if(meter.checkLose())
         {
             dialog.setSource(new DialogSource("Laughter"));
+
             dialog.reading = true;
             suspendSequence = true;
-            Lose();
+            while (!lost)
+                Lose();
             button.stopInputs = true;
         }
 
@@ -135,7 +135,7 @@ public class GameplayManager : MonoBehaviour
 
     public void Pause()
     {
-        FadeOut.Post(globalWwise);
+        PauseMusic.Post(globalWwise);
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
         paused = true;
@@ -144,6 +144,7 @@ public class GameplayManager : MonoBehaviour
     public void UnPause()
     {
         if (!PopupPanel.open) return;
+        ResumeMusic.Post(globalWwise);
         Time.timeScale = 1;
         paused = false;
         PauseMenu.GetComponent<PopupPanel>().Close();
@@ -151,10 +152,11 @@ public class GameplayManager : MonoBehaviour
 
     public void QuitToMenu()
     {
-        if (!PopupPanel.open) return;
+        if (quit) return;
+        quit = true;
         Time.timeScale = 1;
         paused = false;
-        PopupPanel.open = false;
+        StopMusic.Post(globalWwise);
         screenWipe.WipeIn();
         screenWipe.PostWipe += LoadMenu;
     }
@@ -173,6 +175,9 @@ public class GameplayManager : MonoBehaviour
 
     public void Win()
     {
+        if (paused) return;
+        won = true;
+        StopMusic.Post(globalWwise);
         WinScreen.SetActive(true);
         WinText.SetText("You made it through without laughing!\n\nFinal Grade: " + meter.calculateGrade());
         button.stopInputs = true;
@@ -180,6 +185,9 @@ public class GameplayManager : MonoBehaviour
 
     public void Lose()
     {
+        if (paused) return;
+        lost = true;
+        StopMusic.Post(globalWwise);
         LoseScreen.SetActive(true);
         button.stopInputs = true;
     }
@@ -187,13 +195,13 @@ public class GameplayManager : MonoBehaviour
     //resets game
     public void PlayAgain()
     {
-        if (!PopupPanel.open) return;
-        PopupPanel.open = false;
+        if (playingAgain) return;
+        playingAgain = true;
         Time.timeScale = 1;
         paused = false;
         screenWipe.WipeIn();
+        StopMusic.Post(globalWwise);
         screenWipe.PostWipe += ReloadGame;
-        FadeOut.Post(globalWwise);
     }
     //syncs clocks for start of gameplay
     public void StartSequence()
@@ -214,8 +222,10 @@ public class GameplayManager : MonoBehaviour
     {
         startedSequence = false;
         Debug.Log("Finished sequence");
-        Win();
-
+        while (!won)
+        {
+            Win();
+        }
     }
 
     //updates slider icon for laughter bar

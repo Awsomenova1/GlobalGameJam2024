@@ -60,6 +60,8 @@ public class LaughMeter : MonoBehaviour
         }
         //reqhits/second = (60 * laughSpeed)/180
         //decayRateForBpm = (180 * bpm/60)/60 = 180 * bpm/360, 180 is recovery rate
+
+        AkSoundEngine.SetRTPCValue("laughter", laughter);
     }
 
     //check if the player has exceeded loss threasholds
