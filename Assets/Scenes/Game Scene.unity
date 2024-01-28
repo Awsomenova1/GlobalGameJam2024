@@ -1375,7 +1375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: daaddaa1cf277f74091d08c984018662, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa37451be5b236548b78b97553dd329e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2295,7 +2295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: daaddaa1cf277f74091d08c984018662, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa37451be5b236548b78b97553dd329e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4550,11 +4550,17 @@ MonoBehaviour:
   response1: {fileID: 1759675066}
   response2: {fileID: 222539925}
   response3: {fileID: 2132946550}
+  responseButton1: {fileID: 559789740}
+  responseButton2: {fileID: 291325535}
+  responseButton3: {fileID: 1336097590}
+  buttonSprite: {fileID: 21300000, guid: aa37451be5b236548b78b97553dd329e, type: 3}
+  buttonSelectedSprite: {fileID: 21300000, guid: 384f5f7c4707d994485d30957c7528ce, type: 3}
   inResponseWindow: 0
   currResponse: 0
   playerAnim: {fileID: 1382947946}
   responseGroup: {fileID: 1568812692}
   dialogGroup: {fileID: 1326872297}
+  selectedResponse: 0
 --- !u!95 &1166480477
 Animator:
   serializedVersion: 5
@@ -5393,7 +5399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: daaddaa1cf277f74091d08c984018662, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa37451be5b236548b78b97553dd329e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

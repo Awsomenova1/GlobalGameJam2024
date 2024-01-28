@@ -39,6 +39,13 @@ public class LaughMeter : MonoBehaviour
     public TMPro.TextMeshProUGUI response2;
     public TMPro.TextMeshProUGUI response3;
 
+    //Messy, :(
+    public Image responseButton1;
+    public Image responseButton2;
+    public Image responseButton3;
+
+    public Sprite buttonSprite;
+    public Sprite buttonSelectedSprite;
 
     public bool inResponseWindow = false;
     private bool inResponseWindowLastFrame = false;
@@ -49,6 +56,8 @@ public class LaughMeter : MonoBehaviour
 
     public CanvasGroup responseGroup;
     public CanvasGroup dialogGroup;
+
+    public int selectedResponse = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -152,11 +161,37 @@ public class LaughMeter : MonoBehaviour
 
             playerAnim.SetResponding(false);
 
+            responseButton1.sprite = buttonSprite;
+            responseButton2.sprite = buttonSprite;
+            responseButton3.sprite = buttonSprite;
+
             currResponse++;
         }
         else if (inResponseWindow)
         {
-            //Take input for responses
+
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            {
+                responseButton1.sprite = buttonSprite;
+                responseButton2.sprite = buttonSprite;
+                responseButton3.sprite = buttonSprite;
+
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    responseButton1.sprite = buttonSelectedSprite;
+                    selectedResponse = 1;
+                }
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    responseButton2.sprite = buttonSelectedSprite;
+                    selectedResponse = 2;
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    responseButton3.sprite = buttonSelectedSprite;
+                    selectedResponse = 3;
+                }
+            }
         }
 
 
