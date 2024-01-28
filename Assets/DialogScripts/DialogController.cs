@@ -105,6 +105,7 @@ public class DialogController : MonoBehaviour
             source.exit -= close;
             source.playAnimation -= playAnimation;
             source.ps -= PlaySound;
+            source.setEmot -= SetEmotion;
 
         }
         source = newSource;
@@ -117,6 +118,7 @@ public class DialogController : MonoBehaviour
         newSource.exit += close;
         source.playAnimation += playAnimation;
         source.ps += PlaySound;
+        source.setEmot += SetEmotion;
 
     }
 
@@ -214,5 +216,10 @@ public class DialogController : MonoBehaviour
     public void PlaySound(string name, float volume, bool loop)
     {
 
+    }
+
+    public void SetEmotion(int emotionId)
+    {
+        anim.SetFloat("Emotion", emotionId);
     }
 }

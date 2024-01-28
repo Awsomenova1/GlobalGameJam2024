@@ -48,6 +48,8 @@ public class DialogSource
 
     public event Action<string> playAnimation;
 
+    public event Action<int> setEmot;
+
     //Is just used for things like DialogNpc to have reactions to certain events
     public event Action<string[]> callEvent;
 
@@ -686,6 +688,23 @@ public class DialogSource
                 else
                     Debug.LogWarning("Invalid number of parameters for play sound [ps]!");
                 break;
+            case "sh": //Set heat/difficulty
+                if(input.Length == 2)
+                {
+                    LaughMeter.main.laughSpeed = int.Parse(input[1]);
+                }
+                else
+                    Debug.LogWarning("Invalid number of parameters for set heat [sh]!");
+                break;
+            case "se": //set emotion
+                if(input.Length == 2)
+                {
+                    setEmot?.Invoke(int.Parse(input[1]));
+                }
+                else
+                    Debug.LogWarning("Invalid number of parameters for set emotion[se]!");
+                break;
+
 
             #region old audio stuff
 

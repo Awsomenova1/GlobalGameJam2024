@@ -8,7 +8,7 @@ using TMPro;
 public class GameplayManager : MonoBehaviour
 {
 
-    public Animator gameSequence;
+    //public Animator gameSequence;
     public LaughMeter meter;
     public DialogController dialog;
     public Slider speedMeter;
@@ -75,7 +75,7 @@ public class GameplayManager : MonoBehaviour
         if (suspendSequence)
             return;
 
-        if (startedSequence && (gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence") || !dialog.reading))
+        if (startedSequence && (/*gameSequence.GetCurrentAnimatorStateInfo(0).IsName("NoCurrentSequence") ||*/ !dialog.reading))
             FinishedSequence();
 
         if (!startedSequence && !dialog.reading && Input.GetKeyDown(KeyCode.Q) && (!won && !lost))
@@ -250,7 +250,7 @@ public class GameplayManager : MonoBehaviour
         //dialog.setSource(new DialogSource("[c] Blah blah blah."));
         dialog.setSource(new DialogSource("[lf,WormMartEmployee.txt]"));
         dialog.reading = true;
-        gameSequence.Play("24hrEmployee");
+        //gameSequence.Play("24hrEmployee");
 
 
         meter.responseQueue.Add(("It's ok!", "It's about time.", "16!?"));
@@ -261,7 +261,7 @@ public class GameplayManager : MonoBehaviour
     {
         startedSequence = false;
         Debug.Log("Finished sequence");
-        gameSequence.Play("NoCurrentSequence");
+        //gameSequence.Play("NoCurrentSequence");
         while (!won)
         {
             Win();
