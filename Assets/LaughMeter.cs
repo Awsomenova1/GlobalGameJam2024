@@ -31,7 +31,7 @@ public class LaughMeter : MonoBehaviour
     //number of frames since the last time distance recorded
     private int timeSinceCount;
 
-    public static float difficultyScalar = 5;
+    public static float difficultyScalar = 2;
 
     public List<(string resp1, string resp2, string resp3)> responseQueue = new List<(string resp1, string resp2, string resp3)>();
 
