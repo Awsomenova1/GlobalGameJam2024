@@ -33,6 +33,15 @@ public class LaughMeter : MonoBehaviour
 
     public static float difficultyScalar = 5;
 
+    public List<(string resp1, string resp2, string resp3)> responseQueue = new List<(string resp1, string resp2, string resp3)>();
+
+    public bool inResponseWindow = false;
+    private bool inResponseWindowLastFrame = false;
+
+    public int currResponse;
+
+    public Player playerAnim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -94,6 +103,28 @@ public class LaughMeter : MonoBehaviour
             return 0;
         }
         
+    }
+
+
+    public void ResponseUpdates()
+    {
+        if (inResponseWindow && !inResponseWindowLastFrame)
+        {
+            //Open response windows
+        }
+        else if (!inResponseWindow && inResponseWindowLastFrame)
+        {
+            //Close response windows
+            currResponse++;
+        }
+        else if (inResponseWindow)
+        {
+            //Take input for responses
+        }
+
+
+
+        inResponseWindowLastFrame = inResponseWindow;
     }
 
     //calculate a grade for the player based on how well they kept in the center
