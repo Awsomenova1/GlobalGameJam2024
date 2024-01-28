@@ -197,6 +197,21 @@ public class GameplayManager : MonoBehaviour
     {
         if (playingAgain) return;
         playingAgain = true;
+
+        if (PopupPanel.open){
+            if(PauseMenu.activeSelf == true){
+                PauseMenu.GetComponent<PopupPanel>().Close();
+            }
+            else if(WinScreen.activeSelf == true){
+                WinScreen.GetComponent<PopupPanel>().Close();
+            }
+            else if(LoseScreen.activeSelf == true){
+                LoseScreen.GetComponent<PopupPanel>().Close();
+            }
+        }
+        won = false;
+        lost = false;
+
         Time.timeScale = 1;
         paused = false;
         screenWipe.WipeIn();
