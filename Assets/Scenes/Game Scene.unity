@@ -2042,6 +2042,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: f91835fd8010ff541b2766cbaee83839, type: 2}
+  GameOver:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4c7117e6fb53b70468ff2bf952c53d88, type: 2}
   calm:
     idInternal: 0
     valueGuidInternal: 

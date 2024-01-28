@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class Settings 
 {
-    public float musicVolume = 100f, soundVolume = 100f;
+    public float musicVolume = 50f, soundVolume = 50f;
     public bool fullscreen = true;
     // Start is called before the first frame update
     void Start()

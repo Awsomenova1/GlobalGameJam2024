@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F3792599-D85E-FFF1-FE28-B13A9B710D8D}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{8CFB5951-57BD-DFAC-8BDC-82E4CBB44CA2}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -19,13 +19,17 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
-				<Bus Id="2223886005" Name="Story_FX"/>
-				<Bus Id="3017890412" Name="User_Interface"/>
+				<Bus Id="393239870" Name="SFX"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3930136735" Name="Dialogue"/>
 				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
 			<GameParameters>
-				<GameParameter Id="2133615622" Name="Laugh_Meter"/>
+				<GameParameter Id="414646191" Name="voiceVolume"/>
+				<GameParameter Id="1097468465" Name="Laughter"/>
+				<GameParameter Id="2346531308" Name="musicVolume"/>
+				<GameParameter Id="2918011349" Name="masterVolume"/>
+				<GameParameter Id="3873835272" Name="soundVolume"/>
 			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="1852808225" Name="Playing">
@@ -53,7 +57,7 @@
 					</Switches>
 				</SwitchGroup>
 				<SwitchGroup Id="2133615622" Name="Laugh_Meter">
-					<GameParameterRef Id="2133615622"/>
+					<GameParameterRef Id="1097468465"/>
 					<Switches>
 						<Switch Id="1892317246" Name="A_Full"/>
 						<Switch Id="1959799710" Name="D_Near_Empty"/>
@@ -63,7 +67,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D8B41707-2389-8080-C412-4B20CE0DE044}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{91FC034B-A1C6-1169-0F2F-C54EA22E307C}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -98,6 +102,10 @@
 				<File Id="192638632" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Menu\Menu Back.wav</ShortName>
 					<CachePath>SFX/Menu/Menu Back_05A531A7.wem</CachePath>
+				</File>
+				<File Id="240832617" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Chime.wav</ShortName>
+					<CachePath>SFX/Chime_C61A875B.wem</CachePath>
 				</File>
 				<File Id="264731060" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_Snare_180bpm_4b_tail.wav</ShortName>
@@ -143,6 +151,10 @@
 					<ShortName>Mediate_Sbass_180bpm_4b_tail.wav</ShortName>
 					<CachePath>SFX/Mediate_Sbass_180bpm_4b_tail_18320D45.wem</CachePath>
 				</File>
+				<File Id="572561407" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hit.wav</ShortName>
+					<CachePath>SFX/Hit_05A531A7.wem</CachePath>
+				</File>
 				<File Id="593321699" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Calm_HiHat_180bpm_4b_tail.wav</ShortName>
 					<CachePath>SFX/Calm_HiHat_180bpm_4b_tail_18320D45.wem</CachePath>
@@ -170,6 +182,10 @@
 				<File Id="827364640" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Intense_16mm_180bpm_tail.wav</ShortName>
 					<CachePath>SFX/Intense_16mm_180bpm_tail_18320D45.wem</CachePath>
+				</File>
+				<File Id="834450179" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Miss.wav</ShortName>
+					<CachePath>SFX/Miss_05A531A7.wem</CachePath>
 				</File>
 				<File Id="867652906" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mediate_Guitar_180bpm_4b_tail.wav</ShortName>
@@ -221,6 +237,14 @@
 				</File>
 			</Media>
 			<Events>
+				<Event Id="1432716332" Name="Game_Over" DurationType="OneShot" DurationMin="8.848481" DurationMax="8.848481">
+					<MediaRefs>
+						<MediaRef Id="9238376"/>
+					</MediaRefs>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="2470328564" Id="3753286132" Name="Calm"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="2166671746" Name="Menu_Adjust" DurationType="OneShot" DurationMin="1.4180952" DurationMax="1.4180952">
 					<MediaRefs>
 						<MediaRef Id="319242125"/>
@@ -293,8 +317,59 @@
 					<MediaRefs>
 						<MediaRef Id="999403510"/>
 					</MediaRefs>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1541636155" Id="3386657621"/>
+							<MediaRefs>
+								<MediaRef Id="60782463"/>
+								<MediaRef Id="817135513"/>
+								<MediaRef Id="872952000"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1541636155" Id="1206605712"/>
+							<MediaRefs>
+								<MediaRef Id="419695715"/>
+								<MediaRef Id="422559067"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
-				<Event Id="953277036" Name="Resume" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1217129213" Name="QTE_Hit" DurationType="OneShot" DurationMin="1.3333334" DurationMax="1.3333334">
+					<MediaRefs>
+						<MediaRef Id="572561407"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3855974658" Name="QTE_Miss" DurationType="OneShot" DurationMin="1.3333334" DurationMax="1.3333334">
+					<MediaRefs>
+						<MediaRef Id="834450179"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1426186273" Name="QTE_Perfect" DurationType="OneShot" DurationMin="1.3333334" DurationMax="1.3333334">
+					<MediaRefs>
+						<MediaRef Id="240832617"/>
+						<MediaRef Id="572561407"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="953277036" Name="Resume" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1541636155" Id="3386657621"/>
+							<MediaRefs>
+								<MediaRef Id="60782463"/>
+								<MediaRef Id="817135513"/>
+								<MediaRef Id="872952000"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="1541636155" Id="1206605712"/>
+							<MediaRefs>
+								<MediaRef Id="419695715"/>
+								<MediaRef Id="422559067"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="2977420043" Name="Start_Menu" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="1010371254"/>
@@ -593,7 +668,7 @@
 				</Event>
 			</Events>
 			<GameParameters>
-				<GameParameter Id="2133615622" Name="Laugh_Meter"/>
+				<GameParameter Id="1097468465" Name="Laughter"/>
 			</GameParameters>
 			<StateGroups>
 				<StateGroup Id="1852808225" Name="Playing">
@@ -627,5 +702,5 @@
 			<Path>Empty.bnk</Path>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{167E8342-1EC6-B8DC-CE78-90AC6B44A8BA}</FileHash>
+	<FileHash>{2864CE84-430C-F3ED-139E-E935909058C9}</FileHash>
 </SoundBanksInfo>
