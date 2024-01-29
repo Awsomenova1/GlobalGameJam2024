@@ -49,9 +49,23 @@
 							<ChildrenList>
 								<Action Name="" ID="{BE5C6C93-E473-4E2F-AA16-AECFFA3BFACF}" ShortID="651446426">
 									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="3"/>
+										<Property Name="ActionType" Type="int16" Value="2"/>
 									</PropertyList>
-									<ReferenceList/>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Dialogue" ID="{5CECFD9B-CC44-4CCC-A023-650FE937778B}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{93AFB5F1-610A-4CFD-BB87-463B582F13C9}" ShortID="103262319">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music" ID="{DBDDD0B3-B891-434C-97AC-1EF81D59C625}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}"/>
+										</Reference>
+									</ReferenceList>
 								</Action>
 								<Action Name="" ID="{19A9A146-2443-4A45-A53F-2DC3BC6DD283}" ShortID="833844887">
 									<ReferenceList>
@@ -291,6 +305,16 @@
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
 							<ChildrenList>
+								<Action Name="" ID="{9FBC86F6-AD9C-4BAC-B7FD-DA6523C312BA}" ShortID="217656990">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Dialogue" ID="{5CECFD9B-CC44-4CCC-A023-650FE937778B}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{38660C62-3709-4514-8252-6267E3426774}" ShortID="548940421">
 									<ReferenceList>
 										<Reference Name="Target">

@@ -85,7 +85,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Laughter" ID="{DEC19A5F-D8F2-486F-91A0-34908945FFB1}"/>
-							<Value>7449.16820702403</Value>
+							<Value>5028.168</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="voiceVolume" ID="{4C769D97-5E63-4C6C-89FC-91101B88701A}"/>
@@ -101,7 +101,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Calm" ID="{18485634-69F0-4E3D-9BBF-0E1795F534F1}"/>
+						<CurrentStateRef Name="Intense" ID="{9F146DCB-C38C-4348-BFC1-E4011C4B5FFF}"/>
 						<CurrentStateRef Name="Menu" ID="{A4B84789-5E70-4BC3-9CE5-89185CC85EE2}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">

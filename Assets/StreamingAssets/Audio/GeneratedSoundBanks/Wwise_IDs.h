@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID GAME_OVER = 1432716332U;
         static const AkUniqueID MENU_ADJUST = 2166671746U;
         static const AkUniqueID MENU_BACK = 3063554414U;
         static const AkUniqueID MENU_NAV = 2684797902U;
@@ -22,6 +23,9 @@ namespace AK
         static const AkUniqueID NPC_TALK = 1510544299U;
         static const AkUniqueID NPC_TIRED = 3425439425U;
         static const AkUniqueID PAUSE = 3092587493U;
+        static const AkUniqueID QTE_HIT = 1217129213U;
+        static const AkUniqueID QTE_MISS = 3855974658U;
+        static const AkUniqueID QTE_PERFECT = 1426186273U;
         static const AkUniqueID RESUME = 953277036U;
         static const AkUniqueID START_MENU = 2977420043U;
         static const AkUniqueID START_MUSIC = 540993415U;
@@ -93,7 +97,11 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
-        static const AkUniqueID LAUGH_METER = 2133615622U;
+        static const AkUniqueID LAUGHTER = 1097468465U;
+        static const AkUniqueID MASTERVOLUME = 2918011349U;
+        static const AkUniqueID MUSICVOLUME = 2346531308U;
+        static const AkUniqueID SOUNDVOLUME = 3873835272U;
+        static const AkUniqueID VOICEVOLUME = 414646191U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
@@ -105,10 +113,10 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID DIALOGUE = 3930136735U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
-        static const AkUniqueID STORY_FX = 2223886005U;
-        static const AkUniqueID USER_INTERFACE = 3017890412U;
+        static const AkUniqueID SFX = 393239870U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES
