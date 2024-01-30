@@ -208,10 +208,10 @@ public class LaughMeter : MonoBehaviour
     public string calculateGrade(){
         float avgDist = calculateAvgDistance();
 
-        if(avgDist == 0f){
+        if(avgDist <= 100){
             return "<color=\"pink\">S";
         }
-        else if(avgDist <= 100){
+        else if(avgDist <= 200){
             return "<color=#6d84ff>A";
         }
         else if(avgDist <= 500){

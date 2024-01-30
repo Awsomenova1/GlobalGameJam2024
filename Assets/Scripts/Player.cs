@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         {
             laughLevel = 2;
         }
-        else if (Mathf.Abs(LaughMeter.laughter - 5000) <= 5000)
+        else if (LaughMeter.main.checkLose())
         {
             laughLevel = 3;
         }
