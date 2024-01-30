@@ -25,7 +25,7 @@ public class Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (stopInputs)
+        if (stopInputs || GameplayManager.paused)
             return;
 
         //when selected key pressed down, add to laughter meter

@@ -16,6 +16,12 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (PopupPanel.mouseNeverMoved > 0)
+        {
+            PopupPanel.mouseNeverMoved--;
+            return;
+        }
+
         if (MainMenu ^ PopupPanel.visible)
             EventSystem.current.SetSelectedGameObject(gameObject);
     }
@@ -30,7 +36,9 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerMoveHandl
 
     public void OnSelect(BaseEventData eventData)
     {
-        if (MainMenuManager.firstopen)
+        if (MainMenuManager.firstopen && !MainMenuManager.quitting && !MainMenuManager.playing)
+        {
             MenuNav.Post(gameObject);
+        }
     }
 }

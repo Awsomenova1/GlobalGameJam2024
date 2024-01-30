@@ -15,6 +15,7 @@ public class PopupPanel : MonoBehaviour
     public float animProgress;
     private GameObject PreviousButton;
     public static bool open = false, visible = false;
+    public static int mouseNeverMoved = 0;
     private Animator anim;
     private GameObject currentSelection;
 
@@ -27,6 +28,11 @@ public class PopupPanel : MonoBehaviour
     {
         open = true;
         
+        if (EventSystem.current.currentSelectedGameObject == PreviousButton && visible)
+        {
+            EventSystem.current.SetSelectedGameObject(PrimaryButton);
+        }
+
         if (EventSystem.current.currentSelectedGameObject != null)
         {
             currentSelection = EventSystem.current.currentSelectedGameObject;
@@ -41,6 +47,11 @@ public class PopupPanel : MonoBehaviour
             Close();
         }
         
+        if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+        {
+            mouseNeverMoved = 0;
+        }
+
         PostProcessing.weight = animProgress;
     }
 
@@ -49,6 +60,7 @@ public class PopupPanel : MonoBehaviour
     {
         anim.SetTrigger("Open");
         open = true;
+        mouseNeverMoved = 2;
         visible = true;
         if (SelectPrevious)
             PreviousButton = EventSystem.current.currentSelectedGameObject;
@@ -57,7 +69,7 @@ public class PopupPanel : MonoBehaviour
 
     public void Close()
     {
-        MenuBack.Post(gameObject);
+        // MenuBack.Post(gameObject); 
         anim.SetTrigger("Close");
         visible = false;
         if (SelectPrevious)

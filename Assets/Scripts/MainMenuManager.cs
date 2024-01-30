@@ -12,10 +12,9 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject PlayButton, InstructionsPanel, SettingsPanel, CreditsPanel;
     [SerializeField] private ScreenWipe screenWipe;
     [SerializeField] private AK.Wwise.Event MenuBack, MenuSelect, MenuNav, MenuAdjust;
-    private bool playing = false, quitting = false;
     [SerializeField] private Slider musicSlider, soundSlider;
     private GameObject currentSelection;
-    public static bool firstopen = false;
+    public static bool firstopen = false, quitting = false, playing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +23,8 @@ public class MainMenuManager : MonoBehaviour
         firstopen = true;
         screenWipe.gameObject.SetActive(true);
         screenWipe.WipeOut();
+        musicSlider.value = SettingsManager.currentSettings.musicVolume;
+        soundSlider.value = SettingsManager.currentSettings.soundVolume;
     }
 
     public void UpdateMusicVolume()
@@ -70,6 +71,7 @@ public class MainMenuManager : MonoBehaviour
     {
         screenWipe.PostWipe -= LoadGame;
         firstopen = false;
+        playing = false;
         SceneManager.LoadScene("Game Scene");
     }
 
@@ -87,8 +89,6 @@ public class MainMenuManager : MonoBehaviour
         if (!PopupPanel.open && !playing && !quitting)
         {
             SettingsPanel.SetActive(true);
-            musicSlider.value = SettingsManager.currentSettings.musicVolume;
-            soundSlider.value = SettingsManager.currentSettings.soundVolume;
             MenuSelect.Post(gameObject);
         }
     }
@@ -118,7 +118,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void Quit()
     {
-        if (quitting) return;
+        if (quitting || playing) return;
         quitting = true;
         MenuSelect.Post(gameObject);
         screenWipe.WipeIn();

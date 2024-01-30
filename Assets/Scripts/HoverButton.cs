@@ -21,6 +21,11 @@ public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (PopupPanel.mouseNeverMoved > 0)
+        {
+            PopupPanel.mouseNeverMoved--;
+            return;
+        }
         image.sprite = hover;
     }
 

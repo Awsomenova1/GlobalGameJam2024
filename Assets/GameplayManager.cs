@@ -252,6 +252,7 @@ public class GameplayManager : MonoBehaviour
         paused = false;
         screenWipe.WipeIn();
         StopMusic.Post(globalWwise);
+        DialogController.main.StopTalk();
         screenWipe.PostWipe += ReloadGame;
     }
     //syncs clocks for start of gameplay
