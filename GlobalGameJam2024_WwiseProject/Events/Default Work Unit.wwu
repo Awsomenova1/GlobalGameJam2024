@@ -46,6 +46,10 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Game_Over" ID="{7025CBBC-867D-454D-8438-40B1CC0FC185}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{BE5C6C93-E473-4E2F-AA16-AECFFA3BFACF}" ShortID="651446426">
 									<PropertyList>
@@ -481,6 +485,20 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Stop_All" ID="{57A24729-C030-4720-979F-DC767A6B0695}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="27"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{F8941A88-C3E1-451C-8AC2-77138FB858C8}" ShortID="31586499">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

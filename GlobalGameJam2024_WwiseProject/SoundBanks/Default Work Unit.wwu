@@ -24,6 +24,7 @@
 						<ObjectRef Name="Menu Adjust" ID="{DFCA0055-6CAC-4658-B605-91D17E804FC8}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Instense" ID="{B75CA433-5C61-4698-B1CC-4127D5B328C4}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="NPC_Stop" ID="{1CB91BC4-41D6-4716-B38E-7DCED8012A85}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_All" ID="{57A24729-C030-4720-979F-DC767A6B0695}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Music" ID="{F9CC6E94-04B2-4728-A612-8A2DDD13F0DF}" WorkUnitID="{BC9F2040-B8C7-426B-983E-C40031009474}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Mood" ID="{288DD627-47F8-475B-BDC6-D6B89CBEF729}" WorkUnitID="{9EF509E2-FA39-4FF0-AB83-890B84C5E6E1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Menu" ID="{AE2D1870-5A49-4795-AE5E-0349525AA7C1}" WorkUnitID="{674ABDE9-B4A3-4CBD-9647-F14F45BFEF01}" Origin="Manual" Filter="7"/>

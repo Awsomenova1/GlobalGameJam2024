@@ -1,4 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
+	452547817	Stop_All			\Default Work Unit\Stop_All	
 	540993415	Start_Music			\Default Work Unit\Music\Start_Music	
 	953277036	Resume			\Default Work Unit\Menu\Resume	
 	1093725892	NPC_Angry			\Default Work Unit\Dialogue\NPC_Angry	

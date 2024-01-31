@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{8CFB5951-57BD-DFAC-8BDC-82E4CBB44CA2}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F4D33754-9855-E973-19DF-3C148DEA5B23}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -56,18 +56,9 @@
 						<Switch Id="3386657621" Name="Tired"/>
 					</Switches>
 				</SwitchGroup>
-				<SwitchGroup Id="2133615622" Name="Laugh_Meter">
-					<GameParameterRef Id="1097468465"/>
-					<Switches>
-						<Switch Id="1892317246" Name="A_Full"/>
-						<Switch Id="1959799710" Name="D_Near_Empty"/>
-						<Switch Id="2988341216" Name="C_Half"/>
-						<Switch Id="4039310350" Name="B_Near_Full"/>
-					</Switches>
-				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D67A7CE6-83AE-891A-2F68-CEB71F64301C}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E9CE5773-F7D5-3914-D534-5ACDDE495666}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -672,6 +663,7 @@
 						<ActionSetStateEntry GroupId="2470328564" Id="3160623154" Name="Silent"/>
 					</ActionSetState>
 				</Event>
+				<Event Id="452547817" Name="Stop_All" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2914981333" Name="Stop_Menu" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
 						<MediaRef Id="1010371254"/>
@@ -774,5 +766,5 @@
 			<Path>Empty.bnk</Path>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{2ECB1879-9B32-9D9E-D50F-F9794CA2BE50}</FileHash>
+	<FileHash>{6C9C4947-B521-D1CB-9BA6-9D1B748AB2A6}</FileHash>
 </SoundBanksInfo>

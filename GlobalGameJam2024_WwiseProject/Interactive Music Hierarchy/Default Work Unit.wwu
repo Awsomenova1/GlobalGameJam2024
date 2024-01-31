@@ -3057,27 +3057,31 @@
 														<PointList>
 															<Point>
 																<XPos>0</XPos>
-																<YPos>25</YPos>
+																<YPos>59</YPos>
 																<Flags>5</Flags>
+																<SegmentShape>Exp2</SegmentShape>
 															</Point>
 															<Point>
 																<XPos>2500</XPos>
-																<YPos>0</YPos>
+																<YPos>30</YPos>
 																<Flags>0</Flags>
+																<SegmentShape>Log3</SegmentShape>
 															</Point>
 															<Point>
-																<XPos>4990.75786</XPos>
-																<YPos>-1</YPos>
+																<XPos>5000</XPos>
+																<YPos>0</YPos>
 																<Flags>0</Flags>
+																<SegmentShape>Exp3</SegmentShape>
 															</Point>
 															<Point>
 																<XPos>7500</XPos>
-																<YPos>-1</YPos>
+																<YPos>30</YPos>
 																<Flags>0</Flags>
+																<SegmentShape>Log2</SegmentShape>
 															</Point>
 															<Point>
 																<XPos>10000</XPos>
-																<YPos>25</YPos>
+																<YPos>59</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -3107,27 +3111,31 @@
 														<PointList>
 															<Point>
 																<XPos>0</XPos>
-																<YPos>-0</YPos>
+																<YPos>-2.9</YPos>
 																<Flags>5</Flags>
+																<SegmentShape>Exp1</SegmentShape>
 															</Point>
 															<Point>
 																<XPos>2500</XPos>
-																<YPos>-3.87</YPos>
+																<YPos>-6.3</YPos>
 																<Flags>0</Flags>
+																<SegmentShape>Log2</SegmentShape>
 															</Point>
 															<Point>
-																<XPos>4990.75786</XPos>
-																<YPos>-3.80675</YPos>
+																<XPos>5000</XPos>
+																<YPos>-8</YPos>
 																<Flags>0</Flags>
+																<SegmentShape>Exp2</SegmentShape>
 															</Point>
 															<Point>
-																<XPos>7500</XPos>
-																<YPos>-3.60468</YPos>
+																<XPos>7509.78474</XPos>
+																<YPos>-6.3</YPos>
 																<Flags>0</Flags>
+																<SegmentShape>Log1</SegmentShape>
 															</Point>
 															<Point>
 																<XPos>10000</XPos>
-																<YPos>0</YPos>
+																<YPos>-2.90402</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>

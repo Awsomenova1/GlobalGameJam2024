@@ -1,12 +1,3 @@
-Switch Group	ID	Name			Wwise Object Path	Notes
-	2133615622	Laugh_Meter			\Music\Laugh_Meter	
-
-Switch	ID	Name	Switch Group			Notes
-	1892317246	A_Full	Laugh_Meter			
-	1959799710	D_Near_Empty	Laugh_Meter			
-	2988341216	C_Half	Laugh_Meter			
-	4039310350	B_Near_Full	Laugh_Meter			
-
 State Group	ID	Name			Wwise Object Path	Notes
 	1852808225	Playing			\Default Work Unit\Playing	
 	2470328564	Intensity			\Default Work Unit\Intensity	
